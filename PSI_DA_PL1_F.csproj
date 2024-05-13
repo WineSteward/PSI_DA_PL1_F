@@ -55,7 +55,11 @@
     </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Estudante.cs" />
+    <Compile Include="Models\Extra.cs" />
+    <Compile Include="Models\Fatura.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\MenuRefeicao.cs" />
     <Compile Include="Models\Multa.cs" />
     <Compile Include="Models\Prato.cs" />
     <Compile Include="Models\Professor.cs" />
