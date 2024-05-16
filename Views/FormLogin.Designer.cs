@@ -29,18 +29,11 @@
         private void InitializeComponent()
         {
             this.btnDirecionarRegisto = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.tbLoginPassword = new System.Windows.Forms.TextBox();
-            this.tbLoginUserName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.listBoxFuncionarios = new System.Windows.Forms.ListBox();
+            this.labelTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,52 +41,24 @@
             // 
             this.btnDirecionarRegisto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
             this.btnDirecionarRegisto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDirecionarRegisto.Location = new System.Drawing.Point(689, 483);
+            this.btnDirecionarRegisto.Location = new System.Drawing.Point(649, 549);
             this.btnDirecionarRegisto.Name = "btnDirecionarRegisto";
-            this.btnDirecionarRegisto.Size = new System.Drawing.Size(131, 37);
+            this.btnDirecionarRegisto.Size = new System.Drawing.Size(171, 37);
             this.btnDirecionarRegisto.TabIndex = 42;
-            this.btnDirecionarRegisto.Text = "Registo";
+            this.btnDirecionarRegisto.Text = "Adicionar Funcionario";
             this.btnDirecionarRegisto.UseVisualStyleBackColor = false;
             // 
-            // btnLogin
+            // btnEntrar
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogin.Location = new System.Drawing.Point(689, 410);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(131, 38);
-            this.btnLogin.TabIndex = 41;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // tbLoginPassword
-            // 
-            this.tbLoginPassword.Location = new System.Drawing.Point(640, 340);
-            this.tbLoginPassword.Multiline = true;
-            this.tbLoginPassword.Name = "tbLoginPassword";
-            this.tbLoginPassword.Size = new System.Drawing.Size(229, 32);
-            this.tbLoginPassword.TabIndex = 38;
-            // 
-            // tbLoginUserName
-            // 
-            this.tbLoginUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbLoginUserName.Location = new System.Drawing.Point(640, 239);
-            this.tbLoginUserName.Multiline = true;
-            this.tbLoginUserName.Name = "tbLoginUserName";
-            this.tbLoginUserName.Size = new System.Drawing.Size(229, 32);
-            this.tbLoginUserName.TabIndex = 37;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Azure;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.label2.Location = new System.Drawing.Point(704, 173);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 34);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Sign in";
+            this.btnEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnEntrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEntrar.Location = new System.Drawing.Point(649, 476);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(171, 38);
+            this.btnEntrar.TabIndex = 41;
+            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // label1
             // 
@@ -107,36 +72,6 @@
             this.label1.TabIndex = 35;
             this.label1.Text = "Login";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::PSI_DA_PL1_F.Properties.Resources.email__1_;
-            this.pictureBox4.Location = new System.Drawing.Point(568, 237);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(57, 37);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 40;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::PSI_DA_PL1_F.Properties.Resources.padlock__1_;
-            this.pictureBox5.Location = new System.Drawing.Point(568, 337);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(57, 37);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 39;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PSI_DA_PL1_F.Properties.Resources.login__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(640, 32);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(229, 138);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PSI_DA_PL1_F.Properties.Resources.Imagem1;
@@ -147,27 +82,39 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
+            // listBoxFuncionarios
+            // 
+            this.listBoxFuncionarios.FormattingEnabled = true;
+            this.listBoxFuncionarios.ItemHeight = 16;
+            this.listBoxFuncionarios.Location = new System.Drawing.Point(586, 125);
+            this.listBoxFuncionarios.Name = "listBoxFuncionarios";
+            this.listBoxFuncionarios.Size = new System.Drawing.Size(302, 324);
+            this.listBoxFuncionarios.TabIndex = 43;
+            // 
+            // labelTitulo
+            // 
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Location = new System.Drawing.Point(644, 42);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(190, 32);
+            this.labelTitulo.TabIndex = 44;
+            this.labelTitulo.Text = "Funcionários";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1032, 603);
+            this.Controls.Add(this.labelTitulo);
+            this.Controls.Add(this.listBoxFuncionarios);
             this.Controls.Add(this.btnDirecionarRegisto);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.tbLoginPassword);
-            this.Controls.Add(this.tbLoginUserName);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,14 +124,10 @@
         #endregion
 
         private System.Windows.Forms.Button btnDirecionarRegisto;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox tbLoginPassword;
-        private System.Windows.Forms.TextBox tbLoginUserName;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox listBoxFuncionarios;
+        private System.Windows.Forms.Label labelTitulo;
     }
 }
