@@ -13,3 +13,5 @@ C:\Users\MMC\Desktop\IPL\1 Ano\2_Semestre\Aplicacaoes\PSI_DA_PL1_F\obj\Debug\PSI
 C:\Users\MMC\Desktop\IPL\1 Ano\2_Semestre\Aplicacaoes\PSI_DA_PL1_F\obj\Debug\PSI_DA_P.4EC82545.Up2Date
 C:\Users\MMC\Desktop\IPL\1 Ano\2_Semestre\Aplicacaoes\PSI_DA_PL1_F\obj\Debug\PSI_DA_PL1_F.exe
 C:\Users\MMC\Desktop\IPL\1 Ano\2_Semestre\Aplicacaoes\PSI_DA_PL1_F\obj\Debug\PSI_DA_PL1_F.pdb
+C:\Users\MMC\Desktop\IPL\1 Ano\2_Semestre\Aplicacaoes\PSI_DA_PL1_F\obj\Debug\PSI_DA_PL1_F.Views.FormLogin.resources
+C:\Users\MMC\Desktop\IPL\1 Ano\2_Semestre\Aplicacaoes\PSI_DA_PL1_F\obj\Debug\PSI_DA_PL1_F.Views.FormRegisto.resources
