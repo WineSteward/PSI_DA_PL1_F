@@ -8,28 +8,11 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class Utilizador
     {
-        private int ID;
+        public int Id { get; set; }
 
-        public int id
-        {
-            get { return ID; }
-            set { ID = value; }
-        }
+        public string Nome { get; set; }
 
-        private string Name;
+        public string NIF { get; set; }
 
-        public string nome
-        {
-            get { return Name; }
-            set { Name = value; }
-        }
-
-        private string NIF;
-
-        public string nif
-        {
-            get { return NIF; }
-            set { NIF = value; }
-        }
     }
 }

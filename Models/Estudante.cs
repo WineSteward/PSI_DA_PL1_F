@@ -8,12 +8,7 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class Estudante : Cliente
     {
-        private string numero_estudante;
+        public string NumeroEstudante { get; set; }
 
-        public string numeroEstudante
-        {
-            get { return numero_estudante; }
-            set { numero_estudante = value;}
-        }
     }
 }

@@ -8,23 +8,11 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class Fatura
     {
-        public int ID;
+        public int Id { get; set; }
 
-        private int Total;
+        public int Total { get; set; }
     
-        private int total
-        {
-            get { return total; }
-            set { total = value; }
-        }
+        public DateTime DataHora { get; set; }
 
-        private DateTime DataHora;
-
-        public DateTime dataHora
-        {
-            get { return dataHora; }
-            set { dataHora = value; }
-        }
-    
     }
 }

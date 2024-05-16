@@ -8,12 +8,7 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class Funcionario : Utilizador
     {
-        private string Username;
+        public string Username { get; set; }
 
-        public string username
-        {
-            get { return Username; }
-            set { Username = value; }
-        }
     }
 }

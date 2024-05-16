@@ -8,29 +8,11 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class MenuRefeicao
     {
-        private int id;
+        public int Id { get; set; }
 
-        public int ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        public DateTime DataHora { get; set; }
 
-        private DateTime DataHora;
-
-        public DateTime dataHora
-        {
-            get { return DataHora; }
-            set { DataHora = value; }
-        }
-
-        private int Stock;
-
-        public int stock
-        {
-            get { return Stock; }
-            set { Stock = value; }
-        }
+        public int Stock { get; set; }
 
         public float precoEstudante;
 

@@ -8,13 +8,7 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class Cliente : Utilizador
     {
-        private float Saldo;
-
-        public float saldo
-        {
-            get { return Saldo; }
-            set { Saldo = value; }
-        }
+        public float Saldo { get; set; }
 
     }
 }

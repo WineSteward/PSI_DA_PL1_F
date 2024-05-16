@@ -8,21 +8,12 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class Multa
     {
-        private float Valor;
+        public int Id {  get; set; }
 
-        public float valor
-        {
-            get { return Valor; }
-            set { Valor = value; } 
-        }
+        public float Valor {  get; set; }
 
-        private int NumeroHoras;
+        public int NumeroHoras {  get; set; }
 
-        public int numeroHoras
-        {
-            get { return NumeroHoras; }
-            set { NumeroHoras = value; }
-        }
     }
 }
 

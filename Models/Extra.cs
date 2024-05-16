@@ -8,14 +8,9 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class Extra
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
-        private string description;
+        public string Descricao { get; set; }
 
-        public string descricao
-        {
-            get { return description; }
-            set { description = value; }
-        }
     }
 }
