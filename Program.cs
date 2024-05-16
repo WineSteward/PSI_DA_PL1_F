@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PSI_DA_PL1_F.Controllers;
+using PSI_DA_PL1_F.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +16,19 @@ namespace PSI_DA_PL1_F
         [STAThread]
         static void Main()
         {
+            using (var db = new CantinaContext())
+            {
+/*              Funcionario Alberto = new Funcionario{NIF = "123345", Nome = "Alberto", Username = "" };
+                db.Funcionarios.Add(Alberto);
+
+                db.SaveChanges();
+  */          }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+
         }
     }
 }
