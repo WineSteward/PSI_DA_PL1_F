@@ -16,5 +16,10 @@ namespace PSI_DA_PL1_F.Views
         {
             InitializeComponent();
         }
+
+        private void btnAdicionarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

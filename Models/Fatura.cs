@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Models
 {
-    internal class Fatura
+    public class Fatura
     {
         public int Id { get; set; }
 

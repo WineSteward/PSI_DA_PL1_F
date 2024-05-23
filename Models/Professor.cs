@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Models
 {
-    internal class Professor
+    public class Professor
     {
         public int Id { get; set; }
 

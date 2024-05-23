@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBoxTipoClienteEdit = new System.Windows.Forms.ListBox();
+            this.textBoxEmailProfessorEdit = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxNumEstudanteEdit = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.numericUpDownSaldoEdit = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxNIFEdit = new System.Windows.Forms.TextBox();
@@ -39,6 +45,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemoverCliente = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBoxTipoCliente = new System.Windows.Forms.ListBox();
+            this.textBoxEmailProfessor = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxNumEstudante = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownSaldo = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,17 +59,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdicionarCliente = new System.Windows.Forms.Button();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
-            this.textBoxNumEstudante = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxEmailProfessor = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxEmailProfessorEdit = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxNumEstudanteEdit = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.listBoxTipoCliente = new System.Windows.Forms.ListBox();
-            this.listBoxTipoClienteEdit = new System.Windows.Forms.ListBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldoEdit)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,6 +87,55 @@
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Área de Edição do Cliente";
+            // 
+            // listBoxTipoClienteEdit
+            // 
+            this.listBoxTipoClienteEdit.FormattingEnabled = true;
+            this.listBoxTipoClienteEdit.Location = new System.Drawing.Point(307, 57);
+            this.listBoxTipoClienteEdit.Name = "listBoxTipoClienteEdit";
+            this.listBoxTipoClienteEdit.Size = new System.Drawing.Size(99, 56);
+            this.listBoxTipoClienteEdit.TabIndex = 32;
+            // 
+            // textBoxEmailProfessorEdit
+            // 
+            this.textBoxEmailProfessorEdit.Location = new System.Drawing.Point(428, 86);
+            this.textBoxEmailProfessorEdit.Name = "textBoxEmailProfessorEdit";
+            this.textBoxEmailProfessorEdit.Size = new System.Drawing.Size(151, 20);
+            this.textBoxEmailProfessorEdit.TabIndex = 30;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(425, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Email do Professor:";
+            // 
+            // textBoxNumEstudanteEdit
+            // 
+            this.textBoxNumEstudanteEdit.Location = new System.Drawing.Point(428, 32);
+            this.textBoxNumEstudanteEdit.Name = "textBoxNumEstudanteEdit";
+            this.textBoxNumEstudanteEdit.Size = new System.Drawing.Size(151, 20);
+            this.textBoxNumEstudanteEdit.TabIndex = 28;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(425, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(113, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Numero de Estudante:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(304, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Tipo de Cliente:";
             // 
             // numericUpDownSaldoEdit
             // 
@@ -186,6 +235,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Área de Criação do Cliente";
             // 
+            // listBoxTipoCliente
+            // 
+            this.listBoxTipoCliente.FormattingEnabled = true;
+            this.listBoxTipoCliente.Location = new System.Drawing.Point(286, 57);
+            this.listBoxTipoCliente.Name = "listBoxTipoCliente";
+            this.listBoxTipoCliente.Size = new System.Drawing.Size(99, 56);
+            this.listBoxTipoCliente.TabIndex = 31;
+            // 
+            // textBoxEmailProfessor
+            // 
+            this.textBoxEmailProfessor.Location = new System.Drawing.Point(407, 85);
+            this.textBoxEmailProfessor.Name = "textBoxEmailProfessor";
+            this.textBoxEmailProfessor.Size = new System.Drawing.Size(151, 20);
+            this.textBoxEmailProfessor.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(404, 69);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 13);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Email do Professor:";
+            // 
+            // textBoxNumEstudante
+            // 
+            this.textBoxNumEstudante.Location = new System.Drawing.Point(407, 31);
+            this.textBoxNumEstudante.Name = "textBoxNumEstudante";
+            this.textBoxNumEstudante.Size = new System.Drawing.Size(151, 20);
+            this.textBoxNumEstudante.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(404, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Numero de Estudante:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -251,6 +340,7 @@
             this.btnAdicionarCliente.TabIndex = 0;
             this.btnAdicionarCliente.Text = "Adicionar Cliente";
             this.btnAdicionarCliente.UseVisualStyleBackColor = true;
+            this.btnAdicionarCliente.Click += new System.EventHandler(this.btnAdicionarCliente_Click);
             // 
             // listBoxClientes
             // 
@@ -259,95 +349,6 @@
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(166, 225);
             this.listBoxClientes.TabIndex = 10;
-            // 
-            // textBoxNumEstudante
-            // 
-            this.textBoxNumEstudante.Location = new System.Drawing.Point(407, 31);
-            this.textBoxNumEstudante.Name = "textBoxNumEstudante";
-            this.textBoxNumEstudante.Size = new System.Drawing.Size(151, 20);
-            this.textBoxNumEstudante.TabIndex = 22;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(404, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 13);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Numero de Estudante:";
-            // 
-            // textBoxEmailProfessor
-            // 
-            this.textBoxEmailProfessor.Location = new System.Drawing.Point(407, 85);
-            this.textBoxEmailProfessor.Name = "textBoxEmailProfessor";
-            this.textBoxEmailProfessor.Size = new System.Drawing.Size(151, 20);
-            this.textBoxEmailProfessor.TabIndex = 24;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(404, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 13);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Email do Professor:";
-            // 
-            // textBoxEmailProfessorEdit
-            // 
-            this.textBoxEmailProfessorEdit.Location = new System.Drawing.Point(428, 86);
-            this.textBoxEmailProfessorEdit.Name = "textBoxEmailProfessorEdit";
-            this.textBoxEmailProfessorEdit.Size = new System.Drawing.Size(151, 20);
-            this.textBoxEmailProfessorEdit.TabIndex = 30;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(425, 70);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 13);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Email do Professor:";
-            // 
-            // textBoxNumEstudanteEdit
-            // 
-            this.textBoxNumEstudanteEdit.Location = new System.Drawing.Point(428, 32);
-            this.textBoxNumEstudanteEdit.Name = "textBoxNumEstudanteEdit";
-            this.textBoxNumEstudanteEdit.Size = new System.Drawing.Size(151, 20);
-            this.textBoxNumEstudanteEdit.TabIndex = 28;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(425, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(113, 13);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Numero de Estudante:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(304, 41);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 13);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Tipo de Cliente:";
-            // 
-            // listBoxTipoCliente
-            // 
-            this.listBoxTipoCliente.FormattingEnabled = true;
-            this.listBoxTipoCliente.Location = new System.Drawing.Point(286, 57);
-            this.listBoxTipoCliente.Name = "listBoxTipoCliente";
-            this.listBoxTipoCliente.Size = new System.Drawing.Size(99, 56);
-            this.listBoxTipoCliente.TabIndex = 31;
-            // 
-            // listBoxTipoClienteEdit
-            // 
-            this.listBoxTipoClienteEdit.FormattingEnabled = true;
-            this.listBoxTipoClienteEdit.Location = new System.Drawing.Point(307, 57);
-            this.listBoxTipoClienteEdit.Name = "listBoxTipoClienteEdit";
-            this.listBoxTipoClienteEdit.Size = new System.Drawing.Size(99, 56);
-            this.listBoxTipoClienteEdit.TabIndex = 32;
             // 
             // FormClientes
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PSI_DA_PL1_F.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,10 @@ namespace PSI_DA_PL1_F.Views
 {
     public partial class FormMenuPrincipal : Form
     {
-        public FormMenuPrincipal()
+        CantinaContext db;
+        public FormMenuPrincipal(CantinaContext db)
         {
+            this.db = db;
             InitializeComponent();
         }
         bool menuExpand = false;

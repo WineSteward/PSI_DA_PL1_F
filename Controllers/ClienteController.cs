@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSI_DA_PL1_F.Models
+namespace PSI_DA_PL1_F.Controllers
 {
-    public class Funcionario : Utilizador
+    internal class ClienteController
     {
-        public string Username { get; set; }
-
     }
 }

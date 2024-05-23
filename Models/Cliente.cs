@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Models
 {
-    internal class Cliente : Utilizador
+    public class Cliente : Utilizador
     {
         public float Saldo { get; set; }
 

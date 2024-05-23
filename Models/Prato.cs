@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Models
 {
-    internal class Prato
+    public class Prato
     {
         public int Id {  get; set; }
 
