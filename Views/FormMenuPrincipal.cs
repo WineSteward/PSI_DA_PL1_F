@@ -108,5 +108,10 @@ namespace PSI_DA_PL1_F.Views
         {
             this.Hide(); // está hide porque assim n fecha o programa e acho que é melhor assim quando se for abrir outros forms
         }
+
+        private void btnRefeicaoEstudante_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Funciona");
+        }
     }
 }
