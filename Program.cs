@@ -26,7 +26,7 @@ namespace PSI_DA_PL1_F
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Views.FormLogin());
+            Application.Run(new Views.FormMenuPrincipal());
 
         }
     }

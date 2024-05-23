@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace menu_principal
+namespace PSI_DA_PL1_F.Views
 {
     public partial class FormMenuPrincipal : Form
     {

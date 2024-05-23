@@ -18,5 +18,8 @@ namespace PSI_DA_PL1_F.Models
 
         public float precoProfessor;
 
+        public Extra[] Extras { get; set; }
+
+        public Prato Prato { get; set; }
     }
 }
