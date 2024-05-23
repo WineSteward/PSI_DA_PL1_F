@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PSI_DA_PL1_F.Views
 {
-    public partial class FormRegisto : Form
+    public partial class FormRegisto : System.Windows.Forms.Form
     {
         public FormRegisto()
         {
