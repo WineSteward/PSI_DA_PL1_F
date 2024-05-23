@@ -37,7 +37,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnUpdateCliente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnRemoverPrato = new System.Windows.Forms.Button();
+            this.btnRemoverCliente = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownSaldo = new System.Windows.Forms.NumericUpDown();
@@ -147,7 +147,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnRemoverPrato);
+            this.groupBox2.Controls.Add(this.btnRemoverCliente);
             this.groupBox2.Location = new System.Drawing.Point(621, 256);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(166, 179);
@@ -155,14 +155,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Área de Tratamento do Cliente";
             // 
-            // btnRemoverPrato
+            // btnRemoverCliente
             // 
-            this.btnRemoverPrato.Location = new System.Drawing.Point(34, 34);
-            this.btnRemoverPrato.Name = "btnRemoverPrato";
-            this.btnRemoverPrato.Size = new System.Drawing.Size(98, 50);
-            this.btnRemoverPrato.TabIndex = 6;
-            this.btnRemoverPrato.Text = "Remover Cliente";
-            this.btnRemoverPrato.UseVisualStyleBackColor = true;
+            this.btnRemoverCliente.Location = new System.Drawing.Point(34, 34);
+            this.btnRemoverCliente.Name = "btnRemoverCliente";
+            this.btnRemoverCliente.Size = new System.Drawing.Size(98, 50);
+            this.btnRemoverCliente.TabIndex = 6;
+            this.btnRemoverCliente.Text = "Remover Cliente";
+            this.btnRemoverCliente.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -375,7 +375,7 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnRemoverPrato;
+        private System.Windows.Forms.Button btnRemoverCliente;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdicionarCliente;
