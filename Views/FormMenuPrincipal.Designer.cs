@@ -44,7 +44,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.estudanteMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.Estudante = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefeicaoEstudante = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -204,7 +204,7 @@
             // 
             this.estudanteMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
             this.estudanteMenu.Controls.Add(this.Estudante);
-            this.estudanteMenu.Controls.Add(this.button1);
+            this.estudanteMenu.Controls.Add(this.btnRefeicaoEstudante);
             this.estudanteMenu.Controls.Add(this.button6);
             this.estudanteMenu.Location = new System.Drawing.Point(3, 3);
             this.estudanteMenu.Name = "estudanteMenu";
@@ -228,21 +228,22 @@
             this.Estudante.UseVisualStyleBackColor = false;
             this.Estudante.Click += new System.EventHandler(this.Estudante_Click);
             // 
-            // button1
+            // btnRefeicaoEstudante
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 88);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(230, 76);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "                       Refeição";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRefeicaoEstudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnRefeicaoEstudante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRefeicaoEstudante.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnRefeicaoEstudante.Image = ((System.Drawing.Image)(resources.GetObject("btnRefeicaoEstudante.Image")));
+            this.btnRefeicaoEstudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefeicaoEstudante.Location = new System.Drawing.Point(3, 88);
+            this.btnRefeicaoEstudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefeicaoEstudante.Name = "btnRefeicaoEstudante";
+            this.btnRefeicaoEstudante.Size = new System.Drawing.Size(230, 76);
+            this.btnRefeicaoEstudante.TabIndex = 4;
+            this.btnRefeicaoEstudante.Text = "                       Refeição";
+            this.btnRefeicaoEstudante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefeicaoEstudante.UseVisualStyleBackColor = false;
+            this.btnRefeicaoEstudante.Click += new System.EventHandler(this.btnRefeicaoEstudante_Click);
             // 
             // button6
             // 
@@ -320,7 +321,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.FlowLayoutPanel estudanteMenu;
         private System.Windows.Forms.Button Estudante;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefeicaoEstudante;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel2;
