@@ -310,7 +310,7 @@ namespace PSI_DA_PL1_F.Views
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); //quando adicionarem coisas dentro desta funcao tirem isto
         }
 
         #endregion
