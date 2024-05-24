@@ -1,6 +1,6 @@
 ﻿namespace PSI_DA_PL1_F.Views
 {
-    partial class Form
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.

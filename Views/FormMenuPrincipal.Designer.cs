@@ -1,4 +1,6 @@
-﻿namespace PSI_DA_PL1_F.Views
+﻿using System;
+
+namespace PSI_DA_PL1_F.Views
 {
     partial class FormMenuPrincipal
     {
@@ -304,6 +306,11 @@
             this.sidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

@@ -14,10 +14,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PSI_DA_PL1_F.Views
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class FormLogin : Form
     {
         private ControllerFuncionario controladorFuncionario;
-        public Form()
+        public FormLogin()
         {
             InitializeComponent();
 
