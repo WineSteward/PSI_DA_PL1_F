@@ -8,11 +8,9 @@ namespace PSI_DA_PL1_F.Models
 {
     internal class Prato
     {
-        public int Id {  get; set; }
-
-        public string Descricao;
-
-        public bool Ativo;
+        public int Id { get; set; }
+        public string Descricao { get; set; }
+        public bool Ativo { get; set; } 
 
         public enum TipoPrato
         {
@@ -20,6 +18,8 @@ namespace PSI_DA_PL1_F.Models
             Peixe,
             Vegetariano
         }
+
+        public TipoPrato Tipo { get; set; }
 
     }
 }

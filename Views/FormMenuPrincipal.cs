@@ -108,5 +108,10 @@ namespace PSI_DA_PL1_F.Views
         {
             this.Hide(); // está hide porque assim n fecha o programa e acho que é melhor assim quando se for abrir outros forms
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
