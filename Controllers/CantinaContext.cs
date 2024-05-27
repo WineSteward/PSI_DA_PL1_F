@@ -9,7 +9,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace PSI_DA_PL1_F.Controllers
 {
-    internal class CantinaContext : DbContext
+    public class CantinaContext : DbContext
     {
         public DbSet<Funcionario> Funcionarios { get; set; }
 
@@ -30,4 +30,6 @@ namespace PSI_DA_PL1_F.Controllers
         public DbSet<Item> Itens { get; set; }
 
     }
+
+
 }

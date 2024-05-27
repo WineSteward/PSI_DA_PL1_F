@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PSI_DA_PL1_F.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,10 @@ namespace PSI_DA_PL1_F.Views
 {
     public partial class FormMenuPrincipal : Form
     {
-        public FormMenuPrincipal()
+        CantinaContext db;
+        public FormMenuPrincipal(CantinaContext db)
         {
+            this.db = db;
             InitializeComponent();
         }
         bool menuExpand = false;
@@ -109,9 +112,9 @@ namespace PSI_DA_PL1_F.Views
             this.Hide(); // está hide porque assim n fecha o programa e acho que é melhor assim quando se for abrir outros forms
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void btnRefeicaoEstudante_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Funciona");
         }
     }
 }

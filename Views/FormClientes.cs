@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PSI_DA_PL1_F.Views
 {
-    public partial class FormRegisto : System.Windows.Forms.Form
+    public partial class FormClientes : Form
     {
-        public FormRegisto()
+        public FormClientes()
         {
             InitializeComponent();
+        }
+
+        private void btnAdicionarCliente_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

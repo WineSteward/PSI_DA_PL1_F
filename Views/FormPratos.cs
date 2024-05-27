@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PSI_DA_PL1_F.Views
 {
-    public partial class FormFuncionario : Form
+    public partial class FormPratos : Form
     {
-        public FormFuncionario()
+        public FormPratos()
         {
             InitializeComponent();
         }

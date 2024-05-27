@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Models
 {
-    internal class Extra
+    public class Extra
     {
         public int Id { get; set; }
 

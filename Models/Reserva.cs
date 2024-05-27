@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace PSI_DA_PL1_F.Models
 {
-    internal class Reserva
+    public class Reserva
     {
         public int Id {  get; set; }
 

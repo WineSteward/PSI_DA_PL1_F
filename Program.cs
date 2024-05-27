@@ -18,15 +18,20 @@ namespace PSI_DA_PL1_F
         {
             using (var db = new CantinaContext())
             {
-/*                Funcionario Alberto = new Funcionario{NIF = "123345", Nome = "Alberto", Username = "" };
-                db.Funcionarios.Add(Alberto);
 
-                db.SaveChanges();
-          */  }
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Views.FormMenuPrincipal(db));
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Views.FormMenuPrincipal());
+                /*
+                   Funcionario Alberto = new Funcionario{NIF = "123345", Nome = "Alberto", Username = "" };
+                   db.Funcionarios.Add(Alberto);
+
+                    db.SaveChanges();
+              */
+            }
+
+            
 
         }
     }

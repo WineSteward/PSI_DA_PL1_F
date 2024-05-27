@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Models
 {
-    internal class Estudante : Cliente
+    public class Estudante : Cliente
     {
         public string NumeroEstudante { get; set; }
 

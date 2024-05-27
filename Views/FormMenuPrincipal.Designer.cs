@@ -1,4 +1,6 @@
-﻿namespace PSI_DA_PL1_F.Views
+﻿using System;
+
+namespace PSI_DA_PL1_F.Views
 {
     partial class FormMenuPrincipal
     {
@@ -35,7 +37,6 @@
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.professorTransition = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -45,9 +46,10 @@
             this.button8 = new System.Windows.Forms.Button();
             this.estudanteMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.Estudante = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefeicaoEstudante = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.panel1.SuspendLayout();
             this.professorMenu.SuspendLayout();
@@ -86,41 +88,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(45, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "iCantina";
             // 
-            // nightControlBox1
-            // 
-            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nightControlBox1.DefaultLocation = true;
-            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = true;
-            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMinimizeButton = true;
-            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(911, 0);
-            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Name = "nightControlBox1";
-            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
-            this.nightControlBox1.TabIndex = 1;
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.nightControlBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -141,7 +119,7 @@
             this.button3.Location = new System.Drawing.Point(3, 270);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(270, 76);
+            this.button3.Size = new System.Drawing.Size(230, 76);
             this.button3.TabIndex = 4;
             this.button3.Text = "                       Logout";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,7 +136,7 @@
             this.button4.Location = new System.Drawing.Point(3, 186);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(270, 76);
+            this.button4.Size = new System.Drawing.Size(230, 76);
             this.button4.TabIndex = 4;
             this.button4.Text = "                       Settings";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -228,7 +206,7 @@
             // 
             this.estudanteMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
             this.estudanteMenu.Controls.Add(this.Estudante);
-            this.estudanteMenu.Controls.Add(this.button1);
+            this.estudanteMenu.Controls.Add(this.btnRefeicaoEstudante);
             this.estudanteMenu.Controls.Add(this.button6);
             this.estudanteMenu.Location = new System.Drawing.Point(3, 3);
             this.estudanteMenu.Name = "estudanteMenu";
@@ -252,21 +230,22 @@
             this.Estudante.UseVisualStyleBackColor = false;
             this.Estudante.Click += new System.EventHandler(this.Estudante_Click);
             // 
-            // button1
+            // btnRefeicaoEstudante
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 88);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(230, 76);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "                       Refeição";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRefeicaoEstudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnRefeicaoEstudante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRefeicaoEstudante.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnRefeicaoEstudante.Image = ((System.Drawing.Image)(resources.GetObject("btnRefeicaoEstudante.Image")));
+            this.btnRefeicaoEstudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefeicaoEstudante.Location = new System.Drawing.Point(3, 88);
+            this.btnRefeicaoEstudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefeicaoEstudante.Name = "btnRefeicaoEstudante";
+            this.btnRefeicaoEstudante.Size = new System.Drawing.Size(230, 76);
+            this.btnRefeicaoEstudante.TabIndex = 4;
+            this.btnRefeicaoEstudante.Text = "                       Refeição";
+            this.btnRefeicaoEstudante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefeicaoEstudante.UseVisualStyleBackColor = false;
+            this.btnRefeicaoEstudante.Click += new System.EventHandler(this.btnRefeicaoEstudante_Click);
             // 
             // button6
             // 
@@ -298,15 +277,23 @@
             this.sidebar.Size = new System.Drawing.Size(237, 608);
             this.sidebar.TabIndex = 1;
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(243, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(795, 588);
+            this.panel2.TabIndex = 2;
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 650);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -321,13 +308,17 @@
 
         }
 
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException(); //quando adicionarem coisas dentro desta funcao tirem isto
+        }
+
         #endregion
         private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.Timer estudanteTransition;
         private System.Windows.Forms.Timer sidebarTransition;
         private System.Windows.Forms.Timer professorTransition;
         private System.Windows.Forms.Label label1;
-        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -337,9 +328,10 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.FlowLayoutPanel estudanteMenu;
         private System.Windows.Forms.Button Estudante;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefeicaoEstudante;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

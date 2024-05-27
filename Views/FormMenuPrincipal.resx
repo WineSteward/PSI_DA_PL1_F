@@ -120,10 +120,9 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAF5JREFUSEtjGAWjQAaIFaiIQeahAAcg/k8DbAPEcCAAxBVA3EBFDDIPZO4oIA+w
-        AHEIECdQEYPMA5kLBx5AjC11UIpB5sIBXXwyCkgCdMnxdCm7QIDmpfAoGFGAgQEAZKdqOgp4l+QAAAAA
-        SUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAGdJREFUSEtj
+        GAUjHPz//98AiO2piA2gRkMAUMABiGkBHKBWgC0RAOIGGmABqBWjgEQACjsgxpZCKMWIOAFy6Ja6QBZR
+        G4+mLjIBKOyAuJ4GmM6pCwSAAqBSGD11UIJRS+FRMNIAAwMACADJAqU4B5cAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="estudanteTransition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -197,7 +196,7 @@
         Rgnt9w0QURLeni3ONAAl9VkH9g9ZrX4AvcM4OB3+/8AAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRefeicaoEstudante.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAMJJREFUKFOdkD0KwkAUhBNULKxsJJV2tpZWdtYWWotYegMJeDU9ga1HsLAVxbB/

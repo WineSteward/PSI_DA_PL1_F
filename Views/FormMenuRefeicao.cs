@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PSI_DA_PL1_F.Views
 {
-    public partial class FormRegisto : System.Windows.Forms.Form
+    public partial class FormMenuRefeicao : Form
     {
-        public FormRegisto()
+        public FormMenuRefeicao()
         {
             InitializeComponent();
         }
