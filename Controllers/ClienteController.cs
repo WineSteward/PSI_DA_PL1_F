@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Controllers
 {
-    internal class ClienteController
+    internal class ClienteController : Controller
     {
     }
 }
