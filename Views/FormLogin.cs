@@ -17,11 +17,16 @@ namespace PSI_DA_PL1_F.Views
     public partial class FormLogin : Form
     {
         private ControllerFuncionario controladorFuncionario;
-        public FormLogin()
+        private CantinaContext db;
+        public FormLogin(CantinaContext db)
         {
             InitializeComponent();
 
+            this.db = db;
             this.controladorFuncionario = new ControllerFuncionario();
+            if (db.Funcionarios != null)
+                listBoxFuncionarios.DataSource = db.Funcionarios;
+
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -31,14 +36,13 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnDirecionarRegisto_Click(object sender, EventArgs e)
         {
-
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos");
                 return;
             }
 
-            this.controladorFuncionario.RegistarFuncionario(textBox1.Text, textBox2.Text, textBox3.Text);
+            this.controladorFuncionario.RegistarFuncionario(textBox1.Text, textBox2.Text, textBox3.Text, this.db);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,18 +52,9 @@ namespace PSI_DA_PL1_F.Views
             // não esta a funcionar
             using (var db = new CantinaContext())
             {
-                var funcionario = db.Funcionarios.Find(dataGridView1.SelectedCells);
+                var funcionario = db.Funcionarios.Find(listBoxFuncionarios.SelectedIndex);
                 db.Funcionarios.Remove(funcionario);
                 db.SaveChanges();
-            }
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            using (var db = new CantinaContext())
-            {
-                var funcionario = db.Funcionarios.ToList();
-                dataGridView1.DataSource = funcionario;
             }
         }
     }
