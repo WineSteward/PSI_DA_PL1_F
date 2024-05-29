@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CantinaContext.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ControllerFuncionario.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Estudante.cs" />
     <Compile Include="Models\Extra.cs" />
