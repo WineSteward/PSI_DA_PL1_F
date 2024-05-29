@@ -10,16 +10,18 @@ namespace PSI_DA_PL1_F.Models
     {
         public int Id {  get; set; }
 
-        public string Descricao;
+        public string Descricao { get; set; }
 
-        public bool Ativo;
+        public bool Ativo { get; set; }
 
-        public enum TipoPrato
-        {
-            Carne,
-            Peixe,
-            Vegetariano
-        }
+        public TipoPrato tipo { get; set; }
 
+    }
+
+    public enum TipoPrato
+    {
+        Carne,
+        Peixe,
+        Vegetariano
     }
 }

@@ -19,16 +19,16 @@ namespace PSI_DA_PL1_F.Views
         private ControllerFuncionario controladorFuncionario;
         private CantinaContext db;
         private FormMenuPrincipal mainForm;
-        public FormFuncionario(CantinaContext db, FormMenuPrincipal mainForm)
+        public FormFuncionario( FormMenuPrincipal mainForm)
         {
             InitializeComponent();
 
-            this.db = db;
+            this.db = mainForm.db;
             this.mainForm = mainForm;
             this.controladorFuncionario = new ControllerFuncionario();
-            if (db.Funcionarios != null)
+            /*if (db.Funcionarios != null)
                 listBoxFuncionarios.DataSource = db.Funcionarios;
-
+            */
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

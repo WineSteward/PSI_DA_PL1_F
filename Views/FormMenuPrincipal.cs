@@ -6,15 +6,14 @@ namespace PSI_DA_PL1_F.Views
 {
     public partial class FormMenuPrincipal : Form
     {
-        CantinaContext db;
-        public FormMenuPrincipal(CantinaContext db)
+        public CantinaContext db;
+        public FormMenuPrincipal()
         {
-            this.db = db;
             InitializeComponent();
-
+            this.db = new CantinaContext();
             //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
             //para controlar um elemento???
-            FormFuncionario login = new FormFuncionario(db, this); 
+            FormFuncionario login = new FormFuncionario(this); 
             login.TopLevel = false;
             login.AutoScroll = true;
             this.panelShowForm.Controls.Add(login);
@@ -118,7 +117,7 @@ namespace PSI_DA_PL1_F.Views
             this.panelShowForm.Controls.Clear();
             //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
             //para controlar um elemento???
-            FormFuncionario login = new FormFuncionario(db, this);
+            FormFuncionario login = new FormFuncionario(this);
             login.TopLevel = false;
             login.AutoScroll = true;
             this.panelShowForm.Controls.Add(login);
