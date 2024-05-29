@@ -21,14 +21,8 @@ namespace PSI_DA_PL1_F
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Views.FormMenuPrincipal(db));
+                Application.Run(new Views.FormLogin(db));
 
-                /*
-                   Funcionario Alberto = new Funcionario{NIF = "123345", Nome = "Alberto", Username = "" };
-                   db.Funcionarios.Add(Alberto);
-
-                    db.SaveChanges();
-              */
             }
 
             

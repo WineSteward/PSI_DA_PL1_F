@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CantinaContext.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\ControllerFuncionario.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Estudante.cs" />
@@ -126,7 +127,6 @@
     <Compile Include="Views\FormRegisto.Designer.cs">
       <DependentUpon>FormRegisto.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="obj\Debug\menu_principal.FormMenuPrincipal.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -51,6 +51,7 @@ namespace PSI_DA_PL1_F.Views
             estudanteTransition.Start();
         }
         bool sidebarExpand = true;
+
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand) 
