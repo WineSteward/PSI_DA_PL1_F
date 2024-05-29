@@ -1,6 +1,6 @@
 ﻿namespace PSI_DA_PL1_F.Views
 {
-    partial class FormLogin
+    partial class FormFuncionario
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxFuncionarios = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
@@ -146,22 +146,22 @@
             this.textBox3.Size = new System.Drawing.Size(129, 20);
             this.textBox3.TabIndex = 53;
             // 
-            // button1
+            // btnRemove
             // 
-            this.button1.BackColor = System.Drawing.Color.Brown;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(22, 39);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 30);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "Apagar Funcionario";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRemove.BackColor = System.Drawing.Color.Brown;
+            this.btnRemove.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRemove.Location = new System.Drawing.Point(22, 39);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(128, 30);
+            this.btnRemove.TabIndex = 54;
+            this.btnRemove.Text = "Apagar Funcionario";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnRemove);
             this.groupBox1.Location = new System.Drawing.Point(499, 379);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -219,7 +219,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listBoxFuncionarios;
     }

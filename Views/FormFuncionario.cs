@@ -14,15 +14,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PSI_DA_PL1_F.Views
 {
-    public partial class FormLogin : Form
+    public partial class FormFuncionario : Form
     {
         private ControllerFuncionario controladorFuncionario;
         private CantinaContext db;
-        public FormLogin(CantinaContext db)
+        private FormMenuPrincipal mainForm;
+        public FormFuncionario(CantinaContext db, FormMenuPrincipal mainForm)
         {
             InitializeComponent();
 
             this.db = db;
+            this.mainForm = mainForm;
             this.controladorFuncionario = new ControllerFuncionario();
             if (db.Funcionarios != null)
                 listBoxFuncionarios.DataSource = db.Funcionarios;
@@ -31,6 +33,19 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            if (listBoxFuncionarios.SelectedItem == null)
+                return;
+
+            Funcionario funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
+
+            //passar o funcionarioAtual(desnecessario segundo o enunciado)
+            //para o main form
+
+
+            //uso o form que recebi e mudo o estado da sidebar e fecho este form
+            mainForm.sidebar.Enabled = true;
+            this.Close();
+            
 
         }
 
@@ -42,20 +57,13 @@ namespace PSI_DA_PL1_F.Views
                 return;
             }
 
-            this.controladorFuncionario.RegistarFuncionario(textBox1.Text, textBox2.Text, textBox3.Text, this.db);
+            this.controladorFuncionario.RegistarFuncionario(textBox1.Text, textBox2.Text, textBox3.Text, db);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRemove_Click(object sender, EventArgs e)
         {
-            // apagar funcionario
-
-            // não esta a funcionar
-            using (var db = new CantinaContext())
-            {
-                var funcionario = db.Funcionarios.Find(listBoxFuncionarios.SelectedIndex);
-                db.Funcionarios.Remove(funcionario);
-                db.SaveChanges();
-            }
+            Funcionario funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
+            this.controladorFuncionario.RemoveFuncionario(db, funcionarioAtual);
         }
     }
 }

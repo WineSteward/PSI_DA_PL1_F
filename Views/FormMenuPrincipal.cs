@@ -1,15 +1,6 @@
 ﻿using PSI_DA_PL1_F.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PSI_DA_PL1_F.Views
 {
@@ -20,6 +11,15 @@ namespace PSI_DA_PL1_F.Views
         {
             this.db = db;
             InitializeComponent();
+
+            //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
+            //para controlar um elemento???
+            FormFuncionario login = new FormFuncionario(db, this); 
+            login.TopLevel = false;
+            login.AutoScroll = true;
+            this.panelShowForm.Controls.Add(login);
+            login.Show();
+
         }
         bool menuExpand = false;
 
@@ -108,14 +108,21 @@ namespace PSI_DA_PL1_F.Views
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide(); // está hide porque assim n fecha o programa e acho que é melhor assim quando se for abrir outros forms
-        }
-
         private void btnRefeicaoEstudante_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funciona");
+            
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.panelShowForm.Controls.Clear();
+            //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
+            //para controlar um elemento???
+            FormFuncionario login = new FormFuncionario(db, this);
+            login.TopLevel = false;
+            login.AutoScroll = true;
+            this.panelShowForm.Controls.Add(login);
+            login.Show();
         }
     }
 }

@@ -17,7 +17,13 @@ namespace PSI_DA_PL1_F.Controllers
             var novoFuncionario = new Funcionario { Username = username, Nome = nome, NIF = nif};
             db.Funcionarios.Add(novoFuncionario);
             db.SaveChanges();
+        }
 
+        public void RemoveFuncionario(CantinaContext db, Funcionario funcionarioAtual)
+        {
+                var funcionario = db.Funcionarios.Find(funcionarioAtual);
+                db.Funcionarios.Remove(funcionario);
+                db.SaveChanges();
         }
 
     }
