@@ -14,9 +14,9 @@ namespace PSI_DA_PL1_F.Models
 
         public int Stock { get; set; }
 
-        public float precoEstudante;
+        public float precoEstudante { get; set; }
 
-        public float precoProfessor;
+        public float precoProfessor { get; set; }
 
         public Extra[] Extras { get; set; }
 

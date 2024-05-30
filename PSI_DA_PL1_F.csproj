@@ -63,7 +63,10 @@
   <ItemGroup>
     <Compile Include="Controllers\CantinaContext.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\ControllerFuncionario.cs" />
+    <Compile Include="Controllers\ControllerMenuPrincipal.cs" />
+    <Compile Include="Controllers\ReservaColtroller.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Estudante.cs" />
     <Compile Include="Models\Extra.cs" />
@@ -90,11 +93,11 @@
     <Compile Include="Views\FormExtras.Designer.cs">
       <DependentUpon>FormExtras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormLogin.cs">
+    <Compile Include="Views\FormFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="Views\FormFuncionario.Designer.cs">
+      <DependentUpon>FormFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -140,6 +143,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
@@ -147,8 +151,8 @@
     <EmbeddedResource Include="Views\FormExtras.resx">
       <DependentUpon>FormExtras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FormFuncionario.resx">
+      <DependentUpon>FormFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>

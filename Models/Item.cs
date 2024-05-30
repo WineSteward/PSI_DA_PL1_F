@@ -12,8 +12,8 @@ namespace PSI_DA_PL1_F.Models
 
         public int Total { get; set; }
 
-        public string Descricao;
+        public string Descricao { get; set; }
 
-        public Fatura fatura;
+        public Fatura fatura { get; set; }
     }
 }

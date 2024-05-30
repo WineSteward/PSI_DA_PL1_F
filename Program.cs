@@ -2,6 +2,7 @@
 using PSI_DA_PL1_F.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,24 +16,12 @@ namespace PSI_DA_PL1_F
         /// </summary>
         [STAThread]
         static void Main()
-        {
-            using (var db = new CantinaContext())
-            {
-
+        { 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Views.FormMenuPrincipal(db));
-
-                /*
-                   Funcionario Alberto = new Funcionario{NIF = "123345", Nome = "Alberto", Username = "" };
-                   db.Funcionarios.Add(Alberto);
-
-                    db.SaveChanges();
-              */
-            }
-
-            
+                Application.Run(new Views.FormMenuPrincipal());
 
         }
+
     }
 }

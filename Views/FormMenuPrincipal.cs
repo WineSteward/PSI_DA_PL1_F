@@ -1,25 +1,24 @@
 ﻿using PSI_DA_PL1_F.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PSI_DA_PL1_F.Views
 {
     public partial class FormMenuPrincipal : Form
     {
-        CantinaContext db;
-        public FormMenuPrincipal(CantinaContext db)
+        public CantinaContext db;
+        public FormMenuPrincipal()
         {
-            this.db = db;
             InitializeComponent();
+            this.db = new CantinaContext();
+            //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
+            //para controlar um elemento???
+            FormFuncionario login = new FormFuncionario(this); 
+            login.TopLevel = false;
+            login.AutoScroll = true;
+            this.panelShowForm.Controls.Add(login);
+            login.Show();
+
         }
         bool menuExpand = false;
 
@@ -51,6 +50,7 @@ namespace PSI_DA_PL1_F.Views
             estudanteTransition.Start();
         }
         bool sidebarExpand = true;
+
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand) 
@@ -107,14 +107,21 @@ namespace PSI_DA_PL1_F.Views
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide(); // está hide porque assim n fecha o programa e acho que é melhor assim quando se for abrir outros forms
-        }
-
         private void btnRefeicaoEstudante_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funciona");
+            
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.panelShowForm.Controls.Clear();
+            //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
+            //para controlar um elemento???
+            FormFuncionario login = new FormFuncionario(this);
+            login.TopLevel = false;
+            login.AutoScroll = true;
+            this.panelShowForm.Controls.Add(login);
+            login.Show();
         }
     }
 }
