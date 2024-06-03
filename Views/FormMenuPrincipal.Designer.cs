@@ -37,24 +37,24 @@ namespace PSI_DA_PL1_F.Views
             this.professorTransition = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.professorMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.estudanteMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelShowForm = new System.Windows.Forms.Panel();
-            this.Estudante = new System.Windows.Forms.Button();
-            this.btnRefeicaoEstudante = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.Professor = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.estudanteMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.Estudante = new System.Windows.Forms.Button();
+            this.btnRefeicaoEstudante = new System.Windows.Forms.Button();
+            this.btnFormEstudante = new System.Windows.Forms.Button();
+            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.panelShowForm = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.professorMenu.SuspendLayout();
             this.estudanteMenu.SuspendLayout();
             this.sidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // estudanteTransition
@@ -97,6 +97,18 @@ namespace PSI_DA_PL1_F.Views
             this.panel1.Size = new System.Drawing.Size(1050, 42);
             this.panel1.TabIndex = 0;
             // 
+            // btnMenu
+            // 
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(3, 5);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(24, 34);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // professorMenu
             // 
             this.professorMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
@@ -107,89 +119,6 @@ namespace PSI_DA_PL1_F.Views
             this.professorMenu.Name = "professorMenu";
             this.professorMenu.Size = new System.Drawing.Size(233, 85);
             this.professorMenu.TabIndex = 10;
-            // 
-            // estudanteMenu
-            // 
-            this.estudanteMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.estudanteMenu.Controls.Add(this.Estudante);
-            this.estudanteMenu.Controls.Add(this.btnRefeicaoEstudante);
-            this.estudanteMenu.Controls.Add(this.button6);
-            this.estudanteMenu.Location = new System.Drawing.Point(3, 3);
-            this.estudanteMenu.Name = "estudanteMenu";
-            this.estudanteMenu.Size = new System.Drawing.Size(233, 85);
-            this.estudanteMenu.TabIndex = 9;
-            // 
-            // sidebar
-            // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.sidebar.Controls.Add(this.estudanteMenu);
-            this.sidebar.Controls.Add(this.professorMenu);
-            this.sidebar.Controls.Add(this.button4);
-            this.sidebar.Controls.Add(this.btnLogout);
-            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.Enabled = false;
-            this.sidebar.Location = new System.Drawing.Point(0, 42);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(237, 608);
-            this.sidebar.TabIndex = 1;
-            // 
-            // panelShowForm
-            // 
-            this.panelShowForm.Location = new System.Drawing.Point(243, 50);
-            this.panelShowForm.Name = "panelShowForm";
-            this.panelShowForm.Size = new System.Drawing.Size(795, 588);
-            this.panelShowForm.TabIndex = 2;
-            // 
-            // Estudante
-            // 
-            this.Estudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.Estudante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Estudante.ForeColor = System.Drawing.SystemColors.Window;
-            this.Estudante.Image = ((System.Drawing.Image)(resources.GetObject("Estudante.Image")));
-            this.Estudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Estudante.Location = new System.Drawing.Point(3, 4);
-            this.Estudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Estudante.Name = "Estudante";
-            this.Estudante.Size = new System.Drawing.Size(230, 76);
-            this.Estudante.TabIndex = 5;
-            this.Estudante.Text = "                       Estudante";
-            this.Estudante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Estudante.UseVisualStyleBackColor = false;
-            this.Estudante.Click += new System.EventHandler(this.Estudante_Click);
-            // 
-            // btnRefeicaoEstudante
-            // 
-            this.btnRefeicaoEstudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.btnRefeicaoEstudante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRefeicaoEstudante.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnRefeicaoEstudante.Image = ((System.Drawing.Image)(resources.GetObject("btnRefeicaoEstudante.Image")));
-            this.btnRefeicaoEstudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefeicaoEstudante.Location = new System.Drawing.Point(3, 88);
-            this.btnRefeicaoEstudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRefeicaoEstudante.Name = "btnRefeicaoEstudante";
-            this.btnRefeicaoEstudante.Size = new System.Drawing.Size(230, 76);
-            this.btnRefeicaoEstudante.TabIndex = 4;
-            this.btnRefeicaoEstudante.Text = "                       Refeição";
-            this.btnRefeicaoEstudante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefeicaoEstudante.UseVisualStyleBackColor = false;
-            this.btnRefeicaoEstudante.Click += new System.EventHandler(this.btnRefeicaoEstudante_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 172);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(230, 76);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "                       Saldo";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // Professor
             // 
@@ -240,6 +169,83 @@ namespace PSI_DA_PL1_F.Views
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = false;
             // 
+            // estudanteMenu
+            // 
+            this.estudanteMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.estudanteMenu.Controls.Add(this.Estudante);
+            this.estudanteMenu.Controls.Add(this.btnRefeicaoEstudante);
+            this.estudanteMenu.Controls.Add(this.btnFormEstudante);
+            this.estudanteMenu.Location = new System.Drawing.Point(3, 3);
+            this.estudanteMenu.Name = "estudanteMenu";
+            this.estudanteMenu.Size = new System.Drawing.Size(233, 85);
+            this.estudanteMenu.TabIndex = 9;
+            // 
+            // Estudante
+            // 
+            this.Estudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.Estudante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Estudante.ForeColor = System.Drawing.SystemColors.Window;
+            this.Estudante.Image = ((System.Drawing.Image)(resources.GetObject("Estudante.Image")));
+            this.Estudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Estudante.Location = new System.Drawing.Point(3, 4);
+            this.Estudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Estudante.Name = "Estudante";
+            this.Estudante.Size = new System.Drawing.Size(230, 76);
+            this.Estudante.TabIndex = 5;
+            this.Estudante.Text = "                       Estudante";
+            this.Estudante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Estudante.UseVisualStyleBackColor = false;
+            this.Estudante.Click += new System.EventHandler(this.Estudante_Click);
+            // 
+            // btnRefeicaoEstudante
+            // 
+            this.btnRefeicaoEstudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnRefeicaoEstudante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRefeicaoEstudante.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnRefeicaoEstudante.Image = ((System.Drawing.Image)(resources.GetObject("btnRefeicaoEstudante.Image")));
+            this.btnRefeicaoEstudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefeicaoEstudante.Location = new System.Drawing.Point(3, 88);
+            this.btnRefeicaoEstudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefeicaoEstudante.Name = "btnRefeicaoEstudante";
+            this.btnRefeicaoEstudante.Size = new System.Drawing.Size(230, 76);
+            this.btnRefeicaoEstudante.TabIndex = 4;
+            this.btnRefeicaoEstudante.Text = "                       Refeição";
+            this.btnRefeicaoEstudante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefeicaoEstudante.UseVisualStyleBackColor = false;
+            this.btnRefeicaoEstudante.Click += new System.EventHandler(this.btnRefeicaoEstudante_Click);
+            // 
+            // btnFormEstudante
+            // 
+            this.btnFormEstudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnFormEstudante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFormEstudante.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFormEstudante.Image = ((System.Drawing.Image)(resources.GetObject("btnFormEstudante.Image")));
+            this.btnFormEstudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormEstudante.Location = new System.Drawing.Point(3, 172);
+            this.btnFormEstudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFormEstudante.Name = "btnFormEstudante";
+            this.btnFormEstudante.Size = new System.Drawing.Size(230, 76);
+            this.btnFormEstudante.TabIndex = 6;
+            this.btnFormEstudante.Text = "                  Opções Estudante";
+            this.btnFormEstudante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormEstudante.UseVisualStyleBackColor = false;
+            this.btnFormEstudante.Click += new System.EventHandler(this.btnFormEstudante_Click);
+            // 
+            // sidebar
+            // 
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.sidebar.Controls.Add(this.estudanteMenu);
+            this.sidebar.Controls.Add(this.professorMenu);
+            this.sidebar.Controls.Add(this.button4);
+            this.sidebar.Controls.Add(this.btnLogout);
+            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebar.Enabled = false;
+            this.sidebar.Location = new System.Drawing.Point(0, 42);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Size = new System.Drawing.Size(237, 608);
+            this.sidebar.TabIndex = 1;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
@@ -273,17 +279,12 @@ namespace PSI_DA_PL1_F.Views
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnMenu
+            // panelShowForm
             // 
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(3, 5);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(24, 34);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.panelShowForm.Location = new System.Drawing.Point(243, 50);
+            this.panelShowForm.Name = "panelShowForm";
+            this.panelShowForm.Size = new System.Drawing.Size(795, 588);
+            this.panelShowForm.TabIndex = 2;
             // 
             // FormMenuPrincipal
             // 
@@ -301,10 +302,10 @@ namespace PSI_DA_PL1_F.Views
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.professorMenu.ResumeLayout(false);
             this.estudanteMenu.ResumeLayout(false);
             this.sidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,7 +330,7 @@ namespace PSI_DA_PL1_F.Views
         private System.Windows.Forms.FlowLayoutPanel estudanteMenu;
         private System.Windows.Forms.Button Estudante;
         private System.Windows.Forms.Button btnRefeicaoEstudante;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnFormEstudante;
         public System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panelShowForm;
         private System.Windows.Forms.Button btnLogout;

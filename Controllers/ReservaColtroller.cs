@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PSI_DA_PL1_F.Controllers
 {
-    internal class ReservaController
+    internal class ReservaController : Controller
     {
         public ReservaController()
         {

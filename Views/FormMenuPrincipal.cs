@@ -10,14 +10,16 @@ namespace PSI_DA_PL1_F.Views
         public FormMenuPrincipal()
         {
             InitializeComponent();
+
+            this.FormClosed += Form_Closed;
+
             this.db = new CantinaContext();
-            //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
-            //para controlar um elemento???
-            FormFuncionario login = new FormFuncionario(this); 
-            login.TopLevel = false;
-            login.AutoScroll = true;
-            this.panelShowForm.Controls.Add(login);
-            login.Show();
+           
+            FormFuncionario funcionarioForm = new FormFuncionario(this);
+            funcionarioForm.TopLevel = false;
+            funcionarioForm.AutoScroll = true;
+            this.panelShowForm.Controls.Add(funcionarioForm);
+            funcionarioForm.Show();
 
         }
         bool menuExpand = false;
@@ -115,13 +117,23 @@ namespace PSI_DA_PL1_F.Views
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.panelShowForm.Controls.Clear();
-            //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
-            //para controlar um elemento???
-            FormFuncionario login = new FormFuncionario(this);
-            login.TopLevel = false;
-            login.AutoScroll = true;
-            this.panelShowForm.Controls.Add(login);
-            login.Show();
+            
+            FormFuncionario funcionarioForm = new FormFuncionario(this);
+            funcionarioForm.TopLevel = false;
+            funcionarioForm.AutoScroll = true;
+            this.panelShowForm.Controls.Add(funcionarioForm);
+            sidebar.Enabled = false;
+            funcionarioForm.Show();
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            db.Dispose();
+        }
+
+        private void btnFormEstudante_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
