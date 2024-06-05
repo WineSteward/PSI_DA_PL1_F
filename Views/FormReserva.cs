@@ -10,12 +10,12 @@ namespace PSI_DA_PL1_F.Views
 {
     public partial class FormReserva : Form
     {
-        private ReservaController reservaControlador;
+        private ControllerReserva reservaControlador;
 
         public FormReserva()
         {
             InitializeComponent();
-            reservaControlador = new ReservaController();
+            reservaControlador = new ControllerReserva();
             MostrarPratos();
             MostrarExtras();
             

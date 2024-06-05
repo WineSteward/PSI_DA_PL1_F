@@ -23,10 +23,14 @@ namespace PSI_DA_PL1_F.Controllers
         public ControllerMenuPrincipal(FormMenuPrincipal formMenuPrincipal)
         {
             formMenuPrincipal.sidebar.Enabled = false;
+
             funcionarioForm = new FormFuncionario(formMenuPrincipal);
+            
             funcionarioForm.TopLevel = false;
             funcionarioForm.AutoScroll = true;
+            
             formMenuPrincipal.panelShowForm.Controls.Add(funcionarioForm);
+            
             funcionarioForm.Show();
         }
     }
