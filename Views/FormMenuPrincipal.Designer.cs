@@ -332,7 +332,7 @@ namespace PSI_DA_PL1_F.Views
         private System.Windows.Forms.Button btnRefeicaoEstudante;
         private System.Windows.Forms.Button btnFormEstudante;
         public System.Windows.Forms.FlowLayoutPanel sidebar;
-        private System.Windows.Forms.Panel panelShowForm;
+        public System.Windows.Forms.Panel panelShowForm;
         private System.Windows.Forms.Button btnLogout;
     }
 }

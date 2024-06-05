@@ -15,11 +15,7 @@ namespace PSI_DA_PL1_F.Views
 
             this.db = new CantinaContext();
            
-            FormFuncionario funcionarioForm = new FormFuncionario(this);
-            funcionarioForm.TopLevel = false;
-            funcionarioForm.AutoScroll = true;
-            this.panelShowForm.Controls.Add(funcionarioForm);
-            funcionarioForm.Show();
+            ControllerMenuPrincipal controladorMenuPrincipal = new ControllerMenuPrincipal(this);
 
         }
         bool menuExpand = false;
@@ -117,13 +113,8 @@ namespace PSI_DA_PL1_F.Views
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.panelShowForm.Controls.Clear();
-            
-            FormFuncionario funcionarioForm = new FormFuncionario(this);
-            funcionarioForm.TopLevel = false;
-            funcionarioForm.AutoScroll = true;
-            this.panelShowForm.Controls.Add(funcionarioForm);
-            sidebar.Enabled = false;
-            funcionarioForm.Show();
+
+            ControllerMenuPrincipal controladorMenuPrincipal = new ControllerMenuPrincipal(this);
         }
 
         private void Form_Closed(object sender, FormClosedEventArgs e)
