@@ -19,16 +19,17 @@ namespace PSI_DA_PL1_F.Views
         private ControllerFuncionario controladorFuncionario;
         private CantinaContext db;
         private FormMenuPrincipal mainForm;
-        public FormFuncionario( FormMenuPrincipal mainForm)
+        public FormFuncionario(FormMenuPrincipal mainForm)
         {
             InitializeComponent();
 
-            this.db = mainForm.db;
             this.mainForm = mainForm;
+            this.db = mainForm.db;
             this.controladorFuncionario = new ControllerFuncionario();
-            /*if (db.Funcionarios != null)
-                listBoxFuncionarios.DataSource = db.Funcionarios;
-            */
+
+            List<Funcionario> listFuncionario = this.controladorFuncionario.UpdateListBoxFuncionario(db);
+
+            listBoxFuncionarios.DataSource = listFuncionario;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -37,10 +38,6 @@ namespace PSI_DA_PL1_F.Views
                 return;
 
             Funcionario funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
-
-            //passar o funcionarioAtual(desnecessario segundo o enunciado)
-            //para o main form
-
 
             //uso o form que recebi e mudo o estado da sidebar e fecho este form
             mainForm.sidebar.Enabled = true;
@@ -51,19 +48,26 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnDirecionarRegisto_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
+            if (textBoxUsername.Text == "" || textBoxNome.Text == "" || textBoxNIF.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos");
                 return;
             }
 
-            this.controladorFuncionario.RegistarFuncionario(textBox1.Text, textBox2.Text, textBox3.Text, db);
+            this.controladorFuncionario.RegistarFuncionario(textBoxUsername.Text, textBoxNome.Text, textBoxNIF.Text, db);
+
+            textBoxUsername.Text = "";
+            textBoxNome.Text = "";
+            textBoxNIF.Text = "";
+
+            listBoxFuncionarios.DataSource = this.controladorFuncionario.UpdateListBoxFuncionario(db);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             Funcionario funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
             this.controladorFuncionario.RemoveFuncionario(db, funcionarioAtual);
+            listBoxFuncionarios.DataSource = this.controladorFuncionario.UpdateListBoxFuncionario(db);
         }
     }
 }

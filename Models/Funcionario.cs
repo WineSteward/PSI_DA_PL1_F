@@ -10,5 +10,10 @@ namespace PSI_DA_PL1_F.Models
     {
         public string Username { get; set; }
 
+        public override string ToString()
+        {
+            return Username + " | " + Nome;
+        }
+
     }
 }

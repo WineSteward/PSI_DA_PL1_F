@@ -14,8 +14,6 @@ namespace PSI_DA_PL1_F.Models
 
         public bool Ativo { get; set; }
 
-        public TipoPrato tipo { get; set; }
-
         public TipoPrato Tipo { get; set; }
 
     }

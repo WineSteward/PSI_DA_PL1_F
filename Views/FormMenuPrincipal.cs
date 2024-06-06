@@ -7,16 +7,23 @@ namespace PSI_DA_PL1_F.Views
     public partial class FormMenuPrincipal : Form
     {
         public CantinaContext db;
+
+        ControllerMenuPrincipal controladorMenuPrincipal;
+        ControllerMenuRefeicao controladorMenuRefeicao;
+        ControllerExtras controladorExtras;
+        ControllerMulta controladorMulta;
+        ControllerPratos controladorPratos;
+        ControllerReserva controladorReserva;
+
         public FormMenuPrincipal()
         {
             InitializeComponent();
-            this.db = new CantinaContext();
 
-            FormFuncionario form = new FormFuncionario(this);
-            form.TopLevel = false;
-            form.AutoScroll = true;
-            this.panelShowForm.Controls.Add(form);
-            form.Show();
+            this.FormClosed += Form_Closed;
+
+            this.db = new CantinaContext();
+           
+            controladorMenuPrincipal = new ControllerMenuPrincipal(this);
 
         }
         bool menuExpand = false;
@@ -29,7 +36,7 @@ namespace PSI_DA_PL1_F.Views
                 estudanteMenu.Height += 10;
                 if(estudanteMenu.Height >= 252) 
                 {
-                    estudanteTransition.Stop();
+                    clienteTransition.Stop();
                     menuExpand = true;
                 }
             }
@@ -38,15 +45,15 @@ namespace PSI_DA_PL1_F.Views
                 estudanteMenu.Height -= 10;
                 if(estudanteMenu.Height <= 90)
                 {
-                    estudanteTransition.Stop();
+                    clienteTransition.Stop();
                     menuExpand = false;
                 }
             }
         }
 
-        private void Estudante_Click(object sender, EventArgs e)
+        private void Cliente_Click(object sender, EventArgs e)
         {
-            estudanteTransition.Start();
+            clienteTransition.Start();
         }
         bool sidebarExpand = true;
 
@@ -79,19 +86,19 @@ namespace PSI_DA_PL1_F.Views
 
         }
 
-        private void Professor_Click(object sender, EventArgs e)
+        private void Settings_Click(object sender, EventArgs e)
         {
-            professorTransition.Start();
+            settingsTransition.Start();
         }
 
-        private void professorTransition_Tick(object sender, EventArgs e)
+        private void settingsTransition_Click(object sender, EventArgs e)
         {
             if (menuExpand == false)
             {
                 professorMenu.Height += 10;
                 if (professorMenu.Height >= 252)
                 {
-                    professorTransition.Stop();
+                    settingsTransition.Stop();
                     menuExpand = true;
                 }
             }
@@ -100,27 +107,33 @@ namespace PSI_DA_PL1_F.Views
                 professorMenu.Height -= 10;
                 if (professorMenu.Height <= 90)
                 {
-                    professorTransition.Stop();
+                    settingsTransition.Stop();
                     menuExpand = false;
                 }
             }
         }
-
-        private void btnRefeicaoEstudante_Click(object sender, EventArgs e)
+        private void Form_Closed(object sender, FormClosedEventArgs e)
         {
-               
+            db.Dispose();
         }
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.panelShowForm.Controls.Clear();
-            //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
-            //para controlar um elemento???
-            FormFuncionario login = new FormFuncionario(this);
-            login.TopLevel = false;
-            login.AutoScroll = true;
-            this.panelShowForm.Controls.Add(login);
-            login.Show();
+
+            ControllerMenuPrincipal controladorMenuPrincipal = new ControllerMenuPrincipal(this);
+        }
+
+      
+        private void btnFormClientes(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReservarRefeicao_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

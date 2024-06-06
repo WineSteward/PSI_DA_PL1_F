@@ -35,9 +35,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxFuncionarios = new System.Windows.Forms.ListBox();
@@ -122,29 +122,29 @@
             this.label5.TabIndex = 49;
             this.label5.Text = "Resgistar";
             // 
-            // textBox1
+            // textBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(520, 154);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 50;
+            this.textBoxUsername.Location = new System.Drawing.Point(520, 154);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(129, 20);
+            this.textBoxUsername.TabIndex = 50;
             // 
-            // textBox2
+            // textBoxNome
             // 
-            this.textBox2.Location = new System.Drawing.Point(520, 185);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 20);
-            this.textBox2.TabIndex = 52;
+            this.textBoxNome.Location = new System.Drawing.Point(520, 185);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(129, 20);
+            this.textBoxNome.TabIndex = 52;
             // 
-            // textBox3
+            // textBoxNIF
             // 
-            this.textBox3.Location = new System.Drawing.Point(520, 214);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(129, 20);
-            this.textBox3.TabIndex = 53;
+            this.textBoxNIF.Location = new System.Drawing.Point(520, 214);
+            this.textBoxNIF.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNIF.Name = "textBoxNIF";
+            this.textBoxNIF.Size = new System.Drawing.Size(129, 20);
+            this.textBoxNIF.TabIndex = 53;
             // 
             // btnRemove
             // 
@@ -179,7 +179,7 @@
             this.listBoxFuncionarios.Size = new System.Drawing.Size(317, 225);
             this.listBoxFuncionarios.TabIndex = 71;
             // 
-            // FormLogin
+            // FormFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,9 +187,9 @@
             this.ClientSize = new System.Drawing.Size(672, 472);
             this.Controls.Add(this.listBoxFuncionarios);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNIF);
+            this.Controls.Add(this.textBoxNome);
+            this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -199,7 +199,7 @@
             this.Controls.Add(this.btnEntrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FormLogin";
+            this.Name = "FormFuncionario";
             this.Text = "FormFuncionario";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -216,9 +216,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxNome;
+        private System.Windows.Forms.TextBox textBoxNIF;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listBoxFuncionarios;
