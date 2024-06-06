@@ -34,11 +34,11 @@
             this.labelDescricao = new System.Windows.Forms.Label();
             this.groupBoxTipoPrato = new System.Windows.Forms.GroupBox();
             this.buttonAdicionar = new System.Windows.Forms.Button();
+            this.buttonAdicionarReserva = new System.Windows.Forms.Button();
             this.groupBoxExtras = new System.Windows.Forms.GroupBox();
             this.checkedListBoxExtras = new System.Windows.Forms.CheckedListBox();
-            this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.labelClientes = new System.Windows.Forms.Label();
-            this.buttonAdicionarReserva = new System.Windows.Forms.Button();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.listBoxReservas = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button = new System.Windows.Forms.Button();
@@ -49,35 +49,38 @@
             // listBoxTipo
             // 
             this.listBoxTipo.FormattingEnabled = true;
-            this.listBoxTipo.ItemHeight = 16;
-            this.listBoxTipo.Location = new System.Drawing.Point(9, 21);
+            this.listBoxTipo.Location = new System.Drawing.Point(23, 29);
+            this.listBoxTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxTipo.Name = "listBoxTipo";
-            this.listBoxTipo.Size = new System.Drawing.Size(266, 84);
+            this.listBoxTipo.Size = new System.Drawing.Size(200, 69);
             this.listBoxTipo.TabIndex = 1;
             this.listBoxTipo.SelectedIndexChanged += new System.EventHandler(this.listBoxTipo_SelectedIndexChanged);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.textBox1.Location = new System.Drawing.Point(631, 0);
+            this.textBox1.Location = new System.Drawing.Point(473, 0);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(11, 606);
+            this.textBox1.Size = new System.Drawing.Size(10, 536);
             this.textBox1.TabIndex = 5;
             // 
             // textBoxDescricaoPrato
             // 
-            this.textBoxDescricaoPrato.Location = new System.Drawing.Point(9, 145);
+            this.textBoxDescricaoPrato.Location = new System.Drawing.Point(23, 130);
+            this.textBoxDescricaoPrato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxDescricaoPrato.Name = "textBoxDescricaoPrato";
-            this.textBoxDescricaoPrato.Size = new System.Drawing.Size(266, 22);
+            this.textBoxDescricaoPrato.Size = new System.Drawing.Size(200, 20);
             this.textBoxDescricaoPrato.TabIndex = 6;
             // 
             // labelDescricao
             // 
             this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Location = new System.Drawing.Point(6, 115);
+            this.labelDescricao.Location = new System.Drawing.Point(20, 105);
+            this.labelDescricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDescricao.Name = "labelDescricao";
-            this.labelDescricao.Size = new System.Drawing.Size(126, 16);
+            this.labelDescricao.Size = new System.Drawing.Size(101, 13);
             this.labelDescricao.TabIndex = 7;
             this.labelDescricao.Text = "Descrição do Prato:";
             // 
@@ -91,29 +94,45 @@
             this.groupBoxTipoPrato.Controls.Add(this.listBoxClientes);
             this.groupBoxTipoPrato.Controls.Add(this.labelDescricao);
             this.groupBoxTipoPrato.Controls.Add(this.textBoxDescricaoPrato);
-            this.groupBoxTipoPrato.Location = new System.Drawing.Point(6, 12);
+            this.groupBoxTipoPrato.Location = new System.Drawing.Point(4, 10);
+            this.groupBoxTipoPrato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxTipoPrato.Name = "groupBoxTipoPrato";
-            this.groupBoxTipoPrato.Size = new System.Drawing.Size(619, 579);
+            this.groupBoxTipoPrato.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTipoPrato.Size = new System.Drawing.Size(465, 515);
             this.groupBoxTipoPrato.TabIndex = 8;
             this.groupBoxTipoPrato.TabStop = false;
             this.groupBoxTipoPrato.Text = "Tipo de prato:";
             // 
             // buttonAdicionar
             // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(62, 535);
+            this.buttonAdicionar.Location = new System.Drawing.Point(62, 447);
+            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(124, 31);
+            this.buttonAdicionar.Size = new System.Drawing.Size(93, 25);
             this.buttonAdicionar.TabIndex = 9;
             this.buttonAdicionar.Text = "Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
+            // buttonAdicionarReserva
+            // 
+            this.buttonAdicionarReserva.Location = new System.Drawing.Point(291, 425);
+            this.buttonAdicionarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdicionarReserva.Name = "buttonAdicionarReserva";
+            this.buttonAdicionarReserva.Size = new System.Drawing.Size(101, 30);
+            this.buttonAdicionarReserva.TabIndex = 11;
+            this.buttonAdicionarReserva.Text = "Adicionar Reserva";
+            this.buttonAdicionarReserva.UseVisualStyleBackColor = true;
+            this.buttonAdicionarReserva.Click += new System.EventHandler(this.buttonAdicionarReserva_Click);
+            // 
             // groupBoxExtras
             // 
             this.groupBoxExtras.Controls.Add(this.checkedListBoxExtras);
-            this.groupBoxExtras.Location = new System.Drawing.Point(9, 177);
+            this.groupBoxExtras.Location = new System.Drawing.Point(23, 156);
+            this.groupBoxExtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxExtras.Name = "groupBoxExtras";
-            this.groupBoxExtras.Size = new System.Drawing.Size(262, 352);
+            this.groupBoxExtras.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxExtras.Size = new System.Drawing.Size(196, 286);
             this.groupBoxExtras.TabIndex = 8;
             this.groupBoxExtras.TabStop = false;
             this.groupBoxExtras.Text = "Extras: ";
@@ -121,79 +140,74 @@
             // checkedListBoxExtras
             // 
             this.checkedListBoxExtras.FormattingEnabled = true;
-            this.checkedListBoxExtras.Location = new System.Drawing.Point(26, 35);
+            this.checkedListBoxExtras.Location = new System.Drawing.Point(20, 28);
+            this.checkedListBoxExtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBoxExtras.Name = "checkedListBoxExtras";
-            this.checkedListBoxExtras.Size = new System.Drawing.Size(206, 293);
+            this.checkedListBoxExtras.Size = new System.Drawing.Size(156, 229);
             this.checkedListBoxExtras.TabIndex = 0;
-            // 
-            // listBoxClientes
-            // 
-            this.listBoxClientes.FormattingEnabled = true;
-            this.listBoxClientes.ItemHeight = 16;
-            this.listBoxClientes.Location = new System.Drawing.Point(322, 90);
-            this.listBoxClientes.Name = "listBoxClientes";
-            this.listBoxClientes.Size = new System.Drawing.Size(269, 372);
-            this.listBoxClientes.TabIndex = 9;
-            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // labelClientes
             // 
             this.labelClientes.AutoSize = true;
             this.labelClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClientes.Location = new System.Drawing.Point(401, 46);
+            this.labelClientes.Location = new System.Drawing.Point(301, 62);
+            this.labelClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelClientes.Name = "labelClientes";
-            this.labelClientes.Size = new System.Drawing.Size(109, 29);
+            this.labelClientes.Size = new System.Drawing.Size(85, 24);
             this.labelClientes.TabIndex = 10;
             this.labelClientes.Text = "Clientes";
             // 
-            // buttonAdicionarReserva
+            // listBoxClientes
             // 
-            this.buttonAdicionarReserva.Location = new System.Drawing.Point(388, 492);
-            this.buttonAdicionarReserva.Name = "buttonAdicionarReserva";
-            this.buttonAdicionarReserva.Size = new System.Drawing.Size(135, 37);
-            this.buttonAdicionarReserva.TabIndex = 11;
-            this.buttonAdicionarReserva.Text = "Adicionar Reserva";
-            this.buttonAdicionarReserva.UseVisualStyleBackColor = true;
-            this.buttonAdicionarReserva.Click += new System.EventHandler(this.buttonAdicionarReserva_Click);
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.Location = new System.Drawing.Point(242, 98);
+            this.listBoxClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(203, 303);
+            this.listBoxClientes.TabIndex = 9;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // listBoxReservas
             // 
             this.listBoxReservas.FormattingEnabled = true;
-            this.listBoxReservas.ItemHeight = 16;
-            this.listBoxReservas.Location = new System.Drawing.Point(720, 127);
+            this.listBoxReservas.Location = new System.Drawing.Point(543, 134);
+            this.listBoxReservas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxReservas.Name = "listBoxReservas";
-            this.listBoxReservas.Size = new System.Drawing.Size(245, 340);
+            this.listBoxReservas.Size = new System.Drawing.Size(185, 277);
             this.listBoxReservas.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(775, 48);
+            this.label1.Location = new System.Drawing.Point(584, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 29);
+            this.label1.Size = new System.Drawing.Size(96, 24);
             this.label1.TabIndex = 12;
             this.label1.Text = "Reservas";
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(780, 504);
+            this.button.Location = new System.Drawing.Point(588, 441);
+            this.button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(135, 37);
+            this.button.Size = new System.Drawing.Size(101, 30);
             this.button.TabIndex = 12;
             this.button.UseVisualStyleBackColor = true;
             // 
             // FormReserva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1032, 603);
+            this.ClientSize = new System.Drawing.Size(806, 536);
             this.Controls.Add(this.button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxReservas);
             this.Controls.Add(this.groupBoxTipoPrato);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormReserva";
             this.Text = "FormReserva";
             this.groupBoxTipoPrato.ResumeLayout(false);

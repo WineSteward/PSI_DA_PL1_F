@@ -14,6 +14,7 @@ namespace PSI_DA_PL1_F.Views
         ControllerMulta controladorMulta;
         ControllerPratos controladorPratos;
         ControllerReserva controladorReserva;
+        ControllerCliente controladorCliente;
 
         public FormMenuPrincipal()
         {
@@ -128,12 +129,12 @@ namespace PSI_DA_PL1_F.Views
       
         private void btnFormClientes(object sender, EventArgs e)
         {
-
+            controladorCliente = new ControllerCliente(this, db);
         }
 
         private void btnReservarRefeicao_Click(object sender, EventArgs e)
         {
-
+            controladorReserva = new ControllerReserva();
         }
     }
 }

@@ -163,6 +163,18 @@
         U/w1in4t8x3lXFtSjSHoU9jy4gHtmDOJ/iVJ3seDdwX8wQM2AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="Estudante.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAYdJREFUSEvN
+        lYtRwzAQRFNCSkgJKSEdQAdJJ1ACHZAOoIR0AB2EDkIHZt/pZJ/lOJZjmOHN7Mg6rU62fl79K5qm2Uqv
+        ElBuvWk5SnaQPsh8BeJ7t85DHTfSk3SRIkdp52UEH/6NpxhHJhK8SZEv6Vlau82g7nHaI/TfuS2hAOa9
+        dJYiJ+nRbTfB5/4I+ci7xsDbfEsR5nr60wP4vV/JxS1mYoHj2/Q/eQL8qZtBHvIZbulQLA907yAnDxEz
+        vNqhWF5IzgI7plb5DJ091fVBVGcBfwObBX8eDFLu/3eJjTElfJGj5zMseUb1uOfNWAv+1M2wKVNpL2EG
+        UIUtGFmyu2B4BBQs12PpIMODrCCfFjl4UxX4U7eWbpoyCpaL/uJNVeBP3VqGa6rg4O7xpirkLy/K9lC2
+        EExtPeZckCXVg/CfuPkHpN19JaODROXPHx2IuLcD/l4Ot40jE/+ZTynD3fQgsVUp810F+Ho/tWroKJVX
+        Rgnt9w0QURLeni3ONAAl9VkH9g9ZrX4AvcM4OB3+/8AAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnReservarRefeicao.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -179,18 +191,6 @@
         fpt9AVcSBD8Ydt/MvCUk+cQ510aZtXbKOUQdiWII0qIoJhSPSDE7ToPOSqm5z6UaIPDlmy9+g/9ES6mG
         z8A4hbgeY8yVTq9c4DJCWrJG6KyqhZl4v9hXC2MkXjNa60210EUX8Wshf6BBueBhWKCX5BH4ltdzqQbw
         U/w1in4t8x3lXFtSjSHoU9jy4gHtmDOJ/iVJ3seDdwX8wQM2AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="Estudante.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAYdJREFUSEvN
-        lYtRwzAQRFNCSkgJKSEdQAdJJ1ACHZAOoIR0AB2EDkIHZt/pZJ/lOJZjmOHN7Mg6rU62fl79K5qm2Uqv
-        ElBuvWk5SnaQPsh8BeJ7t85DHTfSk3SRIkdp52UEH/6NpxhHJhK8SZEv6Vlau82g7nHaI/TfuS2hAOa9
-        dJYiJ+nRbTfB5/4I+ci7xsDbfEsR5nr60wP4vV/JxS1mYoHj2/Q/eQL8qZtBHvIZbulQLA907yAnDxEz
-        vNqhWF5IzgI7plb5DJ091fVBVGcBfwObBX8eDFLu/3eJjTElfJGj5zMseUb1uOfNWAv+1M2wKVNpL2EG
-        UIUtGFmyu2B4BBQs12PpIMODrCCfFjl4UxX4U7eWbpoyCpaL/uJNVeBP3VqGa6rg4O7xpirkLy/K9lC2
-        EExtPeZckCXVg/CfuPkHpN19JaODROXPHx2IuLcD/l4Ot40jE/+ZTynD3fQgsVUp810F+Ho/tWroKJVX
-        Rgnt9w0QURLeni3ONAAl9VkH9g9ZrX4AvcM4OB3+/8AAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

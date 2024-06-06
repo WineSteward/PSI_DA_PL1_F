@@ -81,7 +81,7 @@
             this.groupBox3.Controls.Add(this.textBoxNomeEdit);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnUpdateCliente);
-            this.groupBox3.Location = new System.Drawing.Point(13, 240);
+            this.groupBox3.Location = new System.Drawing.Point(13, 290);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(602, 204);
             this.groupBox3.TabIndex = 12;
@@ -197,7 +197,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnRemoverCliente);
-            this.groupBox2.Location = new System.Drawing.Point(621, 256);
+            this.groupBox2.Location = new System.Drawing.Point(621, 246);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(166, 179);
             this.groupBox2.TabIndex = 13;
@@ -228,7 +228,7 @@
             this.groupBox1.Controls.Add(this.textBoxNome);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAdicionarCliente);
-            this.groupBox1.Location = new System.Drawing.Point(13, 11);
+            this.groupBox1.Location = new System.Drawing.Point(13, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(602, 223);
             this.groupBox1.TabIndex = 11;
@@ -354,11 +354,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(806, 536);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBoxClientes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormClientes";
             this.Text = "FormClientes";
             this.groupBox3.ResumeLayout(false);

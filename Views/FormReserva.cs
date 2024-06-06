@@ -11,10 +11,12 @@ namespace PSI_DA_PL1_F.Views
     public partial class FormReserva : Form
     {
         private ControllerReserva reservaControlador;
-
-        public FormReserva()
+        FormMenuPrincipal menuPrincipal;
+        public FormReserva(FormMenuPrincipal menuPrincipal)
         {
             InitializeComponent();
+
+            this.menuPrincipal = menuPrincipal;
             reservaControlador = new ControllerReserva();
             MostrarPratos();
             MostrarExtras();
@@ -54,8 +56,7 @@ namespace PSI_DA_PL1_F.Views
             string tipoSelecionado = listBoxTipo.SelectedItem.ToString();
 
             // Esta parte foi por charGPT pq não sabia como fazer vê se queres mudar
-            var prato = reservaControlador.GetPratos()
-                .FirstOrDefault(p => p.Tipo.ToString() == tipoSelecionado);
+            var prato = reservaControlador.GetPratos().FirstOrDefault(p => p.Tipo.ToString() == tipoSelecionado);
 
         
             if (prato != null)

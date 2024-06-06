@@ -12,9 +12,12 @@ namespace PSI_DA_PL1_F.Views
 {
     public partial class FormMenuRefeicao : Form
     {
-        public FormMenuRefeicao()
+        FormMenuPrincipal menuPrincipal;
+        public FormMenuRefeicao(FormMenuPrincipal menuPrincipal)
         {
             InitializeComponent();
+
+            this.menuPrincipal = menuPrincipal;
         }
     }
 }

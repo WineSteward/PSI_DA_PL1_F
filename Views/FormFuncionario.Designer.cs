@@ -48,7 +48,7 @@
             // 
             this.btnDirecionarRegisto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
             this.btnDirecionarRegisto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDirecionarRegisto.Location = new System.Drawing.Point(440, 245);
+            this.btnDirecionarRegisto.Location = new System.Drawing.Point(499, 316);
             this.btnDirecionarRegisto.Margin = new System.Windows.Forms.Padding(2);
             this.btnDirecionarRegisto.Name = "btnDirecionarRegisto";
             this.btnDirecionarRegisto.Size = new System.Drawing.Size(128, 30);
@@ -61,7 +61,7 @@
             // 
             this.btnEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
             this.btnEntrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEntrar.Location = new System.Drawing.Point(154, 344);
+            this.btnEntrar.Location = new System.Drawing.Point(150, 403);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(128, 31);
@@ -74,7 +74,7 @@
             // 
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(184, 52);
+            this.labelTitulo.Location = new System.Drawing.Point(180, 111);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(70, 26);
@@ -84,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(437, 158);
+            this.label1.Location = new System.Drawing.Point(496, 229);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
@@ -94,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(437, 187);
+            this.label3.Location = new System.Drawing.Point(496, 258);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
@@ -104,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(437, 216);
+            this.label4.Location = new System.Drawing.Point(496, 288);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
@@ -115,7 +115,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(435, 119);
+            this.label5.Location = new System.Drawing.Point(494, 190);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 26);
@@ -124,7 +124,7 @@
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(520, 154);
+            this.textBoxUsername.Location = new System.Drawing.Point(579, 225);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(129, 20);
@@ -132,7 +132,7 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(520, 185);
+            this.textBoxNome.Location = new System.Drawing.Point(579, 256);
             this.textBoxNome.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(129, 20);
@@ -140,7 +140,7 @@
             // 
             // textBoxNIF
             // 
-            this.textBoxNIF.Location = new System.Drawing.Point(520, 214);
+            this.textBoxNIF.Location = new System.Drawing.Point(579, 285);
             this.textBoxNIF.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(129, 20);
@@ -162,7 +162,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnRemove);
-            this.groupBox1.Location = new System.Drawing.Point(499, 379);
+            this.groupBox1.Location = new System.Drawing.Point(647, 475);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -174,7 +174,7 @@
             // listBoxFuncionarios
             // 
             this.listBoxFuncionarios.FormattingEnabled = true;
-            this.listBoxFuncionarios.Location = new System.Drawing.Point(69, 99);
+            this.listBoxFuncionarios.Location = new System.Drawing.Point(65, 158);
             this.listBoxFuncionarios.Name = "listBoxFuncionarios";
             this.listBoxFuncionarios.Size = new System.Drawing.Size(317, 225);
             this.listBoxFuncionarios.TabIndex = 71;
@@ -184,7 +184,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(672, 472);
+            this.ClientSize = new System.Drawing.Size(822, 575);
             this.Controls.Add(this.listBoxFuncionarios);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBoxNIF);

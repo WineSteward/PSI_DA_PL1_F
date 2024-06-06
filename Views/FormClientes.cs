@@ -12,9 +12,12 @@ namespace PSI_DA_PL1_F.Views
 {
     public partial class FormClientes : Form
     {
-        public FormClientes()
+        FormMenuPrincipal menuPrincipal;
+        public FormClientes(FormMenuPrincipal menuPrincipal)
         {
             InitializeComponent();
+
+            this.menuPrincipal = menuPrincipal;
         }
 
         private void btnAdicionarCliente_Click(object sender, EventArgs e)

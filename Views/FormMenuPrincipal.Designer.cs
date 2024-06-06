@@ -44,18 +44,17 @@ namespace PSI_DA_PL1_F.Views
             this.button8 = new System.Windows.Forms.Button();
             this.estudanteMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.Estudante = new System.Windows.Forms.Button();
+            this.btnReservarRefeicao = new System.Windows.Forms.Button();
             this.btnFormEstudante = new System.Windows.Forms.Button();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelShowForm = new System.Windows.Forms.Panel();
-            this.btnReservarRefeicao = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.professorMenu.SuspendLayout();
             this.estudanteMenu.SuspendLayout();
             this.sidebar.SuspendLayout();
-            this.panelShowForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // clienteTransition
@@ -95,7 +94,7 @@ namespace PSI_DA_PL1_F.Views
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.MinimumSize = new System.Drawing.Size(112, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 42);
+            this.panel1.Size = new System.Drawing.Size(1211, 42);
             this.panel1.TabIndex = 0;
             // 
             // btnMenu
@@ -173,6 +172,7 @@ namespace PSI_DA_PL1_F.Views
             // estudanteMenu
             // 
             this.estudanteMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.estudanteMenu.Controls.Add(this.Estudante);
             this.estudanteMenu.Controls.Add(this.btnReservarRefeicao);
             this.estudanteMenu.Controls.Add(this.btnFormEstudante);
             this.estudanteMenu.Location = new System.Drawing.Point(3, 3);
@@ -187,7 +187,7 @@ namespace PSI_DA_PL1_F.Views
             this.Estudante.ForeColor = System.Drawing.SystemColors.Window;
             this.Estudante.Image = ((System.Drawing.Image)(resources.GetObject("Estudante.Image")));
             this.Estudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Estudante.Location = new System.Drawing.Point(202, 4);
+            this.Estudante.Location = new System.Drawing.Point(3, 4);
             this.Estudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Estudante.Name = "Estudante";
             this.Estudante.Size = new System.Drawing.Size(230, 76);
@@ -197,6 +197,23 @@ namespace PSI_DA_PL1_F.Views
             this.Estudante.UseVisualStyleBackColor = false;
             this.Estudante.Click += new System.EventHandler(this.Cliente_Click);
             // 
+            // btnReservarRefeicao
+            // 
+            this.btnReservarRefeicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnReservarRefeicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReservarRefeicao.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnReservarRefeicao.Image = ((System.Drawing.Image)(resources.GetObject("btnReservarRefeicao.Image")));
+            this.btnReservarRefeicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReservarRefeicao.Location = new System.Drawing.Point(3, 88);
+            this.btnReservarRefeicao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReservarRefeicao.Name = "btnReservarRefeicao";
+            this.btnReservarRefeicao.Size = new System.Drawing.Size(230, 76);
+            this.btnReservarRefeicao.TabIndex = 7;
+            this.btnReservarRefeicao.Text = "                  Reservar Refeição";
+            this.btnReservarRefeicao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReservarRefeicao.UseVisualStyleBackColor = false;
+            this.btnReservarRefeicao.Click += new System.EventHandler(this.btnReservarRefeicao_Click);
+            // 
             // btnFormEstudante
             // 
             this.btnFormEstudante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
@@ -204,7 +221,7 @@ namespace PSI_DA_PL1_F.Views
             this.btnFormEstudante.ForeColor = System.Drawing.SystemColors.Window;
             this.btnFormEstudante.Image = ((System.Drawing.Image)(resources.GetObject("btnFormEstudante.Image")));
             this.btnFormEstudante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormEstudante.Location = new System.Drawing.Point(3, 88);
+            this.btnFormEstudante.Location = new System.Drawing.Point(3, 172);
             this.btnFormEstudante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFormEstudante.Name = "btnFormEstudante";
             this.btnFormEstudante.Size = new System.Drawing.Size(230, 76);
@@ -226,7 +243,7 @@ namespace PSI_DA_PL1_F.Views
             this.sidebar.Location = new System.Drawing.Point(0, 42);
             this.sidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(237, 608);
+            this.sidebar.Size = new System.Drawing.Size(237, 687);
             this.sidebar.TabIndex = 1;
             // 
             // button4
@@ -263,34 +280,16 @@ namespace PSI_DA_PL1_F.Views
             // 
             // panelShowForm
             // 
-            this.panelShowForm.Controls.Add(this.Estudante);
             this.panelShowForm.Location = new System.Drawing.Point(243, 50);
             this.panelShowForm.Name = "panelShowForm";
-            this.panelShowForm.Size = new System.Drawing.Size(795, 588);
+            this.panelShowForm.Size = new System.Drawing.Size(963, 667);
             this.panelShowForm.TabIndex = 2;
-            // 
-            // btnReservarRefeicao
-            // 
-            this.btnReservarRefeicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.btnReservarRefeicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReservarRefeicao.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnReservarRefeicao.Image = ((System.Drawing.Image)(resources.GetObject("btnReservarRefeicao.Image")));
-            this.btnReservarRefeicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReservarRefeicao.Location = new System.Drawing.Point(3, 4);
-            this.btnReservarRefeicao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnReservarRefeicao.Name = "btnReservarRefeicao";
-            this.btnReservarRefeicao.Size = new System.Drawing.Size(230, 76);
-            this.btnReservarRefeicao.TabIndex = 7;
-            this.btnReservarRefeicao.Text = "                  Reservar Refeição";
-            this.btnReservarRefeicao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReservarRefeicao.UseVisualStyleBackColor = false;
-            this.btnReservarRefeicao.Click += new System.EventHandler(this.btnReservarRefeicao_Click);
             // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 650);
+            this.ClientSize = new System.Drawing.Size(1211, 729);
             this.Controls.Add(this.panelShowForm);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
@@ -306,7 +305,6 @@ namespace PSI_DA_PL1_F.Views
             this.professorMenu.ResumeLayout(false);
             this.estudanteMenu.ResumeLayout(false);
             this.sidebar.ResumeLayout(false);
-            this.panelShowForm.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

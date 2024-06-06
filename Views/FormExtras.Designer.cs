@@ -32,12 +32,12 @@
             this.btnRemoverExtra = new System.Windows.Forms.Button();
             this.checkBoxAtivarExtra = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownPreco = new System.Windows.Forms.NumericUpDown();
             this.textBoxDescricao = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdicionarExtra = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxExtras = new System.Windows.Forms.ListBox();
-            this.numericUpDownPreco = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.numericUpDownPrecoEdit = new System.Windows.Forms.NumericUpDown();
             this.textBoxDescricaoEdit = new System.Windows.Forms.RichTextBox();
@@ -55,7 +55,7 @@
             // 
             this.groupBox2.Controls.Add(this.btnRemoverExtra);
             this.groupBox2.Controls.Add(this.checkBoxAtivarExtra);
-            this.groupBox2.Location = new System.Drawing.Point(520, 256);
+            this.groupBox2.Location = new System.Drawing.Point(520, 302);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(204, 179);
             this.groupBox2.TabIndex = 13;
@@ -88,12 +88,19 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAdicionarExtra);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 11);
+            this.groupBox1.Location = new System.Drawing.Point(13, 44);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(409, 223);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Área de Criação do Extra";
+            // 
+            // numericUpDownPreco
+            // 
+            this.numericUpDownPreco.Location = new System.Drawing.Point(6, 139);
+            this.numericUpDownPreco.Name = "numericUpDownPreco";
+            this.numericUpDownPreco.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownPreco.TabIndex = 6;
             // 
             // textBoxDescricao
             // 
@@ -133,17 +140,10 @@
             // listBoxExtras
             // 
             this.listBoxExtras.FormattingEnabled = true;
-            this.listBoxExtras.Location = new System.Drawing.Point(440, 7);
+            this.listBoxExtras.Location = new System.Drawing.Point(438, 42);
             this.listBoxExtras.Name = "listBoxExtras";
             this.listBoxExtras.Size = new System.Drawing.Size(347, 225);
             this.listBoxExtras.TabIndex = 10;
-            // 
-            // numericUpDownPreco
-            // 
-            this.numericUpDownPreco.Location = new System.Drawing.Point(6, 139);
-            this.numericUpDownPreco.Name = "numericUpDownPreco";
-            this.numericUpDownPreco.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownPreco.TabIndex = 6;
             // 
             // groupBox3
             // 
@@ -152,7 +152,7 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.btnUpdateExtra);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(13, 240);
+            this.groupBox3.Location = new System.Drawing.Point(13, 302);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(409, 210);
             this.groupBox3.TabIndex = 14;
@@ -205,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(806, 536);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
