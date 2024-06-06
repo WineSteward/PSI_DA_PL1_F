@@ -11,13 +11,12 @@ namespace PSI_DA_PL1_F.Views
         {
             InitializeComponent();
             this.db = new CantinaContext();
-            //POSSO ENVIAR O PROPRIO FORM PARA OUTRO
-            //para controlar um elemento???
-            FormFuncionario login = new FormFuncionario(this); 
-            login.TopLevel = false;
-            login.AutoScroll = true;
-            this.panelShowForm.Controls.Add(login);
-            login.Show();
+
+            FormFuncionario form = new FormFuncionario(this);
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            this.panelShowForm.Controls.Add(form);
+            form.Show();
 
         }
         bool menuExpand = false;
@@ -109,7 +108,7 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnRefeicaoEstudante_Click(object sender, EventArgs e)
         {
-            
+               
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
