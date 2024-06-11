@@ -12,10 +12,12 @@ namespace PSI_DA_PL1_F.Controllers
 {
     internal class ControllerFuncionario : Controller
     {
+        private Funcionario novoFuncionario;
+        private List<Funcionario> listaFuncionarios;
 
         public void RegistarFuncionario(string username, string nome, string nif, CantinaContext db)
         {
-            var novoFuncionario = new Funcionario { Username = username, Nome = nome, NIF = nif };
+            novoFuncionario = new Funcionario { Username = username, Nome = nome, NIF = nif };
             db.Funcionarios.Add(novoFuncionario);
             db.SaveChanges();
         }
@@ -31,7 +33,7 @@ namespace PSI_DA_PL1_F.Controllers
 
         public List<Funcionario> UpdateListBoxFuncionario(CantinaContext db)
         {
-            List<Funcionario> listaFuncionarios = db.Funcionarios.ToList<Funcionario>();
+            listaFuncionarios = db.Funcionarios.ToList<Funcionario>();
             
             return listaFuncionarios;
         }

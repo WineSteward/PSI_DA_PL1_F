@@ -19,6 +19,9 @@ namespace PSI_DA_PL1_F.Views
         private ControllerFuncionario controladorFuncionario;
         private CantinaContext db;
         private FormMenuPrincipal mainForm;
+        private List<Funcionario> listFuncionario;
+        private Funcionario funcionarioAtual;
+
         public FormFuncionario(FormMenuPrincipal mainForm)
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace PSI_DA_PL1_F.Views
             this.db = mainForm.db;
             this.controladorFuncionario = new ControllerFuncionario();
 
-            List<Funcionario> listFuncionario = this.controladorFuncionario.UpdateListBoxFuncionario(db);
+            listFuncionario = this.controladorFuncionario.UpdateListBoxFuncionario(db);
 
             listBoxFuncionarios.DataSource = listFuncionario;
         }
@@ -37,7 +40,7 @@ namespace PSI_DA_PL1_F.Views
             if (listBoxFuncionarios.SelectedItem == null)
                 return;
 
-            Funcionario funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
+            funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
 
             //uso o form que recebi e mudo o estado da sidebar e fecho este form
             mainForm.sidebar.Enabled = true;
@@ -65,8 +68,10 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            Funcionario funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
+            funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
+
             this.controladorFuncionario.RemoveFuncionario(db, funcionarioAtual);
+            
             listBoxFuncionarios.DataSource = this.controladorFuncionario.UpdateListBoxFuncionario(db);
         }
     }

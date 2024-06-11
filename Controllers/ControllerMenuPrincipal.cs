@@ -13,25 +13,41 @@ namespace PSI_DA_PL1_F.Controllers
 
     internal class ControllerMenuPrincipal : Controller
     {
+        private FormMenuPrincipal formMenuPrincipal;
         private FormFuncionario funcionarioForm;
-
-        public ControllerMenuPrincipal(Funcionario funcionario)
-        {
-            
-        }
+        private FormClientes formCliente;
 
         public ControllerMenuPrincipal(FormMenuPrincipal formMenuPrincipal)
         {
-            formMenuPrincipal.sidebar.Enabled = false;
+            this.formMenuPrincipal = formMenuPrincipal;
 
+            formMenuPrincipal.sidebar.Enabled = false;
+        }
+
+        public void ShowFormFuncionario()
+        {
             funcionarioForm = new FormFuncionario(formMenuPrincipal);
-            
+
             funcionarioForm.TopLevel = false;
             funcionarioForm.AutoScroll = true;
-            
+
             formMenuPrincipal.panelShowForm.Controls.Add(funcionarioForm);
-            
+
             funcionarioForm.Show();
+        }
+
+        public void ShowFormCliente()
+        {
+            formCliente = new FormClientes(formMenuPrincipal);
+
+            formCliente.TopLevel = false;
+            formCliente.AutoScroll = true;
+
+            formMenuPrincipal.sidebar.Enabled = false;
+
+            formMenuPrincipal.panelShowForm.Controls.Add(formCliente);
+
+            formCliente.Show();
         }
     }
 }
