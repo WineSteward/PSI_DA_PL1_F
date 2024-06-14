@@ -35,10 +35,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRemoverPrato = new System.Windows.Forms.Button();
             this.checkBoxAtivarPrato = new System.Windows.Forms.CheckBox();
+            this.btnRemoverPrato = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBoxAtivarPratoEdit = new System.Windows.Forms.CheckBox();
             this.textBoxDescricaoEdit = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdatePrato = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.btnAdicionarPrato.TabIndex = 0;
             this.btnAdicionarPrato.Text = "Adicionar Prato";
             this.btnAdicionarPrato.UseVisualStyleBackColor = true;
+            this.btnAdicionarPrato.Click += new System.EventHandler(this.btnAdicionarPrato_Click);
             // 
             // listBoxPratos
             // 
@@ -65,6 +67,7 @@
             this.listBoxPratos.Name = "listBoxPratos";
             this.listBoxPratos.Size = new System.Drawing.Size(347, 225);
             this.listBoxPratos.TabIndex = 1;
+            this.listBoxPratos.SelectedIndexChanged += new System.EventHandler(this.listBoxPratos_SelectedIndexChanged);
             // 
             // textBoxDescricao
             // 
@@ -103,6 +106,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxDescricao);
+            this.groupBox1.Controls.Add(this.checkBoxAtivarPrato);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAdicionarPrato);
             this.groupBox1.Controls.Add(this.listBoxTipoPrato);
@@ -114,6 +118,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Área de Criação do Prato";
             // 
+            // checkBoxAtivarPrato
+            // 
+            this.checkBoxAtivarPrato.AutoSize = true;
+            this.checkBoxAtivarPrato.Location = new System.Drawing.Point(305, 121);
+            this.checkBoxAtivarPrato.Name = "checkBoxAtivarPrato";
+            this.checkBoxAtivarPrato.Size = new System.Drawing.Size(78, 17);
+            this.checkBoxAtivarPrato.TabIndex = 8;
+            this.checkBoxAtivarPrato.Text = "Prato Ativo";
+            this.checkBoxAtivarPrato.UseVisualStyleBackColor = true;
+            // 
             // btnRemoverPrato
             // 
             this.btnRemoverPrato.Location = new System.Drawing.Point(45, 114);
@@ -122,21 +136,11 @@
             this.btnRemoverPrato.TabIndex = 6;
             this.btnRemoverPrato.Text = "Remover Prato";
             this.btnRemoverPrato.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAtivarPrato
-            // 
-            this.checkBoxAtivarPrato.AutoSize = true;
-            this.checkBoxAtivarPrato.Location = new System.Drawing.Point(55, 46);
-            this.checkBoxAtivarPrato.Name = "checkBoxAtivarPrato";
-            this.checkBoxAtivarPrato.Size = new System.Drawing.Size(78, 17);
-            this.checkBoxAtivarPrato.TabIndex = 8;
-            this.checkBoxAtivarPrato.Text = "Prato Ativo";
-            this.checkBoxAtivarPrato.UseVisualStyleBackColor = true;
+            this.btnRemoverPrato.Click += new System.EventHandler(this.btnRemoverPrato_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnRemoverPrato);
-            this.groupBox2.Controls.Add(this.checkBoxAtivarPrato);
             this.groupBox2.Location = new System.Drawing.Point(527, 305);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(204, 179);
@@ -146,6 +150,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.checkBoxAtivarPratoEdit);
             this.groupBox3.Controls.Add(this.textBoxDescricaoEdit);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.btnUpdatePrato);
@@ -157,6 +162,16 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Área de Edição do Prato";
+            // 
+            // checkBoxAtivarPratoEdit
+            // 
+            this.checkBoxAtivarPratoEdit.AutoSize = true;
+            this.checkBoxAtivarPratoEdit.Location = new System.Drawing.Point(305, 105);
+            this.checkBoxAtivarPratoEdit.Name = "checkBoxAtivarPratoEdit";
+            this.checkBoxAtivarPratoEdit.Size = new System.Drawing.Size(78, 17);
+            this.checkBoxAtivarPratoEdit.TabIndex = 9;
+            this.checkBoxAtivarPratoEdit.Text = "Prato Ativo";
+            this.checkBoxAtivarPratoEdit.UseVisualStyleBackColor = true;
             // 
             // textBoxDescricaoEdit
             // 
@@ -183,9 +198,11 @@
             this.btnUpdatePrato.TabIndex = 0;
             this.btnUpdatePrato.Text = "Update Prato";
             this.btnUpdatePrato.UseVisualStyleBackColor = true;
+            this.btnUpdatePrato.Click += new System.EventHandler(this.btnUpdatePrato_Click);
             // 
             // listBoxTipoPratoEdit
             // 
+            this.listBoxTipoPratoEdit.Enabled = false;
             this.listBoxTipoPratoEdit.FormattingEnabled = true;
             this.listBoxTipoPratoEdit.Location = new System.Drawing.Point(6, 105);
             this.listBoxTipoPratoEdit.Name = "listBoxTipoPratoEdit";
@@ -216,7 +233,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -241,5 +257,6 @@
         private System.Windows.Forms.Button btnUpdatePrato;
         private System.Windows.Forms.ListBox listBoxTipoPratoEdit;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBoxAtivarPratoEdit;
     }
 }

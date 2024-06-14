@@ -42,6 +42,8 @@ namespace PSI_DA_PL1_F.Views
             this.btnFormMulta = new System.Windows.Forms.Button();
             this.btnFormMenuRefeicao = new System.Windows.Forms.Button();
             this.opcoesExpander = new System.Windows.Forms.Button();
+            this.btnFormExtras = new System.Windows.Forms.Button();
+            this.btnFormPratos = new System.Windows.Forms.Button();
             this.estudanteMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.clientesExpander = new System.Windows.Forms.Button();
             this.btnReservarRefeicao = new System.Windows.Forms.Button();
@@ -50,8 +52,6 @@ namespace PSI_DA_PL1_F.Views
             this.button4 = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelShowForm = new System.Windows.Forms.Panel();
-            this.btnFormPratos = new System.Windows.Forms.Button();
-            this.btnFormExtras = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.menuOpcoes.SuspendLayout();
@@ -174,6 +174,40 @@ namespace PSI_DA_PL1_F.Views
             this.opcoesExpander.UseVisualStyleBackColor = false;
             this.opcoesExpander.Click += new System.EventHandler(this.Settings_Click);
             // 
+            // btnFormExtras
+            // 
+            this.btnFormExtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnFormExtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFormExtras.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFormExtras.Image = ((System.Drawing.Image)(resources.GetObject("btnFormExtras.Image")));
+            this.btnFormExtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormExtras.Location = new System.Drawing.Point(3, 88);
+            this.btnFormExtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFormExtras.Name = "btnFormExtras";
+            this.btnFormExtras.Size = new System.Drawing.Size(230, 76);
+            this.btnFormExtras.TabIndex = 7;
+            this.btnFormExtras.Text = "                       Extras";
+            this.btnFormExtras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormExtras.UseVisualStyleBackColor = false;
+            this.btnFormExtras.Click += new System.EventHandler(this.btnFormExtras_Click);
+            // 
+            // btnFormPratos
+            // 
+            this.btnFormPratos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnFormPratos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFormPratos.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFormPratos.Image = ((System.Drawing.Image)(resources.GetObject("btnFormPratos.Image")));
+            this.btnFormPratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormPratos.Location = new System.Drawing.Point(3, 172);
+            this.btnFormPratos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFormPratos.Name = "btnFormPratos";
+            this.btnFormPratos.Size = new System.Drawing.Size(230, 76);
+            this.btnFormPratos.TabIndex = 8;
+            this.btnFormPratos.Text = "                       Pratos";
+            this.btnFormPratos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormPratos.UseVisualStyleBackColor = false;
+            this.btnFormPratos.Click += new System.EventHandler(this.btnFormPratos_Click);
+            // 
             // estudanteMenu
             // 
             this.estudanteMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
@@ -289,39 +323,6 @@ namespace PSI_DA_PL1_F.Views
             this.panelShowForm.Name = "panelShowForm";
             this.panelShowForm.Size = new System.Drawing.Size(963, 667);
             this.panelShowForm.TabIndex = 2;
-            // 
-            // btnFormPratos
-            // 
-            this.btnFormPratos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.btnFormPratos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFormPratos.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnFormPratos.Image = ((System.Drawing.Image)(resources.GetObject("btnFormPratos.Image")));
-            this.btnFormPratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormPratos.Location = new System.Drawing.Point(3, 172);
-            this.btnFormPratos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnFormPratos.Name = "btnFormPratos";
-            this.btnFormPratos.Size = new System.Drawing.Size(230, 76);
-            this.btnFormPratos.TabIndex = 8;
-            this.btnFormPratos.Text = "                       Pratos";
-            this.btnFormPratos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormPratos.UseVisualStyleBackColor = false;
-            // 
-            // btnFormExtras
-            // 
-            this.btnFormExtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.btnFormExtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFormExtras.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnFormExtras.Image = ((System.Drawing.Image)(resources.GetObject("btnFormExtras.Image")));
-            this.btnFormExtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormExtras.Location = new System.Drawing.Point(3, 88);
-            this.btnFormExtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnFormExtras.Name = "btnFormExtras";
-            this.btnFormExtras.Size = new System.Drawing.Size(230, 76);
-            this.btnFormExtras.TabIndex = 7;
-            this.btnFormExtras.Text = "                       Extras";
-            this.btnFormExtras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormExtras.UseVisualStyleBackColor = false;
-            this.btnFormExtras.Click += new System.EventHandler(this.btnFormExtras_Click);
             // 
             // FormMenuPrincipal
             // 

@@ -66,6 +66,10 @@ namespace PSI_DA_PL1_F.Views
             controladorMenuPrincipal.ShowFormMultas();
         }
 
+        private void btnFormPratos_Click(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowFormPratos();
+        }
 
 
 
@@ -154,5 +158,7 @@ namespace PSI_DA_PL1_F.Views
                 }
             }
         }
+
+       
     }
 }

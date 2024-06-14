@@ -32,25 +32,25 @@
             this.btnRemoverExtra = new System.Windows.Forms.Button();
             this.checkBoxAtivar = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDownPreco = new System.Windows.Forms.NumericUpDown();
             this.textBoxDescricao = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdicionarExtra = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxExtras = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBoxAtivarEdit = new System.Windows.Forms.CheckBox();
             this.numericUpDownPrecoEdit = new System.Windows.Forms.NumericUpDown();
             this.textBoxDescricaoEdit = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdateExtra = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.checkBoxAtivarEdit = new System.Windows.Forms.CheckBox();
+            this.numericUpDownPreco = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecoEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -97,14 +97,6 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Área de Criação do Extra";
-            // 
-            // numericUpDownPreco
-            // 
-            this.numericUpDownPreco.DecimalPlaces = 2;
-            this.numericUpDownPreco.Location = new System.Drawing.Point(35, 150);
-            this.numericUpDownPreco.Name = "numericUpDownPreco";
-            this.numericUpDownPreco.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownPreco.TabIndex = 6;
             // 
             // textBoxDescricao
             // 
@@ -166,6 +158,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Área de Atualização do Extra";
             // 
+            // checkBoxAtivarEdit
+            // 
+            this.checkBoxAtivarEdit.AutoSize = true;
+            this.checkBoxAtivarEdit.Location = new System.Drawing.Point(266, 154);
+            this.checkBoxAtivarEdit.Name = "checkBoxAtivarEdit";
+            this.checkBoxAtivarEdit.Size = new System.Drawing.Size(77, 17);
+            this.checkBoxAtivarEdit.TabIndex = 9;
+            this.checkBoxAtivarEdit.Text = "Extra Ativo";
+            this.checkBoxAtivarEdit.UseVisualStyleBackColor = true;
+            // 
             // numericUpDownPrecoEdit
             // 
             this.numericUpDownPrecoEdit.DecimalPlaces = 2;
@@ -220,15 +222,13 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // checkBoxAtivarEdit
+            // numericUpDownPreco
             // 
-            this.checkBoxAtivarEdit.AutoSize = true;
-            this.checkBoxAtivarEdit.Location = new System.Drawing.Point(266, 154);
-            this.checkBoxAtivarEdit.Name = "checkBoxAtivarEdit";
-            this.checkBoxAtivarEdit.Size = new System.Drawing.Size(77, 17);
-            this.checkBoxAtivarEdit.TabIndex = 9;
-            this.checkBoxAtivarEdit.Text = "Extra Ativo";
-            this.checkBoxAtivarEdit.UseVisualStyleBackColor = true;
+            this.numericUpDownPreco.DecimalPlaces = 2;
+            this.numericUpDownPreco.Location = new System.Drawing.Point(35, 150);
+            this.numericUpDownPreco.Name = "numericUpDownPreco";
+            this.numericUpDownPreco.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownPreco.TabIndex = 6;
             // 
             // FormExtras
             // 
@@ -246,10 +246,10 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecoEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,7 +264,6 @@
         private System.Windows.Forms.Button btnAdicionarExtra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBoxExtras;
-        private System.Windows.Forms.NumericUpDown numericUpDownPreco;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.NumericUpDown numericUpDownPrecoEdit;
         private System.Windows.Forms.RichTextBox textBoxDescricaoEdit;
@@ -273,5 +272,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.CheckBox checkBoxAtivarEdit;
+        private System.Windows.Forms.NumericUpDown numericUpDownPreco;
     }
 }

@@ -18,6 +18,7 @@ namespace PSI_DA_PL1_F.Controllers
         private FormClientes formCliente;
         private FormExtras formExtras;
         private FormMulta formMulta;
+        private FormPratos formPratos;
 
         public ControllerMenuPrincipal(FormMenuPrincipal formMenuPrincipal)
         {
@@ -82,7 +83,16 @@ namespace PSI_DA_PL1_F.Controllers
 
         public void ShowFormPratos()
         {
+            formPratos = new FormPratos(formMenuPrincipal);
 
+            formPratos.TopLevel = false;
+            formPratos.AutoScroll = true;
+
+            formMenuPrincipal.sidebar.Enabled = false;
+
+            formMenuPrincipal.panelShowForm.Controls.Add(formPratos);
+
+            formPratos.Show();
         }
 
     }
