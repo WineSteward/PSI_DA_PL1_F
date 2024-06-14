@@ -19,5 +19,10 @@ namespace PSI_DA_PL1_F.Views
 
             this.menuPrincipal = menuPrincipal;
         }
+
+        private void btnAdicionarMenu_Click(object sender, EventArgs e)
+        {
+            DateTime dataMenu = dateTimePicker.Value;
+        }
     }
 }

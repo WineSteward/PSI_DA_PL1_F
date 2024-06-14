@@ -330,6 +330,7 @@
             this.btnAdicionarMenu.TabIndex = 0;
             this.btnAdicionarMenu.Text = "Adicionar Menu";
             this.btnAdicionarMenu.UseVisualStyleBackColor = true;
+            this.btnAdicionarMenu.Click += new System.EventHandler(this.btnAdicionarMenu_Click);
             // 
             // listBoxMenuRefeicoes
             // 

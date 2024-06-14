@@ -21,7 +21,6 @@ namespace PSI_DA_PL1_F.Controllers
         public ControllerReserva(FormMenuPrincipal menuPrincipal, CantinaContext db, MenuRefeicao Menu)
         {
             this.db = db;
-            this.menuPrincipal = menuPrincipal;
             this.Menu = Menu;
         }
 

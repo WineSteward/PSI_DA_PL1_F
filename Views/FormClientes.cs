@@ -55,7 +55,9 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            controladorCliente.CloseForm();
+            menuPrincipal.panelShowForm.Controls.Clear();
+
+            menuPrincipal.sidebar.Enabled = true;
         }
 
         private void btnRemoverCliente_Click(object sender, EventArgs e)

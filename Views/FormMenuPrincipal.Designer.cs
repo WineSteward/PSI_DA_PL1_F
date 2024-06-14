@@ -39,11 +39,11 @@ namespace PSI_DA_PL1_F.Views
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.menuOpcoes = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnFormMulta = new System.Windows.Forms.Button();
-            this.btnFormMenuRefeicao = new System.Windows.Forms.Button();
             this.opcoesExpander = new System.Windows.Forms.Button();
             this.btnFormExtras = new System.Windows.Forms.Button();
             this.btnFormPratos = new System.Windows.Forms.Button();
+            this.btnFormMulta = new System.Windows.Forms.Button();
+            this.btnFormMenuRefeicao = new System.Windows.Forms.Button();
             this.estudanteMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.clientesExpander = new System.Windows.Forms.Button();
             this.btnReservarRefeicao = new System.Windows.Forms.Button();
@@ -124,39 +124,6 @@ namespace PSI_DA_PL1_F.Views
             this.menuOpcoes.Size = new System.Drawing.Size(233, 85);
             this.menuOpcoes.TabIndex = 10;
             // 
-            // btnFormMulta
-            // 
-            this.btnFormMulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.btnFormMulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFormMulta.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnFormMulta.Image = ((System.Drawing.Image)(resources.GetObject("btnFormMulta.Image")));
-            this.btnFormMulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormMulta.Location = new System.Drawing.Point(3, 256);
-            this.btnFormMulta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnFormMulta.Name = "btnFormMulta";
-            this.btnFormMulta.Size = new System.Drawing.Size(230, 76);
-            this.btnFormMulta.TabIndex = 9;
-            this.btnFormMulta.Text = "                       Multas";
-            this.btnFormMulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormMulta.UseVisualStyleBackColor = false;
-            this.btnFormMulta.Click += new System.EventHandler(this.btnFormMulta_Click);
-            // 
-            // btnFormMenuRefeicao
-            // 
-            this.btnFormMenuRefeicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.btnFormMenuRefeicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFormMenuRefeicao.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnFormMenuRefeicao.Image = ((System.Drawing.Image)(resources.GetObject("btnFormMenuRefeicao.Image")));
-            this.btnFormMenuRefeicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormMenuRefeicao.Location = new System.Drawing.Point(3, 340);
-            this.btnFormMenuRefeicao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnFormMenuRefeicao.Name = "btnFormMenuRefeicao";
-            this.btnFormMenuRefeicao.Size = new System.Drawing.Size(230, 76);
-            this.btnFormMenuRefeicao.TabIndex = 6;
-            this.btnFormMenuRefeicao.Text = "                       Menu Refeições";
-            this.btnFormMenuRefeicao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormMenuRefeicao.UseVisualStyleBackColor = false;
-            // 
             // opcoesExpander
             // 
             this.opcoesExpander.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
@@ -207,6 +174,39 @@ namespace PSI_DA_PL1_F.Views
             this.btnFormPratos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormPratos.UseVisualStyleBackColor = false;
             this.btnFormPratos.Click += new System.EventHandler(this.btnFormPratos_Click);
+            // 
+            // btnFormMulta
+            // 
+            this.btnFormMulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnFormMulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFormMulta.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFormMulta.Image = ((System.Drawing.Image)(resources.GetObject("btnFormMulta.Image")));
+            this.btnFormMulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormMulta.Location = new System.Drawing.Point(3, 256);
+            this.btnFormMulta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFormMulta.Name = "btnFormMulta";
+            this.btnFormMulta.Size = new System.Drawing.Size(230, 76);
+            this.btnFormMulta.TabIndex = 9;
+            this.btnFormMulta.Text = "                       Multas";
+            this.btnFormMulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormMulta.UseVisualStyleBackColor = false;
+            this.btnFormMulta.Click += new System.EventHandler(this.btnFormMulta_Click);
+            // 
+            // btnFormMenuRefeicao
+            // 
+            this.btnFormMenuRefeicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnFormMenuRefeicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFormMenuRefeicao.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFormMenuRefeicao.Image = ((System.Drawing.Image)(resources.GetObject("btnFormMenuRefeicao.Image")));
+            this.btnFormMenuRefeicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormMenuRefeicao.Location = new System.Drawing.Point(3, 340);
+            this.btnFormMenuRefeicao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFormMenuRefeicao.Name = "btnFormMenuRefeicao";
+            this.btnFormMenuRefeicao.Size = new System.Drawing.Size(230, 76);
+            this.btnFormMenuRefeicao.TabIndex = 6;
+            this.btnFormMenuRefeicao.Text = "                       Menu Refeições";
+            this.btnFormMenuRefeicao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormMenuRefeicao.UseVisualStyleBackColor = false;
             // 
             // estudanteMenu
             // 

@@ -31,13 +31,6 @@ namespace PSI_DA_PL1_F.Controllers
             db.SaveChanges();
         }
 
-        public void CloseForm()
-        {
-            menuPrincipal.panelShowForm.Controls.Clear();
-
-            menuPrincipal.sidebar.Enabled = true;
-        }
-
         public List<Cliente> UpdateListBox()
         {
             List <Cliente> listaClientes = new List<Cliente>();
