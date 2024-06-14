@@ -7,11 +7,22 @@ using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Models
 {
-    public class Professor
+    public class Professor : Cliente
     {
-        public int Id { get; set; }
-
         public string EmailProfessor { get; set; }
 
+        public Professor() { }
+        public Professor(string nome, string nif, decimal saldo, string emailProfessor)
+        {
+            this.Nome = nome;
+            this.NIF = nif;
+            this.Saldo = saldo;
+            this.EmailProfessor = emailProfessor;
+        }
+
+        public override string ToString()
+        {
+            return Nome + "| Professor";
+        }
     }
 }

@@ -17,10 +17,31 @@ namespace PSI_DA_PL1_F.Models
 
         public MenuRefeicao Menu { get; set; }
         
-        public Extra[] Extras { get; set; } //minimo de 1 maximo de 3
+        public List<Extra> Extras { get; set; } //minimo de 1 maximo de 3
 
-        public Prato Prato { get; set; }
+        public Prato Prato { get; set; } //so podem escolher 1
+
+        public static List<Extra> GetCheckedItems(CheckedListBox checkedListBox)
+        {
+            List<Extra> checkedItemsList = new List<Extra>();
+            
+            foreach (var item in checkedListBox.CheckedItems)
+            {
+                checkedItemsList.Add((Extra)item);
+            }
+            return checkedItemsList;
+        }
 
 
+        public Reserva() { }
+
+        public Reserva(Cliente cliente, Multa multa, MenuRefeicao menu, List<Extra> extras, Prato prato)
+        {
+            Cliente = cliente;
+            Multa = multa;
+            Menu = menu;
+            Extras = extras;
+            Prato = prato;
+        }
     }
 }

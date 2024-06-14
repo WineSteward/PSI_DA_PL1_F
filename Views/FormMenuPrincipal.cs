@@ -8,12 +8,9 @@ namespace PSI_DA_PL1_F.Views
     {
         public CantinaContext db;
 
+        bool menuExpand = false;
+
         ControllerMenuPrincipal controladorMenuPrincipal;
-        ControllerMenuRefeicao controladorMenuRefeicao;
-        ControllerExtras controladorExtras;
-        ControllerMulta controladorMulta;
-        ControllerPratos controladorPratos;
-        ControllerReserva controladorReserva;
 
         public FormMenuPrincipal()
         {
@@ -25,16 +22,65 @@ namespace PSI_DA_PL1_F.Views
            
             controladorMenuPrincipal = new ControllerMenuPrincipal(this);
 
-        }
-        bool menuExpand = false;
+            controladorMenuPrincipal.ShowFormFuncionario();
 
+        }
+       
+      
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            //call controller and dispose DBContext there
+            db.Dispose();
+        }
+
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            panelShowForm.Controls.Clear();
+
+            sidebar.Enabled = false;
+
+            controladorMenuPrincipal.ShowFormFuncionario();
+        }
+
+      
+        private void btnFormClientes(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowFormCliente();
+        }
+
+        private void btnReservarRefeicao_Click(object sender, EventArgs e)
+        {
+            //Mostrar form reserva
+            //controladorMenuPrincipal.ShowFormResarva();
+        }
+
+
+        private void btnFormExtras_Click(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowFormExtras();
+        }
+
+        private void btnFormMulta_Click(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowFormMultas();
+        }
+
+        private void btnFormPratos_Click(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowFormPratos();
+        }
+
+
+
+        //-----------------------------------------------Animation-----------------------------------------------------
 
         private void menuTransition_Tick(object sender, EventArgs e)
         {
-            if(menuExpand == false)
+            if (menuExpand == false)
             {
                 estudanteMenu.Height += 10;
-                if(estudanteMenu.Height >= 252) 
+                if (estudanteMenu.Height >= 252)
                 {
                     clienteTransition.Stop();
                     menuExpand = true;
@@ -43,7 +89,7 @@ namespace PSI_DA_PL1_F.Views
             else
             {
                 estudanteMenu.Height -= 10;
-                if(estudanteMenu.Height <= 90)
+                if (estudanteMenu.Height <= 90)
                 {
                     clienteTransition.Stop();
                     menuExpand = false;
@@ -59,19 +105,19 @@ namespace PSI_DA_PL1_F.Views
 
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
-            if (sidebarExpand) 
+            if (sidebarExpand)
             {
                 sidebar.Width -= 10;
-                if(sidebar.Width <= 42)
+                if (sidebar.Width <= 42)
                 {
                     sidebarExpand = false;
                     sidebarTransition.Stop();
                 }
             }
-            else 
+            else
             {
                 sidebar.Width += 10;
-                if(sidebar.Width >= 237)
+                if (sidebar.Width >= 237)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -95,8 +141,8 @@ namespace PSI_DA_PL1_F.Views
         {
             if (menuExpand == false)
             {
-                professorMenu.Height += 10;
-                if (professorMenu.Height >= 252)
+                menuOpcoes.Height += 10;
+                if (menuOpcoes.Height >= 410)
                 {
                     settingsTransition.Stop();
                     menuExpand = true;
@@ -104,36 +150,15 @@ namespace PSI_DA_PL1_F.Views
             }
             else
             {
-                professorMenu.Height -= 10;
-                if (professorMenu.Height <= 90)
+                menuOpcoes.Height -= 10;
+                if (menuOpcoes.Height <= 90)
                 {
                     settingsTransition.Stop();
                     menuExpand = false;
                 }
             }
         }
-        private void Form_Closed(object sender, FormClosedEventArgs e)
-        {
-            db.Dispose();
-        }
 
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            this.panelShowForm.Controls.Clear();
-
-            ControllerMenuPrincipal controladorMenuPrincipal = new ControllerMenuPrincipal(this);
-        }
-
-      
-        private void btnFormClientes(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReservarRefeicao_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

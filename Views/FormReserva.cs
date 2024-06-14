@@ -10,83 +10,41 @@ namespace PSI_DA_PL1_F.Views
 {
     public partial class FormReserva : Form
     {
-        private ControllerReserva reservaControlador;
+        private ControllerReserva controladorReserva;
+        FormMenuPrincipal menuPrincipal;
 
-        public FormReserva()
+        public FormReserva(FormMenuPrincipal menuPrincipal, MenuRefeicao Menu)
         {
             InitializeComponent();
-            reservaControlador = new ControllerReserva();
-            MostrarPratos();
-            MostrarExtras();
-            
-            listBoxTipo.SelectedIndexChanged += listBoxTipo_SelectedIndexChanged;
-        }
 
-        private void MostrarPratos()
-        {
-            var pratos = reservaControlador.GetPratos();
-            listBoxTipo.Items.Clear();
-            foreach (var prato in pratos)
-            {
+            this.menuPrincipal = menuPrincipal;
+            controladorReserva = new ControllerReserva(menuPrincipal, menuPrincipal.db, Menu);
 
-                listBoxTipo.Items.Add(prato.Tipo.ToString());
-            }
-        }
+            listBoxClientes.DataSource = controladorReserva.UpdateListBoxClientes();
+            listBoxReservas.DataSource = controladorReserva.UpdateListBoxReservas();
+            checkedListBoxExtras.DataSource = controladorReserva.UpdateListBoxExtras();
+            listBoxPratos.DataSource = controladorReserva.UpdateListBoxPratos();
 
-        private void MostrarExtras()
-        {
-            var extras = reservaControlador.GetExtras();
-            checkedListBoxExtras.Items.Clear();
-            foreach (var extra in extras)
-            {
-                
-                checkedListBoxExtras.Items.Add(extra.Descricao);
-            }
-        }
-
-        private void listBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listBoxTipo.SelectedItem == null)
-            {
-                return;
-            }
-
-            string tipoSelecionado = listBoxTipo.SelectedItem.ToString();
-
-            // Esta parte foi por charGPT pq não sabia como fazer vê se queres mudar
-            var prato = reservaControlador.GetPratos()
-                .FirstOrDefault(p => p.Tipo.ToString() == tipoSelecionado);
-
-        
-            if (prato != null)
-            {
-                textBoxDescricaoPrato.Text = prato.Descricao;
-            }
-        }
-
-        private void buttonAdicionar_Click(object sender, EventArgs e)
-        {
-            if (listBoxTipo.SelectedItem == null)
-            {
-                MessageBox.Show("Selecione um tipo de prato.");
-                return;
-            }
-
-        }
-
-        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listBoxClientes.SelectedItem == null)
-            {
-                return;
-            }
-
-            
         }
 
         private void buttonAdicionarReserva_Click(object sender, EventArgs e)
         {
+            controladorReserva.AddReserva((Cliente)listBoxClientes.SelectedItem, (Prato)listBoxPratos.SelectedItem, checkedListBoxExtras);
+        }
+
+        private void btnConsumir_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void checkedListBoxExtras_Click(object sender, EventArgs e)
+        {
+            if (checkedListBoxExtras.CheckedItems.Count > 3)
+            { 
+                checkedListBoxExtras.SetItemCheckState(checkedListBoxExtras.SelectedIndex, CheckState.Unchecked);
+            }
+        }
+
+      
     }
 }
