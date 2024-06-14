@@ -16,6 +16,7 @@ namespace PSI_DA_PL1_F.Controllers
         private FormMenuPrincipal formMenuPrincipal;
         private FormFuncionario funcionarioForm;
         private FormClientes formCliente;
+        private FormExtras formExtras;
 
         public ControllerMenuPrincipal(FormMenuPrincipal formMenuPrincipal)
         {
@@ -49,5 +50,30 @@ namespace PSI_DA_PL1_F.Controllers
 
             formCliente.Show();
         }
+
+        public void ShowFormExtras()
+        {
+            formExtras = new FormExtras(formMenuPrincipal);
+
+            formExtras.TopLevel = false;
+            formExtras.AutoScroll = true;
+
+            formMenuPrincipal.sidebar.Enabled = false;
+
+            formMenuPrincipal.panelShowForm.Controls.Add(formExtras);
+
+            formExtras.Show();
+        }
+
+        public void ShowFormMultas()
+        {
+
+        }
+
+        public void ShowFormPratos()
+        {
+
+        }
+
     }
 }

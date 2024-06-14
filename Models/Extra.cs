@@ -12,5 +12,17 @@ namespace PSI_DA_PL1_F.Models
 
         public string Descricao { get; set; }
 
+        public decimal Valor { get; set; }
+
+        public bool Ativo { get; set; }
+
+        public Extra(string descricao, decimal valor)
+        {
+            this.Descricao = descricao;
+            this.Valor = valor;
+        }
+
     }
+
+
 }

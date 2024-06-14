@@ -11,12 +11,6 @@ namespace PSI_DA_PL1_F.Views
         bool menuExpand = false;
 
         ControllerMenuPrincipal controladorMenuPrincipal;
-        ControllerMenuRefeicao controladorMenuRefeicao;
-        ControllerExtras controladorExtras;
-        ControllerMulta controladorMulta;
-        ControllerPratos controladorPratos;
-        ControllerReserva controladorReserva;
-        ControllerCliente controladorCliente;
 
         public FormMenuPrincipal()
         {
@@ -57,11 +51,15 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnReservarRefeicao_Click(object sender, EventArgs e)
         {
-            controladorReserva = new ControllerReserva();
+            //Mostrar form reserva
+            //controladorMenuPrincipal.ShowFormResarva();
         }
 
 
-
+        private void btnFormExtras_Click(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowFormExtras();
+        }
 
 
 
@@ -153,5 +151,6 @@ namespace PSI_DA_PL1_F.Views
             }
         }
 
+      
     }
 }

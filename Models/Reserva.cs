@@ -19,7 +19,7 @@ namespace PSI_DA_PL1_F.Models
         
         public Extra[] Extras { get; set; } //minimo de 1 maximo de 3
 
-        public Prato Prato { get; set; }
+        public Prato Prato { get; set; } //so podem escolher 1
 
 
     }

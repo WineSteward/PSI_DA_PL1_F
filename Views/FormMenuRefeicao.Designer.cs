@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkedListBoxExtrasEdicao = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxExtrasEdit = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.listBoxTipoPratosEdicao = new System.Windows.Forms.ListBox();
+            this.listBoxPratosEdit = new System.Windows.Forms.ListBox();
             this.numericUpDownPrecoProfessorEdit = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDownPrecoEstudanteEdit = new System.Windows.Forms.NumericUpDown();
@@ -44,7 +44,7 @@
             this.btnRemoverMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkedListBoxExtras = new System.Windows.Forms.CheckedListBox();
-            this.listBoxTipoPratos = new System.Windows.Forms.ListBox();
+            this.listBoxPratos = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDownPrecoProfessor = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,9 +68,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkedListBoxExtrasEdicao);
+            this.groupBox3.Controls.Add(this.checkedListBoxExtrasEdit);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.listBoxTipoPratosEdicao);
+            this.groupBox3.Controls.Add(this.listBoxPratosEdit);
             this.groupBox3.Controls.Add(this.numericUpDownPrecoProfessorEdit);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.numericUpDownPrecoEstudanteEdit);
@@ -86,14 +86,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Área de Edição do Menu";
             // 
-            // checkedListBoxExtrasEdicao
+            // checkedListBoxExtrasEdit
             // 
-            this.checkedListBoxExtrasEdicao.FormattingEnabled = true;
-            this.checkedListBoxExtrasEdicao.Location = new System.Drawing.Point(406, 121);
-            this.checkedListBoxExtrasEdicao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkedListBoxExtrasEdicao.Name = "checkedListBoxExtrasEdicao";
-            this.checkedListBoxExtrasEdicao.Size = new System.Drawing.Size(192, 79);
-            this.checkedListBoxExtrasEdicao.TabIndex = 20;
+            this.checkedListBoxExtrasEdit.FormattingEnabled = true;
+            this.checkedListBoxExtrasEdit.Location = new System.Drawing.Point(406, 121);
+            this.checkedListBoxExtrasEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.checkedListBoxExtrasEdit.Name = "checkedListBoxExtrasEdit";
+            this.checkedListBoxExtrasEdit.Size = new System.Drawing.Size(192, 79);
+            this.checkedListBoxExtrasEdit.TabIndex = 20;
             // 
             // label5
             // 
@@ -104,14 +104,14 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Preço Professor:";
             // 
-            // listBoxTipoPratosEdicao
+            // listBoxPratosEdit
             // 
-            this.listBoxTipoPratosEdicao.FormattingEnabled = true;
-            this.listBoxTipoPratosEdicao.Location = new System.Drawing.Point(406, 18);
-            this.listBoxTipoPratosEdicao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBoxTipoPratosEdicao.Name = "listBoxTipoPratosEdicao";
-            this.listBoxTipoPratosEdicao.Size = new System.Drawing.Size(192, 82);
-            this.listBoxTipoPratosEdicao.TabIndex = 21;
+            this.listBoxPratosEdit.FormattingEnabled = true;
+            this.listBoxPratosEdit.Location = new System.Drawing.Point(406, 18);
+            this.listBoxPratosEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxPratosEdit.Name = "listBoxPratosEdit";
+            this.listBoxPratosEdit.Size = new System.Drawing.Size(192, 82);
+            this.listBoxPratosEdit.TabIndex = 21;
             // 
             // numericUpDownPrecoProfessorEdit
             // 
@@ -209,7 +209,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.checkedListBoxExtras);
-            this.groupBox1.Controls.Add(this.listBoxTipoPratos);
+            this.groupBox1.Controls.Add(this.listBoxPratos);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.numericUpDownPrecoProfessor);
             this.groupBox1.Controls.Add(this.label3);
@@ -230,19 +230,19 @@
             // 
             this.checkedListBoxExtras.FormattingEnabled = true;
             this.checkedListBoxExtras.Location = new System.Drawing.Point(406, 117);
-            this.checkedListBoxExtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBoxExtras.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBoxExtras.Name = "checkedListBoxExtras";
             this.checkedListBoxExtras.Size = new System.Drawing.Size(192, 79);
             this.checkedListBoxExtras.TabIndex = 18;
             // 
-            // listBoxTipoPratos
+            // listBoxPratos
             // 
-            this.listBoxTipoPratos.FormattingEnabled = true;
-            this.listBoxTipoPratos.Location = new System.Drawing.Point(406, 20);
-            this.listBoxTipoPratos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBoxTipoPratos.Name = "listBoxTipoPratos";
-            this.listBoxTipoPratos.Size = new System.Drawing.Size(192, 82);
-            this.listBoxTipoPratos.TabIndex = 19;
+            this.listBoxPratos.FormattingEnabled = true;
+            this.listBoxPratos.Location = new System.Drawing.Point(406, 20);
+            this.listBoxPratos.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxPratos.Name = "listBoxPratos";
+            this.listBoxPratos.Size = new System.Drawing.Size(192, 82);
+            this.listBoxPratos.TabIndex = 19;
             // 
             // label4
             // 
@@ -387,8 +387,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAtualizarMenu;
         private System.Windows.Forms.CheckedListBox checkedListBoxExtras;
-        private System.Windows.Forms.ListBox listBoxTipoPratos;
-        private System.Windows.Forms.CheckedListBox checkedListBoxExtrasEdicao;
-        private System.Windows.Forms.ListBox listBoxTipoPratosEdicao;
+        private System.Windows.Forms.ListBox listBoxPratos;
+        private System.Windows.Forms.CheckedListBox checkedListBoxExtrasEdit;
+        private System.Windows.Forms.ListBox listBoxPratosEdit;
     }
 }

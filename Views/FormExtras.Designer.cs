@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdateExtra = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).BeginInit();
@@ -55,16 +56,16 @@
             // 
             this.groupBox2.Controls.Add(this.btnRemoverExtra);
             this.groupBox2.Controls.Add(this.checkBoxAtivarExtra);
-            this.groupBox2.Location = new System.Drawing.Point(520, 302);
+            this.groupBox2.Location = new System.Drawing.Point(526, 243);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(204, 179);
+            this.groupBox2.Size = new System.Drawing.Size(204, 203);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Área de Tratamento do Extra";
             // 
             // btnRemoverExtra
             // 
-            this.btnRemoverExtra.Location = new System.Drawing.Point(45, 114);
+            this.btnRemoverExtra.Location = new System.Drawing.Point(55, 102);
             this.btnRemoverExtra.Name = "btnRemoverExtra";
             this.btnRemoverExtra.Size = new System.Drawing.Size(98, 50);
             this.btnRemoverExtra.TabIndex = 6;
@@ -88,23 +89,23 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAdicionarExtra);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 44);
+            this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(409, 223);
+            this.groupBox1.Size = new System.Drawing.Size(409, 257);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Área de Criação do Extra";
             // 
             // numericUpDownPreco
             // 
-            this.numericUpDownPreco.Location = new System.Drawing.Point(6, 139);
+            this.numericUpDownPreco.Location = new System.Drawing.Point(35, 150);
             this.numericUpDownPreco.Name = "numericUpDownPreco";
             this.numericUpDownPreco.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownPreco.TabIndex = 6;
             // 
             // textBoxDescricao
             // 
-            this.textBoxDescricao.Location = new System.Drawing.Point(6, 58);
+            this.textBoxDescricao.Location = new System.Drawing.Point(35, 69);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(308, 47);
             this.textBoxDescricao.TabIndex = 2;
@@ -113,7 +114,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 42);
+            this.label2.Location = new System.Drawing.Point(32, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 5;
@@ -121,17 +122,18 @@
             // 
             // btnAdicionarExtra
             // 
-            this.btnAdicionarExtra.Location = new System.Drawing.Point(6, 181);
+            this.btnAdicionarExtra.Location = new System.Drawing.Point(35, 192);
             this.btnAdicionarExtra.Name = "btnAdicionarExtra";
             this.btnAdicionarExtra.Size = new System.Drawing.Size(156, 23);
             this.btnAdicionarExtra.TabIndex = 0;
             this.btnAdicionarExtra.Text = "Adicionar Extra";
             this.btnAdicionarExtra.UseVisualStyleBackColor = true;
+            this.btnAdicionarExtra.Click += new System.EventHandler(this.btnAdicionarExtra_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 123);
+            this.label1.Location = new System.Drawing.Point(32, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 4;
@@ -140,7 +142,7 @@
             // listBoxExtras
             // 
             this.listBoxExtras.FormattingEnabled = true;
-            this.listBoxExtras.Location = new System.Drawing.Point(438, 42);
+            this.listBoxExtras.Location = new System.Drawing.Point(437, 12);
             this.listBoxExtras.Name = "listBoxExtras";
             this.listBoxExtras.Size = new System.Drawing.Size(347, 225);
             this.listBoxExtras.TabIndex = 10;
@@ -152,23 +154,23 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.btnUpdateExtra);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(13, 302);
+            this.groupBox3.Location = new System.Drawing.Point(13, 275);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(409, 210);
+            this.groupBox3.Size = new System.Drawing.Size(409, 237);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Área de Atualização do Extra";
             // 
             // numericUpDownPrecoEdit
             // 
-            this.numericUpDownPrecoEdit.Location = new System.Drawing.Point(6, 139);
+            this.numericUpDownPrecoEdit.Location = new System.Drawing.Point(35, 151);
             this.numericUpDownPrecoEdit.Name = "numericUpDownPrecoEdit";
             this.numericUpDownPrecoEdit.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownPrecoEdit.TabIndex = 6;
             // 
             // textBoxDescricaoEdit
             // 
-            this.textBoxDescricaoEdit.Location = new System.Drawing.Point(6, 58);
+            this.textBoxDescricaoEdit.Location = new System.Drawing.Point(35, 70);
             this.textBoxDescricaoEdit.Name = "textBoxDescricaoEdit";
             this.textBoxDescricaoEdit.Size = new System.Drawing.Size(308, 47);
             this.textBoxDescricaoEdit.TabIndex = 2;
@@ -177,7 +179,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 42);
+            this.label3.Location = new System.Drawing.Point(32, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 5;
@@ -185,7 +187,7 @@
             // 
             // btnUpdateExtra
             // 
-            this.btnUpdateExtra.Location = new System.Drawing.Point(6, 181);
+            this.btnUpdateExtra.Location = new System.Drawing.Point(35, 193);
             this.btnUpdateExtra.Name = "btnUpdateExtra";
             this.btnUpdateExtra.Size = new System.Drawing.Size(156, 23);
             this.btnUpdateExtra.TabIndex = 0;
@@ -195,17 +197,28 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 123);
+            this.label4.Location = new System.Drawing.Point(32, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Preço do Extra:";
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(696, 474);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(98, 50);
+            this.btnReturn.TabIndex = 15;
+            this.btnReturn.Text = "Regressar ao Menu Principal";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // FormExtras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 536);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -241,5 +254,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdateExtra;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

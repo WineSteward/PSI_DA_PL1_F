@@ -13,7 +13,6 @@ namespace PSI_DA_PL1_F.Controllers
     {
         CantinaContext db;
         FormMenuPrincipal menuPrincipal;
-        FormClientes clienteForm;
         public ControllerCliente(FormMenuPrincipal menuPrincipal, CantinaContext db)
         {
             this.db = db;

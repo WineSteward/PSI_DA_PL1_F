@@ -10,7 +10,7 @@ namespace PSI_DA_PL1_F.Models
     {
         public int Id { get; set; }
 
-        public int Total { get; set; }
+        public decimal Preco { get; set; }
 
         public string Descricao { get; set; }
 

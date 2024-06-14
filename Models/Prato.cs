@@ -12,6 +12,8 @@ namespace PSI_DA_PL1_F.Models
 
         public string Descricao { get; set; }
 
+        public decimal Valor { get; set; }
+
         public bool Ativo { get; set; }
 
         public TipoPrato Tipo { get; set; }

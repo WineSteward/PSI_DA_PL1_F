@@ -10,7 +10,7 @@ namespace PSI_DA_PL1_F.Models
     {
         public int Id {  get; set; }
 
-        public float Valor {  get; set; }
+        public decimal Valor {  get; set; }
 
         public int NumeroHoras {  get; set; }
 
