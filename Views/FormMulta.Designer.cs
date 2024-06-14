@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxMultas = new System.Windows.Forms.ListBox();
             this.btnRemoverMulta = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHorasEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownValorEdit)).BeginInit();
@@ -73,6 +74,7 @@
             // 
             // numericUpDownValorEdit
             // 
+            this.numericUpDownValorEdit.DecimalPlaces = 2;
             this.numericUpDownValorEdit.Location = new System.Drawing.Point(142, 43);
             this.numericUpDownValorEdit.Name = "numericUpDownValorEdit";
             this.numericUpDownValorEdit.Size = new System.Drawing.Size(120, 20);
@@ -95,6 +97,7 @@
             this.btnUpdateMulta.TabIndex = 8;
             this.btnUpdateMulta.Text = "Atualizar Multa";
             this.btnUpdateMulta.UseVisualStyleBackColor = true;
+            this.btnUpdateMulta.Click += new System.EventHandler(this.btnUpdateMulta_Click);
             // 
             // label4
             // 
@@ -128,6 +131,7 @@
             // 
             // numericUpDownValor
             // 
+            this.numericUpDownValor.DecimalPlaces = 2;
             this.numericUpDownValor.Location = new System.Drawing.Point(133, 69);
             this.numericUpDownValor.Name = "numericUpDownValor";
             this.numericUpDownValor.Size = new System.Drawing.Size(120, 20);
@@ -150,6 +154,7 @@
             this.btnAdicionarMultas.TabIndex = 0;
             this.btnAdicionarMultas.Text = "Adicionar Multa";
             this.btnAdicionarMultas.UseVisualStyleBackColor = true;
+            this.btnAdicionarMultas.Click += new System.EventHandler(this.btnAdicionarMultas_Click);
             // 
             // label1
             // 
@@ -167,6 +172,7 @@
             this.listBoxMultas.Name = "listBoxMultas";
             this.listBoxMultas.Size = new System.Drawing.Size(347, 225);
             this.listBoxMultas.TabIndex = 10;
+            this.listBoxMultas.SelectedIndexChanged += new System.EventHandler(this.listBoxMultas_SelectedIndexChanged);
             // 
             // btnRemoverMulta
             // 
@@ -176,12 +182,24 @@
             this.btnRemoverMulta.TabIndex = 13;
             this.btnRemoverMulta.Text = "Remover Multa";
             this.btnRemoverMulta.UseVisualStyleBackColor = true;
+            this.btnRemoverMulta.Click += new System.EventHandler(this.btnRemoverMulta_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(696, 474);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(98, 50);
+            this.btnReturn.TabIndex = 16;
+            this.btnReturn.Text = "Regressar ao Menu Principal";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // FormMulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 536);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnRemoverMulta);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -217,5 +235,6 @@
         private System.Windows.Forms.Button btnUpdateMulta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnRemoverMulta;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

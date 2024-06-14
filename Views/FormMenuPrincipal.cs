@@ -61,6 +61,10 @@ namespace PSI_DA_PL1_F.Views
             controladorMenuPrincipal.ShowFormExtras();
         }
 
+        private void btnFormMulta_Click(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowFormMultas();
+        }
 
 
 
@@ -150,7 +154,5 @@ namespace PSI_DA_PL1_F.Views
                 }
             }
         }
-
-      
     }
 }

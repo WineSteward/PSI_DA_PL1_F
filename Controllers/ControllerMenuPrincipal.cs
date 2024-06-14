@@ -17,6 +17,7 @@ namespace PSI_DA_PL1_F.Controllers
         private FormFuncionario funcionarioForm;
         private FormClientes formCliente;
         private FormExtras formExtras;
+        private FormMulta formMulta;
 
         public ControllerMenuPrincipal(FormMenuPrincipal formMenuPrincipal)
         {
@@ -67,7 +68,16 @@ namespace PSI_DA_PL1_F.Controllers
 
         public void ShowFormMultas()
         {
+            formMulta = new FormMulta(formMenuPrincipal);
 
+            formMulta.TopLevel = false;
+            formMulta.AutoScroll = true;
+
+            formMenuPrincipal.sidebar.Enabled = false;
+
+            formMenuPrincipal.panelShowForm.Controls.Add(formMulta);
+
+            formMulta.Show();
         }
 
         public void ShowFormPratos()

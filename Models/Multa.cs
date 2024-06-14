@@ -8,12 +8,24 @@ namespace PSI_DA_PL1_F.Models
 {
     public class Multa
     {
-        public int Id {  get; set; }
+        public int Id { get; set; }
 
-        public decimal Valor {  get; set; }
+        public decimal Valor { get; set; }
 
-        public int NumeroHoras {  get; set; }
+        public decimal NumeroHoras { get; set; }
 
+        public Multa() { }
+
+        public Multa(decimal numeroHoras, decimal valor)
+        {
+            this.Valor = valor;
+            this.NumeroHoras = numeroHoras;
+        }
+
+        public override string ToString()
+        {
+            return NumeroHoras.ToString() + "Horas | " + Valor.ToString() + "€";
+        }
     }
 }
 
