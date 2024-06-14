@@ -115,6 +115,7 @@
             // 
             // numericUpDownPrecoProfessorEdit
             // 
+            this.numericUpDownPrecoProfessorEdit.DecimalPlaces = 2;
             this.numericUpDownPrecoProfessorEdit.Location = new System.Drawing.Point(6, 197);
             this.numericUpDownPrecoProfessorEdit.Name = "numericUpDownPrecoProfessorEdit";
             this.numericUpDownPrecoProfessorEdit.Size = new System.Drawing.Size(123, 20);
@@ -136,6 +137,7 @@
             // 
             // numericUpDownPrecoEstudanteEdit
             // 
+            this.numericUpDownPrecoEstudanteEdit.DecimalPlaces = 2;
             this.numericUpDownPrecoEstudanteEdit.Location = new System.Drawing.Point(6, 145);
             this.numericUpDownPrecoEstudanteEdit.Name = "numericUpDownPrecoEstudanteEdit";
             this.numericUpDownPrecoEstudanteEdit.Size = new System.Drawing.Size(123, 20);
@@ -255,6 +257,7 @@
             // 
             // numericUpDownPrecoProfessor
             // 
+            this.numericUpDownPrecoProfessor.DecimalPlaces = 2;
             this.numericUpDownPrecoProfessor.Location = new System.Drawing.Point(6, 180);
             this.numericUpDownPrecoProfessor.Name = "numericUpDownPrecoProfessor";
             this.numericUpDownPrecoProfessor.Size = new System.Drawing.Size(123, 20);
@@ -276,6 +279,7 @@
             // 
             // numericUpDownPrecoEstudante
             // 
+            this.numericUpDownPrecoEstudante.DecimalPlaces = 2;
             this.numericUpDownPrecoEstudante.Location = new System.Drawing.Point(6, 133);
             this.numericUpDownPrecoEstudante.Name = "numericUpDownPrecoEstudante";
             this.numericUpDownPrecoEstudante.Size = new System.Drawing.Size(123, 20);

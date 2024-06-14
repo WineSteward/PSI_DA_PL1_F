@@ -28,33 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxTipo = new System.Windows.Forms.ListBox();
+            this.listBoxPratos = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBoxDescricaoPrato = new System.Windows.Forms.TextBox();
-            this.labelDescricao = new System.Windows.Forms.Label();
             this.groupBoxTipoPrato = new System.Windows.Forms.GroupBox();
-            this.buttonAdicionar = new System.Windows.Forms.Button();
-            this.buttonAdicionarReserva = new System.Windows.Forms.Button();
+            this.btnAddSaldo = new System.Windows.Forms.Button();
+            this.btnAdicionarReserva = new System.Windows.Forms.Button();
             this.groupBoxExtras = new System.Windows.Forms.GroupBox();
             this.checkedListBoxExtras = new System.Windows.Forms.CheckedListBox();
             this.labelClientes = new System.Windows.Forms.Label();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.listBoxReservas = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button = new System.Windows.Forms.Button();
+            this.btnConsumir = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBoxTipoPrato.SuspendLayout();
             this.groupBoxExtras.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBoxTipo
+            // listBoxPratos
             // 
-            this.listBoxTipo.FormattingEnabled = true;
-            this.listBoxTipo.Location = new System.Drawing.Point(23, 29);
-            this.listBoxTipo.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxTipo.Name = "listBoxTipo";
-            this.listBoxTipo.Size = new System.Drawing.Size(200, 69);
-            this.listBoxTipo.TabIndex = 1;
-            this.listBoxTipo.SelectedIndexChanged += new System.EventHandler(this.listBoxTipo_SelectedIndexChanged);
+            this.listBoxPratos.FormattingEnabled = true;
+            this.listBoxPratos.Location = new System.Drawing.Point(19, 88);
+            this.listBoxPratos.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxPratos.Name = "listBoxPratos";
+            this.listBoxPratos.Size = new System.Drawing.Size(200, 69);
+            this.listBoxPratos.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -66,34 +64,15 @@
             this.textBox1.Size = new System.Drawing.Size(10, 536);
             this.textBox1.TabIndex = 5;
             // 
-            // textBoxDescricaoPrato
-            // 
-            this.textBoxDescricaoPrato.Location = new System.Drawing.Point(23, 130);
-            this.textBoxDescricaoPrato.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxDescricaoPrato.Name = "textBoxDescricaoPrato";
-            this.textBoxDescricaoPrato.Size = new System.Drawing.Size(200, 20);
-            this.textBoxDescricaoPrato.TabIndex = 6;
-            // 
-            // labelDescricao
-            // 
-            this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Location = new System.Drawing.Point(20, 105);
-            this.labelDescricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelDescricao.Name = "labelDescricao";
-            this.labelDescricao.Size = new System.Drawing.Size(101, 13);
-            this.labelDescricao.TabIndex = 7;
-            this.labelDescricao.Text = "Descrição do Prato:";
-            // 
             // groupBoxTipoPrato
             // 
-            this.groupBoxTipoPrato.Controls.Add(this.buttonAdicionar);
-            this.groupBoxTipoPrato.Controls.Add(this.buttonAdicionarReserva);
+            this.groupBoxTipoPrato.Controls.Add(this.label2);
+            this.groupBoxTipoPrato.Controls.Add(this.btnAddSaldo);
+            this.groupBoxTipoPrato.Controls.Add(this.btnAdicionarReserva);
             this.groupBoxTipoPrato.Controls.Add(this.groupBoxExtras);
             this.groupBoxTipoPrato.Controls.Add(this.labelClientes);
-            this.groupBoxTipoPrato.Controls.Add(this.listBoxTipo);
+            this.groupBoxTipoPrato.Controls.Add(this.listBoxPratos);
             this.groupBoxTipoPrato.Controls.Add(this.listBoxClientes);
-            this.groupBoxTipoPrato.Controls.Add(this.labelDescricao);
-            this.groupBoxTipoPrato.Controls.Add(this.textBoxDescricaoPrato);
             this.groupBoxTipoPrato.Location = new System.Drawing.Point(4, 10);
             this.groupBoxTipoPrato.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxTipoPrato.Name = "groupBoxTipoPrato";
@@ -101,34 +80,33 @@
             this.groupBoxTipoPrato.Size = new System.Drawing.Size(465, 515);
             this.groupBoxTipoPrato.TabIndex = 8;
             this.groupBoxTipoPrato.TabStop = false;
-            this.groupBoxTipoPrato.Text = "Tipo de prato:";
+            this.groupBoxTipoPrato.Text = "Secção Reserva";
             // 
-            // buttonAdicionar
+            // btnAddSaldo
             // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(62, 447);
-            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(93, 25);
-            this.buttonAdicionar.TabIndex = 9;
-            this.buttonAdicionar.Text = "Adicionar";
-            this.buttonAdicionar.UseVisualStyleBackColor = true;
-            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
+            this.btnAddSaldo.Location = new System.Drawing.Point(294, 468);
+            this.btnAddSaldo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddSaldo.Name = "btnAddSaldo";
+            this.btnAddSaldo.Size = new System.Drawing.Size(101, 35);
+            this.btnAddSaldo.TabIndex = 12;
+            this.btnAddSaldo.Text = "Adicionar Saldo";
+            this.btnAddSaldo.UseVisualStyleBackColor = true;
             // 
-            // buttonAdicionarReserva
+            // btnAdicionarReserva
             // 
-            this.buttonAdicionarReserva.Location = new System.Drawing.Point(291, 425);
-            this.buttonAdicionarReserva.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAdicionarReserva.Name = "buttonAdicionarReserva";
-            this.buttonAdicionarReserva.Size = new System.Drawing.Size(101, 30);
-            this.buttonAdicionarReserva.TabIndex = 11;
-            this.buttonAdicionarReserva.Text = "Adicionar Reserva";
-            this.buttonAdicionarReserva.UseVisualStyleBackColor = true;
-            this.buttonAdicionarReserva.Click += new System.EventHandler(this.buttonAdicionarReserva_Click);
+            this.btnAdicionarReserva.Location = new System.Drawing.Point(294, 405);
+            this.btnAdicionarReserva.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdicionarReserva.Name = "btnAdicionarReserva";
+            this.btnAdicionarReserva.Size = new System.Drawing.Size(101, 47);
+            this.btnAdicionarReserva.TabIndex = 11;
+            this.btnAdicionarReserva.Text = "Adicionar Reserva";
+            this.btnAdicionarReserva.UseVisualStyleBackColor = true;
+            this.btnAdicionarReserva.Click += new System.EventHandler(this.buttonAdicionarReserva_Click);
             // 
             // groupBoxExtras
             // 
             this.groupBoxExtras.Controls.Add(this.checkedListBoxExtras);
-            this.groupBoxExtras.Location = new System.Drawing.Point(23, 156);
+            this.groupBoxExtras.Location = new System.Drawing.Point(23, 175);
             this.groupBoxExtras.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxExtras.Name = "groupBoxExtras";
             this.groupBoxExtras.Padding = new System.Windows.Forms.Padding(2);
@@ -145,6 +123,7 @@
             this.checkedListBoxExtras.Name = "checkedListBoxExtras";
             this.checkedListBoxExtras.Size = new System.Drawing.Size(156, 229);
             this.checkedListBoxExtras.TabIndex = 0;
+            this.checkedListBoxExtras.Click += new System.EventHandler(this.checkedListBoxExtras_Click);
             // 
             // labelClientes
             // 
@@ -165,7 +144,6 @@
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(203, 303);
             this.listBoxClientes.TabIndex = 9;
-            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // listBoxReservas
             // 
@@ -187,14 +165,27 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Reservas";
             // 
-            // button
+            // btnConsumir
             // 
-            this.button.Location = new System.Drawing.Point(588, 441);
-            this.button.Margin = new System.Windows.Forms.Padding(2);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(101, 30);
-            this.button.TabIndex = 12;
-            this.button.UseVisualStyleBackColor = true;
+            this.btnConsumir.Location = new System.Drawing.Point(588, 441);
+            this.btnConsumir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsumir.Name = "btnConsumir";
+            this.btnConsumir.Size = new System.Drawing.Size(101, 30);
+            this.btnConsumir.TabIndex = 12;
+            this.btnConsumir.Text = "Consumir Reserva";
+            this.btnConsumir.UseVisualStyleBackColor = true;
+            this.btnConsumir.Click += new System.EventHandler(this.btnConsumir_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(77, 62);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 24);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Pratos";
             // 
             // FormReserva
             // 
@@ -202,7 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(806, 536);
-            this.Controls.Add(this.button);
+            this.Controls.Add(this.btnConsumir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxReservas);
             this.Controls.Add(this.groupBoxTipoPrato);
@@ -220,19 +211,18 @@
         }
 
         #endregion
-        private System.Windows.Forms.ListBox listBoxTipo;
+        private System.Windows.Forms.ListBox listBoxPratos;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBoxDescricaoPrato;
-        private System.Windows.Forms.Label labelDescricao;
         private System.Windows.Forms.GroupBox groupBoxTipoPrato;
         private System.Windows.Forms.GroupBox groupBoxExtras;
         private System.Windows.Forms.CheckedListBox checkedListBoxExtras;
-        private System.Windows.Forms.Button buttonAdicionar;
         private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.Label labelClientes;
-        private System.Windows.Forms.Button buttonAdicionarReserva;
+        private System.Windows.Forms.Button btnAdicionarReserva;
         private System.Windows.Forms.ListBox listBoxReservas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button;
+        private System.Windows.Forms.Button btnConsumir;
+        private System.Windows.Forms.Button btnAddSaldo;
+        private System.Windows.Forms.Label label2;
     }
 }
