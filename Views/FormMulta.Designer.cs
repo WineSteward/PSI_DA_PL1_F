@@ -186,6 +186,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBoxMultas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMulta";
             this.Text = "FormMulta";
             this.groupBox3.ResumeLayout(false);

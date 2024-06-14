@@ -344,6 +344,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBoxMenuRefeicoes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMenuRefeicao";
             this.Text = "FormMenuRefeicao";
             this.groupBox3.ResumeLayout(false);

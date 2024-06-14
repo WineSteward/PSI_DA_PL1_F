@@ -210,6 +210,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBoxPratos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPratos";
             this.Text = "FormPratos";
             this.groupBox1.ResumeLayout(false);

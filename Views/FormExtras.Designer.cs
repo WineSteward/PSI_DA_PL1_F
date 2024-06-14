@@ -30,7 +30,7 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemoverExtra = new System.Windows.Forms.Button();
-            this.checkBoxAtivarExtra = new System.Windows.Forms.CheckBox();
+            this.checkBoxAtivar = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numericUpDownPreco = new System.Windows.Forms.NumericUpDown();
             this.textBoxDescricao = new System.Windows.Forms.RichTextBox();
@@ -45,6 +45,7 @@
             this.btnUpdateExtra = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.checkBoxAtivarEdit = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).BeginInit();
@@ -55,8 +56,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnRemoverExtra);
-            this.groupBox2.Controls.Add(this.checkBoxAtivarExtra);
-            this.groupBox2.Location = new System.Drawing.Point(526, 243);
+            this.groupBox2.Location = new System.Drawing.Point(525, 265);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(204, 203);
             this.groupBox2.TabIndex = 13;
@@ -71,20 +71,22 @@
             this.btnRemoverExtra.TabIndex = 6;
             this.btnRemoverExtra.Text = "Remover Extra";
             this.btnRemoverExtra.UseVisualStyleBackColor = true;
+            this.btnRemoverExtra.Click += new System.EventHandler(this.btnRemoverExtra_Click);
             // 
-            // checkBoxAtivarExtra
+            // checkBoxAtivar
             // 
-            this.checkBoxAtivarExtra.AutoSize = true;
-            this.checkBoxAtivarExtra.Location = new System.Drawing.Point(55, 46);
-            this.checkBoxAtivarExtra.Name = "checkBoxAtivarExtra";
-            this.checkBoxAtivarExtra.Size = new System.Drawing.Size(77, 17);
-            this.checkBoxAtivarExtra.TabIndex = 8;
-            this.checkBoxAtivarExtra.Text = "Extra Ativo";
-            this.checkBoxAtivarExtra.UseVisualStyleBackColor = true;
+            this.checkBoxAtivar.AutoSize = true;
+            this.checkBoxAtivar.Location = new System.Drawing.Point(266, 153);
+            this.checkBoxAtivar.Name = "checkBoxAtivar";
+            this.checkBoxAtivar.Size = new System.Drawing.Size(77, 17);
+            this.checkBoxAtivar.TabIndex = 8;
+            this.checkBoxAtivar.Text = "Extra Ativo";
+            this.checkBoxAtivar.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.numericUpDownPreco);
+            this.groupBox1.Controls.Add(this.checkBoxAtivar);
             this.groupBox1.Controls.Add(this.textBoxDescricao);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAdicionarExtra);
@@ -98,6 +100,7 @@
             // 
             // numericUpDownPreco
             // 
+            this.numericUpDownPreco.DecimalPlaces = 2;
             this.numericUpDownPreco.Location = new System.Drawing.Point(35, 150);
             this.numericUpDownPreco.Name = "numericUpDownPreco";
             this.numericUpDownPreco.Size = new System.Drawing.Size(120, 20);
@@ -146,9 +149,11 @@
             this.listBoxExtras.Name = "listBoxExtras";
             this.listBoxExtras.Size = new System.Drawing.Size(347, 225);
             this.listBoxExtras.TabIndex = 10;
+            this.listBoxExtras.SelectedIndexChanged += new System.EventHandler(this.listBoxExtras_SelectedIndexChanged);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.checkBoxAtivarEdit);
             this.groupBox3.Controls.Add(this.numericUpDownPrecoEdit);
             this.groupBox3.Controls.Add(this.textBoxDescricaoEdit);
             this.groupBox3.Controls.Add(this.label3);
@@ -163,6 +168,7 @@
             // 
             // numericUpDownPrecoEdit
             // 
+            this.numericUpDownPrecoEdit.DecimalPlaces = 2;
             this.numericUpDownPrecoEdit.Location = new System.Drawing.Point(35, 151);
             this.numericUpDownPrecoEdit.Name = "numericUpDownPrecoEdit";
             this.numericUpDownPrecoEdit.Size = new System.Drawing.Size(120, 20);
@@ -193,6 +199,7 @@
             this.btnUpdateExtra.TabIndex = 0;
             this.btnUpdateExtra.Text = "Atualizar Extra";
             this.btnUpdateExtra.UseVisualStyleBackColor = true;
+            this.btnUpdateExtra.Click += new System.EventHandler(this.btnUpdateExtra_Click);
             // 
             // label4
             // 
@@ -213,6 +220,16 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // checkBoxAtivarEdit
+            // 
+            this.checkBoxAtivarEdit.AutoSize = true;
+            this.checkBoxAtivarEdit.Location = new System.Drawing.Point(266, 154);
+            this.checkBoxAtivarEdit.Name = "checkBoxAtivarEdit";
+            this.checkBoxAtivarEdit.Size = new System.Drawing.Size(77, 17);
+            this.checkBoxAtivarEdit.TabIndex = 9;
+            this.checkBoxAtivarEdit.Text = "Extra Ativo";
+            this.checkBoxAtivarEdit.UseVisualStyleBackColor = true;
+            // 
             // FormExtras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,10 +240,10 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBoxExtras);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormExtras";
             this.Text = "FormExtras";
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).EndInit();
@@ -240,7 +257,7 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnRemoverExtra;
-        private System.Windows.Forms.CheckBox checkBoxAtivarExtra;
+        private System.Windows.Forms.CheckBox checkBoxAtivar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox textBoxDescricao;
         private System.Windows.Forms.Label label2;
@@ -255,5 +272,6 @@
         private System.Windows.Forms.Button btnUpdateExtra;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.CheckBox checkBoxAtivarEdit;
     }
 }

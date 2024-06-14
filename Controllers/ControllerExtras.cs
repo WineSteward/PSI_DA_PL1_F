@@ -19,9 +19,9 @@ namespace PSI_DA_PL1_F.Controllers
                 this.menuPrincipal = menuPrincipal;
             }
 
-            public void AddExtra(string descricao, decimal saldo)
+            public void AddExtra(string descricao, decimal saldo, bool estado)
             {
-                db.Extras.Add(new Extra(descricao, saldo));
+                db.Extras.Add(new Extra(descricao, saldo, estado));
                 db.SaveChanges();
             }
 
@@ -54,14 +54,13 @@ namespace PSI_DA_PL1_F.Controllers
                return db.Extras.Find(extraAtual.Id);
             }
 
-            public void UpdateEstudante(string nome, string nif, decimal saldo, string numeroEstudante, Cliente clienteAtual)
+            public void UpdateExtra(string descricao, decimal valor, bool ativo, Extra extraAtual)
             {
-                Estudante estudanteAtual = db.Estudantes.Find(clienteAtual.Id);
+                extraAtual = db.Extras.Find(extraAtual.Id);
 
-                estudanteAtual.Nome = nome;
-                estudanteAtual.NIF = nif;
-                estudanteAtual.Saldo = saldo;
-                estudanteAtual.NumeroEstudante = numeroEstudante;
+                extraAtual.Descricao = descricao;
+                extraAtual.Valor = valor;
+                extraAtual.Ativo = ativo;
 
                 db.SaveChanges();
             }

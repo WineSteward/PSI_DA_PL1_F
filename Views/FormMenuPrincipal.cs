@@ -133,8 +133,8 @@ namespace PSI_DA_PL1_F.Views
         {
             if (menuExpand == false)
             {
-                professorMenu.Height += 10;
-                if (professorMenu.Height >= 252)
+                menuOpcoes.Height += 10;
+                if (menuOpcoes.Height >= 410)
                 {
                     settingsTransition.Stop();
                     menuExpand = true;
@@ -142,8 +142,8 @@ namespace PSI_DA_PL1_F.Views
             }
             else
             {
-                professorMenu.Height -= 10;
-                if (professorMenu.Height <= 90)
+                menuOpcoes.Height -= 10;
+                if (menuOpcoes.Height <= 90)
                 {
                     settingsTransition.Stop();
                     menuExpand = false;
