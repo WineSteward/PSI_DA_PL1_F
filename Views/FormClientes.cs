@@ -22,7 +22,7 @@ namespace PSI_DA_PL1_F.Views
 
             this.menuPrincipal = menuPrincipal;
 
-            controladorCliente = new ControllerCliente(menuPrincipal, menuPrincipal.db);
+            controladorCliente = new ControllerCliente(menuPrincipal.db);
 
             listBoxTipoCliente.Items.Add("Estudante");
             listBoxTipoCliente.Items.Add("Professor");
@@ -43,12 +43,12 @@ namespace PSI_DA_PL1_F.Views
 
             listBoxClientes.DataSource = controladorCliente.UpdateListBox();
 
-            textBoxNomeEdit.Text = "";
-            textBoxNIFEdit.Text = "";
-            numericUpDownSaldoEdit.Value = 0;
+            textBoxNome.Text = "";
+            textBoxNIF.Text = "";
+            numericUpDownSaldo.Value = 0;
 
-            textBoxNumEstudanteEdit.Text = "";
-            textBoxEmailProfessorEdit.Text = "";
+            textBoxNumEstudante.Text = "";
+            textBoxEmailProfessor.Text = "";
 
 
         }
@@ -79,6 +79,10 @@ namespace PSI_DA_PL1_F.Views
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textBoxEmailProfessorEdit.Text = "";
+
+            textBoxNumEstudanteEdit.Text = "";
+
             Cliente clienteAtual = controladorCliente.FindCliente((Cliente)listBoxClientes.SelectedItem);
                
             textBoxNomeEdit.Text = clienteAtual.Nome;

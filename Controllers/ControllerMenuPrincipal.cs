@@ -19,6 +19,7 @@ namespace PSI_DA_PL1_F.Controllers
         private FormExtras formExtras;
         private FormMulta formMulta;
         private FormPratos formPratos;
+        private FormVistaSemanal formReserva;
 
         public ControllerMenuPrincipal(FormMenuPrincipal formMenuPrincipal)
         {
@@ -27,7 +28,7 @@ namespace PSI_DA_PL1_F.Controllers
             formMenuPrincipal.sidebar.Enabled = false;
         }
 
-        public void ShowFormFuncionario()
+       public void ShowFormFuncionario()
         {
             funcionarioForm = new FormFuncionario(formMenuPrincipal);
 
@@ -93,6 +94,20 @@ namespace PSI_DA_PL1_F.Controllers
             formMenuPrincipal.panelShowForm.Controls.Add(formPratos);
 
             formPratos.Show();
+        }
+
+        public void ShowFormVistaSemanal()
+        {
+            formReserva = new FormVistaSemanal(formMenuPrincipal);
+
+            formReserva.TopLevel = false;
+            formReserva.AutoScroll = true;
+
+            formMenuPrincipal.sidebar.Enabled = false;
+
+            formMenuPrincipal.panelShowForm.Controls.Add(formReserva);
+
+            formReserva.Show();
         }
 
     }

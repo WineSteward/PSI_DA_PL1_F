@@ -12,11 +12,9 @@ namespace PSI_DA_PL1_F.Controllers
     internal class ControllerCliente : Controller
     {
         CantinaContext db;
-        FormMenuPrincipal menuPrincipal;
-        public ControllerCliente(FormMenuPrincipal menuPrincipal, CantinaContext db)
+        public ControllerCliente(CantinaContext db)
         {
             this.db = db;
-            this.menuPrincipal = menuPrincipal;
         }
 
         public void AddEstudante(string nome, string nif, decimal saldo, string numeroEstudante)

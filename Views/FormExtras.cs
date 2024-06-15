@@ -14,12 +14,14 @@ namespace PSI_DA_PL1_F.Views
 {
     public partial class FormExtras : Form
     {
+        private FormMenuPrincipal menuPrincipal;
         private ControllerExtras controladorExtras;
         public FormExtras(FormMenuPrincipal menuPrincipal)
         {
             InitializeComponent();
 
-            controladorExtras = new ControllerExtras(menuPrincipal, menuPrincipal.db);
+            this.menuPrincipal = menuPrincipal;
+            controladorExtras = new ControllerExtras(menuPrincipal.db);
 
             listBoxExtras.DataSource = controladorExtras.UpdateListBox();
         }
@@ -27,6 +29,12 @@ namespace PSI_DA_PL1_F.Views
         private void btnAdicionarExtra_Click(object sender, EventArgs e)
         {
             controladorExtras.AddExtra(textBoxDescricao.Text, numericUpDownPreco.Value, checkBoxAtivarEdit.Checked);
+
+            textBoxDescricao.Clear();
+
+            numericUpDownPreco.Value = 0;
+
+            checkBoxAtivar.Checked = false;
 
             listBoxExtras.DataSource = controladorExtras.UpdateListBox();
         }
@@ -38,7 +46,10 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            controladorExtras.CloseForm();
+            menuPrincipal.panelShowForm.Controls.Clear();
+
+            menuPrincipal.sidebar.Enabled = true;
+            
         }
 
         private void btnRemoverExtra_Click(object sender, EventArgs e)

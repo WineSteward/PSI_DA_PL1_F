@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PSI_DA_PL1_F.Models
 {
@@ -15,6 +16,17 @@ namespace PSI_DA_PL1_F.Models
         public decimal Valor { get; set; }
 
         public bool Ativo { get; set; }
+
+        public static List<Extra> GetCheckedItems(CheckedListBox checkedListBox)
+        {
+            List<Extra> checkedItemsList = new List<Extra>();
+
+            foreach (var item in checkedListBox.CheckedItems)
+            {
+                checkedItemsList.Add((Extra)item);
+            }
+            return checkedItemsList;
+        }
 
         public Extra() { }
         public Extra(string descricao, decimal valor, bool ativo)

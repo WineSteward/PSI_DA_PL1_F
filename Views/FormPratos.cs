@@ -15,25 +15,31 @@ namespace PSI_DA_PL1_F.Views
     public partial class FormPratos : Form
     {
         private ControllerPratos controladorPratos;
+        private FormMenuPrincipal menuPrincipal;
 
         public FormPratos(FormMenuPrincipal menuPrincipal)
         {
             InitializeComponent();
 
-            controladorPratos = new ControllerPratos(menuPrincipal, menuPrincipal.db);
+            this.menuPrincipal = menuPrincipal;
+
+            controladorPratos = new ControllerPratos(menuPrincipal.db);
+
 
             listBoxTipoPratoEdit.DataSource = controladorPratos.UpdateListBoxTipo();
 
             listBoxPratos.DataSource = controladorPratos.UpdateListBoxPratos();
 
             listBoxTipoPrato.DataSource = controladorPratos.UpdateListBoxTipo();
-
-            
         }
 
         private void btnAdicionarPrato_Click(object sender, EventArgs e)
         {
             controladorPratos.AddPrato(textBoxDescricao.Text, (TipoPrato)listBoxTipoPrato.SelectedItem, checkBoxAtivarPrato.Checked);
+
+            textBoxDescricao.Clear();
+            checkBoxAtivarPrato.Checked = false;
+
 
             listBoxPratos.DataSource = controladorPratos.UpdateListBoxPratos();
         }
@@ -67,6 +73,13 @@ namespace PSI_DA_PL1_F.Views
         {
             controladorPratos.RemovePrato(listBoxPratos.SelectedItem);
             listBoxPratos.DataSource = controladorPratos.UpdateListBoxPratos();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            menuPrincipal.panelShowForm.Controls.Clear();
+
+            menuPrincipal.sidebar.Enabled = true;
         }
     }
 }

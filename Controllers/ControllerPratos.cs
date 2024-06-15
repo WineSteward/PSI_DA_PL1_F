@@ -11,25 +11,16 @@ namespace PSI_DA_PL1_F.Controllers
     internal class ControllerPratos
     {
         CantinaContext db;
-        FormMenuPrincipal menuPrincipal;
 
-        public ControllerPratos(FormMenuPrincipal menuPrincipal, CantinaContext db)
+        public ControllerPratos(CantinaContext db)
         {
             this.db = db;
-            this.menuPrincipal = menuPrincipal;
         }
 
         public void AddPrato(string descricao, TipoPrato tipo, bool estado)
         {
             db.Pratos.Add(new Prato(descricao, estado, tipo));
             db.SaveChanges();
-        }
-
-        public void CloseForm()
-        {
-            menuPrincipal.panelShowForm.Controls.Clear();
-
-            menuPrincipal.sidebar.Enabled = true;
         }
 
         public List<Prato> UpdateListBoxPratos()

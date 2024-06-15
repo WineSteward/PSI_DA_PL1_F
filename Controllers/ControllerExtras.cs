@@ -11,25 +11,16 @@ namespace PSI_DA_PL1_F.Controllers
     internal class ControllerExtras
     {
             CantinaContext db;
-            FormMenuPrincipal menuPrincipal;
 
-            public ControllerExtras(FormMenuPrincipal menuPrincipal, CantinaContext db)
+            public ControllerExtras(CantinaContext db)
             {
                 this.db = db;
-                this.menuPrincipal = menuPrincipal;
             }
 
             public void AddExtra(string descricao, decimal saldo, bool estado)
             {
                 db.Extras.Add(new Extra(descricao, saldo, estado));
                 db.SaveChanges();
-            }
-
-            public void CloseForm()
-            {
-                menuPrincipal.panelShowForm.Controls.Clear();
-
-                menuPrincipal.sidebar.Enabled = true;
             }
 
             public List<Extra> UpdateListBox()

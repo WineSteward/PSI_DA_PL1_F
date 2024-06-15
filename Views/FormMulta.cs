@@ -15,11 +15,12 @@ namespace PSI_DA_PL1_F.Views
     public partial class FormMulta : Form
     {
         private ControllerMulta controladorMulta;
+        private FormMenuPrincipal menuPrincipal;
         public FormMulta(FormMenuPrincipal menuPrincipal)
         {
             InitializeComponent();
-
-            controladorMulta = new ControllerMulta(menuPrincipal, menuPrincipal.db);
+            this.menuPrincipal = menuPrincipal;
+            controladorMulta = new ControllerMulta(menuPrincipal.db);
 
             listBoxMultas.DataSource = controladorMulta.UpdateListBox();
         }
@@ -57,7 +58,9 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            controladorMulta.CloseForm();
+            menuPrincipal.panelShowForm.Controls.Clear();
+
+            menuPrincipal.sidebar.Enabled = true;
         }
     }
 }

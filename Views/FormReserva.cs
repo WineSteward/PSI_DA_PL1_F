@@ -12,29 +12,39 @@ namespace PSI_DA_PL1_F.Views
     {
         private ControllerReserva controladorReserva;
         FormMenuPrincipal menuPrincipal;
-
+        MenuRefeicao menu;
         public FormReserva(FormMenuPrincipal menuPrincipal, MenuRefeicao Menu)
         {
             InitializeComponent();
 
             this.menuPrincipal = menuPrincipal;
-            controladorReserva = new ControllerReserva(menuPrincipal, menuPrincipal.db, Menu);
+            this.menu = Menu;
+
+            this.TopLevel = false;
+            this.AutoScroll = true;
+
+            menuPrincipal.panelShowForm.Controls.Add(this);
+
+            this.Show();
+
+            controladorReserva = new ControllerReserva(menuPrincipal.db, menu);
 
             listBoxClientes.DataSource = controladorReserva.UpdateListBoxClientes();
-            listBoxReservas.DataSource = controladorReserva.UpdateListBoxReservas();
-            checkedListBoxExtras.DataSource = controladorReserva.UpdateListBoxExtras();
-            listBoxPratos.DataSource = controladorReserva.UpdateListBoxPratos();
+            listBoxReservas.DataSource = controladorReserva.UpdateListBoxReservas(menu);
+            checkedListBoxExtras.DataSource = controladorReserva.UpdateListBoxExtras(menu);
+            listBoxPratos.DataSource = controladorReserva.UpdateListBoxPratos(menu);
 
         }
 
         private void buttonAdicionarReserva_Click(object sender, EventArgs e)
         {
             controladorReserva.AddReserva((Cliente)listBoxClientes.SelectedItem, (Prato)listBoxPratos.SelectedItem, checkedListBoxExtras);
+            listBoxReservas.DataSource = controladorReserva.UpdateListBoxReservas(menu);
         }
 
         private void btnConsumir_Click(object sender, EventArgs e)
         {
-
+            controladorReserva.ConsumirReserva((Reserva)listBoxReservas.SelectedItem);
         }
 
         private void checkedListBoxExtras_Click(object sender, EventArgs e)
@@ -45,6 +55,11 @@ namespace PSI_DA_PL1_F.Views
             }
         }
 
-      
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            menuPrincipal.panelShowForm.Controls.Clear();
+
+            menuPrincipal.sidebar.Enabled = true;
+        }
     }
 }

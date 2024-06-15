@@ -21,6 +21,8 @@ namespace PSI_DA_PL1_F.Models
 
         public Prato Prato { get; set; } //so podem escolher 1
 
+        public bool Ativo { get; set; }
+
         public static List<Extra> GetCheckedItems(CheckedListBox checkedListBox)
         {
             List<Extra> checkedItemsList = new List<Extra>();
@@ -32,7 +34,6 @@ namespace PSI_DA_PL1_F.Models
             return checkedItemsList;
         }
 
-
         public Reserva() { }
 
         public Reserva(Cliente cliente, Multa multa, MenuRefeicao menu, List<Extra> extras, Prato prato)
@@ -42,6 +43,7 @@ namespace PSI_DA_PL1_F.Models
             Menu = menu;
             Extras = extras;
             Prato = prato;
+            Ativo = true;
         }
     }
 }

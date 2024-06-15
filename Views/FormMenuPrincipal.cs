@@ -49,12 +49,6 @@ namespace PSI_DA_PL1_F.Views
             controladorMenuPrincipal.ShowFormCliente();
         }
 
-        private void btnReservarRefeicao_Click(object sender, EventArgs e)
-        {
-            //Mostrar form reserva
-            //controladorMenuPrincipal.ShowFormResarva();
-        }
-
 
         private void btnFormExtras_Click(object sender, EventArgs e)
         {
@@ -71,6 +65,10 @@ namespace PSI_DA_PL1_F.Views
             controladorMenuPrincipal.ShowFormPratos();
         }
 
+        private void btnVistaSemanal_Click(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowFormVistaSemanal();
+        }
 
 
         //-----------------------------------------------Animation-----------------------------------------------------
@@ -80,7 +78,7 @@ namespace PSI_DA_PL1_F.Views
             if (menuExpand == false)
             {
                 estudanteMenu.Height += 10;
-                if (estudanteMenu.Height >= 252)
+                if (estudanteMenu.Height >= 160)
                 {
                     clienteTransition.Stop();
                     menuExpand = true;
@@ -108,7 +106,7 @@ namespace PSI_DA_PL1_F.Views
             if (sidebarExpand)
             {
                 sidebar.Width -= 10;
-                if (sidebar.Width <= 42)
+                if (sidebar.Width <= 40)
                 {
                     sidebarExpand = false;
                     sidebarTransition.Stop();
@@ -142,7 +140,7 @@ namespace PSI_DA_PL1_F.Views
             if (menuExpand == false)
             {
                 menuOpcoes.Height += 10;
-                if (menuOpcoes.Height >= 410)
+                if (menuOpcoes.Height >= 330)
                 {
                     settingsTransition.Stop();
                     menuExpand = true;
@@ -158,7 +156,5 @@ namespace PSI_DA_PL1_F.Views
                 }
             }
         }
-
-       
     }
 }

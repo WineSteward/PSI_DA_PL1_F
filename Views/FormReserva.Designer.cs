@@ -31,6 +31,7 @@
             this.listBoxPratos = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBoxTipoPrato = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnAddSaldo = new System.Windows.Forms.Button();
             this.btnAdicionarReserva = new System.Windows.Forms.Button();
             this.groupBoxExtras = new System.Windows.Forms.GroupBox();
@@ -40,7 +41,7 @@
             this.listBoxReservas = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConsumir = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBoxTipoPrato.SuspendLayout();
             this.groupBoxExtras.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +82,17 @@
             this.groupBoxTipoPrato.TabIndex = 8;
             this.groupBoxTipoPrato.TabStop = false;
             this.groupBoxTipoPrato.Text = "Secção Reserva";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(77, 62);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 24);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Pratos";
             // 
             // btnAddSaldo
             // 
@@ -176,16 +188,15 @@
             this.btnConsumir.UseVisualStyleBackColor = true;
             this.btnConsumir.Click += new System.EventHandler(this.btnConsumir_Click);
             // 
-            // label2
+            // btnReturn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(77, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 24);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Pratos";
+            this.btnReturn.Location = new System.Drawing.Point(696, 478);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(98, 50);
+            this.btnReturn.TabIndex = 17;
+            this.btnReturn.Text = "Regressar ao Menu Principal";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // FormReserva
             // 
@@ -193,6 +204,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(806, 536);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnConsumir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxReservas);
@@ -224,5 +236,6 @@
         private System.Windows.Forms.Button btnConsumir;
         private System.Windows.Forms.Button btnAddSaldo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

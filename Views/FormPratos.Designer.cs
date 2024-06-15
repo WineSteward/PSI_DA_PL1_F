@@ -45,6 +45,7 @@
             this.btnUpdatePrato = new System.Windows.Forms.Button();
             this.listBoxTipoPratoEdit = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,7 +131,7 @@
             // 
             // btnRemoverPrato
             // 
-            this.btnRemoverPrato.Location = new System.Drawing.Point(45, 114);
+            this.btnRemoverPrato.Location = new System.Drawing.Point(43, 41);
             this.btnRemoverPrato.Name = "btnRemoverPrato";
             this.btnRemoverPrato.Size = new System.Drawing.Size(98, 50);
             this.btnRemoverPrato.TabIndex = 6;
@@ -143,7 +144,7 @@
             this.groupBox2.Controls.Add(this.btnRemoverPrato);
             this.groupBox2.Location = new System.Drawing.Point(527, 305);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(204, 179);
+            this.groupBox2.Size = new System.Drawing.Size(188, 122);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Área de Tratamento do Prato";
@@ -218,11 +219,22 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Tipo de Prato:";
             // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(696, 480);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(98, 50);
+            this.btnReturn.TabIndex = 16;
+            this.btnReturn.Text = "Regressar ao Menu Principal";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
             // FormPratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 536);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -258,5 +270,6 @@
         private System.Windows.Forms.ListBox listBoxTipoPratoEdit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBoxAtivarPratoEdit;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

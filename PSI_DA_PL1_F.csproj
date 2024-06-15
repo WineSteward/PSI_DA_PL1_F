@@ -71,6 +71,7 @@
     <Compile Include="Controllers\ControllerMulta.cs" />
     <Compile Include="Controllers\ControllerPratos.cs" />
     <Compile Include="Controllers\ControllerReserva.cs" />
+    <Compile Include="Controllers\ControllerVistaSemanal.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Estudante.cs" />
     <Compile Include="Models\Extra.cs" />
@@ -133,6 +134,12 @@
     <Compile Include="Views\FormReserva.Designer.cs">
       <DependentUpon>FormReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormVistaSemanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormVistaSemanal.Designer.cs">
+      <DependentUpon>FormVistaSemanal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -166,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormReserva.resx">
       <DependentUpon>FormReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormVistaSemanal.resx">
+      <DependentUpon>FormVistaSemanal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\PSI_DA_PL1_F.exe.config" />
     <None Include="packages.config" />

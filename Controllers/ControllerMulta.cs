@@ -11,25 +11,16 @@ namespace PSI_DA_PL1_F.Controllers
     internal class ControllerMulta
     {
         CantinaContext db;
-        FormMenuPrincipal menuPrincipal;
 
-        public ControllerMulta(FormMenuPrincipal menuPrincipal, CantinaContext db)
+        public ControllerMulta(CantinaContext db)
         {
             this.db = db;
-            this.menuPrincipal = menuPrincipal;
         }
 
         public void AddMulta(decimal numeroHoras, decimal valor)
         {
             db.Multas.Add(new Multa(numeroHoras, valor));
             db.SaveChanges();
-        }
-
-        public void CloseForm()
-        {
-            menuPrincipal.panelShowForm.Controls.Clear();
-
-            menuPrincipal.sidebar.Enabled = true;
         }
 
         public List<Multa> UpdateListBox()

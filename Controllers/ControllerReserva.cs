@@ -2,15 +2,17 @@
 using PSI_DA_PL1_F.Views;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PSI_DA_PL1_F.Controllers
 {
     internal class ControllerReserva : Controller
     {
         private CantinaContext db;
-        private FormMenuPrincipal menuPrincipal;
         private MenuRefeicao Menu;
         List<Prato> listaPratos;
         List<Extra> listaExtras;
@@ -18,7 +20,7 @@ namespace PSI_DA_PL1_F.Controllers
         Multa multa;
        
 
-        public ControllerReserva(FormMenuPrincipal menuPrincipal, CantinaContext db, MenuRefeicao Menu)
+        public ControllerReserva(CantinaContext db, MenuRefeicao Menu)
         {
             this.db = db;
             this.Menu = Menu;
@@ -26,15 +28,14 @@ namespace PSI_DA_PL1_F.Controllers
 
         public void AddReserva(Cliente cliente, Prato prato, CheckedListBox extras)
         {
-            escolhaExtras = Reserva.GetCheckedItems(extras);
-
-            foreach (Extra extra in escolhaExtras)
-            {
-                escolhaExtras.Add(extra);
-            }
-
-
+            escolhaExtras = Extra.GetCheckedItems(extras);
+            
             db.Reservas.Add(new Reserva(cliente, multa, Menu, escolhaExtras, prato));
+        }
+
+        public void ConsumirReserva(Reserva reservaEscolhida)
+        {
+            db.Reservas.Remove(reservaEscolhida);
         }
 
 
@@ -49,7 +50,7 @@ namespace PSI_DA_PL1_F.Controllers
             return listaClientes;
         }
 
-        public List<Extra> UpdateListBoxExtras()
+        public List<Extra> UpdateListBoxExtras(MenuRefeicao Menu)
         {
 
             foreach (Extra extra in Menu.Extras)
@@ -60,24 +61,18 @@ namespace PSI_DA_PL1_F.Controllers
             return listaExtras;
         }
 
-        public List<Reserva> UpdateListBoxReservas()
+        public List<Reserva> UpdateListBoxReservas(MenuRefeicao Menu)
         {
-
-            //Ir buscar as reservas que tenham a data hora do menu
-            db.Reservas.Where(reserva => reserva in Menu.DataHora).ToList();
-            
-            
-            List<Reserva> listaReservas = new List<Reserva>();
-
-
-            listaReservas = db.Reservas.ToList<Reserva>();
+            List<Reserva> listaReservas = db.Reservas
+                                     .Where(r => r.Menu.Id == Menu.Id)
+                                     .ToList();
 
             return listaReservas;
         }
 
-        public List<Prato> UpdateListBoxPratos()
+        public List<Prato> UpdateListBoxPratos(MenuRefeicao menu)
         {
-            foreach(Prato prato in Menu.Pratos)
+            foreach(Prato prato in menu.Pratos)
             {
                 listaPratos.Add(prato);
             }

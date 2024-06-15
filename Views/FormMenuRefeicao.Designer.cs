@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxPratosEdit = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxExtrasEdit = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.listBoxPratosEdit = new System.Windows.Forms.ListBox();
             this.numericUpDownPrecoProfessorEdit = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDownPrecoEstudanteEdit = new System.Windows.Forms.NumericUpDown();
@@ -43,8 +43,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemoverMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxPratos = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxExtras = new System.Windows.Forms.CheckedListBox();
-            this.listBoxPratos = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDownPrecoProfessor = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdicionarMenu = new System.Windows.Forms.Button();
             this.listBoxMenuRefeicoes = new System.Windows.Forms.ListBox();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecoProfessorEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecoEstudanteEdit)).BeginInit();
@@ -68,9 +69,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.checkedListBoxPratosEdit);
             this.groupBox3.Controls.Add(this.checkedListBoxExtrasEdit);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.listBoxPratosEdit);
             this.groupBox3.Controls.Add(this.numericUpDownPrecoProfessorEdit);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.numericUpDownPrecoEstudanteEdit);
@@ -85,6 +86,15 @@
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Área de Edição do Menu";
+            // 
+            // checkedListBoxPratosEdit
+            // 
+            this.checkedListBoxPratosEdit.FormattingEnabled = true;
+            this.checkedListBoxPratosEdit.Location = new System.Drawing.Point(406, 18);
+            this.checkedListBoxPratosEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.checkedListBoxPratosEdit.Name = "checkedListBoxPratosEdit";
+            this.checkedListBoxPratosEdit.Size = new System.Drawing.Size(192, 79);
+            this.checkedListBoxPratosEdit.TabIndex = 20;
             // 
             // checkedListBoxExtrasEdit
             // 
@@ -103,15 +113,6 @@
             this.label5.Size = new System.Drawing.Size(85, 13);
             this.label5.TabIndex = 22;
             this.label5.Text = "Preço Professor:";
-            // 
-            // listBoxPratosEdit
-            // 
-            this.listBoxPratosEdit.FormattingEnabled = true;
-            this.listBoxPratosEdit.Location = new System.Drawing.Point(406, 18);
-            this.listBoxPratosEdit.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxPratosEdit.Name = "listBoxPratosEdit";
-            this.listBoxPratosEdit.Size = new System.Drawing.Size(192, 82);
-            this.listBoxPratosEdit.TabIndex = 21;
             // 
             // numericUpDownPrecoProfessorEdit
             // 
@@ -188,6 +189,7 @@
             this.btnAtualizarMenu.TabIndex = 14;
             this.btnAtualizarMenu.Text = "Atualizar Menu";
             this.btnAtualizarMenu.UseVisualStyleBackColor = true;
+            this.btnAtualizarMenu.Click += new System.EventHandler(this.btnAtualizarMenu_Click);
             // 
             // groupBox2
             // 
@@ -210,8 +212,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkedListBoxPratos);
             this.groupBox1.Controls.Add(this.checkedListBoxExtras);
-            this.groupBox1.Controls.Add(this.listBoxPratos);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.numericUpDownPrecoProfessor);
             this.groupBox1.Controls.Add(this.label3);
@@ -228,6 +230,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Área de Criação de Menus";
             // 
+            // checkedListBoxPratos
+            // 
+            this.checkedListBoxPratos.FormattingEnabled = true;
+            this.checkedListBoxPratos.Location = new System.Drawing.Point(406, 18);
+            this.checkedListBoxPratos.Margin = new System.Windows.Forms.Padding(2);
+            this.checkedListBoxPratos.Name = "checkedListBoxPratos";
+            this.checkedListBoxPratos.Size = new System.Drawing.Size(192, 79);
+            this.checkedListBoxPratos.TabIndex = 19;
+            // 
             // checkedListBoxExtras
             // 
             this.checkedListBoxExtras.FormattingEnabled = true;
@@ -236,15 +247,6 @@
             this.checkedListBoxExtras.Name = "checkedListBoxExtras";
             this.checkedListBoxExtras.Size = new System.Drawing.Size(192, 79);
             this.checkedListBoxExtras.TabIndex = 18;
-            // 
-            // listBoxPratos
-            // 
-            this.listBoxPratos.FormattingEnabled = true;
-            this.listBoxPratos.Location = new System.Drawing.Point(406, 20);
-            this.listBoxPratos.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxPratos.Name = "listBoxPratos";
-            this.listBoxPratos.Size = new System.Drawing.Size(192, 82);
-            this.listBoxPratos.TabIndex = 19;
             // 
             // label4
             // 
@@ -339,12 +341,24 @@
             this.listBoxMenuRefeicoes.Name = "listBoxMenuRefeicoes";
             this.listBoxMenuRefeicoes.Size = new System.Drawing.Size(166, 225);
             this.listBoxMenuRefeicoes.TabIndex = 14;
+            this.listBoxMenuRefeicoes.SelectedIndexChanged += new System.EventHandler(this.listBoxMenuRefeicoes_SelectedIndexChanged);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(689, 474);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(98, 50);
+            this.btnReturn.TabIndex = 18;
+            this.btnReturn.Text = "Regressar ao Menu Principal";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // FormMenuRefeicao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 536);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -373,10 +387,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnRemoverMenu;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdicionarMenu;
         private System.Windows.Forms.ListBox listBoxMenuRefeicoes;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownPrecoEstudante;
         private System.Windows.Forms.Label label1;
@@ -393,8 +405,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAtualizarMenu;
         private System.Windows.Forms.CheckedListBox checkedListBoxExtras;
-        private System.Windows.Forms.ListBox listBoxPratos;
         private System.Windows.Forms.CheckedListBox checkedListBoxExtrasEdit;
-        private System.Windows.Forms.ListBox listBoxPratosEdit;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckedListBox checkedListBoxPratosEdit;
+        private System.Windows.Forms.CheckedListBox checkedListBoxPratos;
     }
 }
