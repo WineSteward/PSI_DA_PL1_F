@@ -16,19 +16,9 @@ namespace PSI_DA_PL1_F.Models
 
         public bool Ativo { get; set; }
 
+        public List<MenuRefeicao> menuRefeicaos { get; set; }
+
         public TipoPrato Tipo { get; set; }
-
-
-        public static List<Prato> GetCheckedItems(CheckedListBox checkedListBox)
-        {
-            List<Prato> checkedItemsList = new List<Prato>();
-
-            foreach (var item in checkedListBox.CheckedItems)
-            {
-                checkedItemsList.Add((Prato)item);
-            }
-            return checkedItemsList;
-        }
 
         public static List<TipoPrato> GetAllTipos()
         {

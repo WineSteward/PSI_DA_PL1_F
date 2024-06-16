@@ -29,7 +29,6 @@ namespace PSI_DA_PL1_F.Views
       
         private void Form_Closed(object sender, FormClosedEventArgs e)
         {
-            //call controller and dispose DBContext there
             db.Dispose();
         }
 
@@ -70,6 +69,10 @@ namespace PSI_DA_PL1_F.Views
             controladorMenuPrincipal.ShowFormVistaSemanal();
         }
 
+        private void btnMenuRefeicao_Click(object sender, EventArgs e)
+        {
+            controladorMenuPrincipal.ShowVistaMenuRefeicao();
+        }
 
         //-----------------------------------------------Animation-----------------------------------------------------
 
@@ -140,7 +143,7 @@ namespace PSI_DA_PL1_F.Views
             if (menuExpand == false)
             {
                 menuOpcoes.Height += 10;
-                if (menuOpcoes.Height >= 330)
+                if (menuOpcoes.Height >= 415)
                 {
                     settingsTransition.Stop();
                     menuExpand = true;
@@ -156,5 +159,7 @@ namespace PSI_DA_PL1_F.Views
                 }
             }
         }
+
+       
     }
 }

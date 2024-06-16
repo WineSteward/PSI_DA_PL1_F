@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PSI_DA_PL1_F.Models
 {
@@ -22,6 +23,19 @@ namespace PSI_DA_PL1_F.Models
 
         public List<Prato> Pratos { get; set; }  //MENU NAO TEM MAXIMO DE PRATOS podemos bifana, bacalhau a bras, frango com massa..., tudo no mesmo dia mas na RESERVA SO PODEM ESCOLHER 1
 
+        public static List<T> GetCheckedItems<T>(CheckedListBox checkedListBox) where T : class
+        {
+            List<T> checkedItemsList = new List<T>();
+
+            foreach (var item in checkedListBox.CheckedItems)
+            {
+                if (item is T)
+                {
+                    checkedItemsList.Add(item as T);
+                }
+            }
+            return checkedItemsList;
+        }
 
         public override string ToString()
         {

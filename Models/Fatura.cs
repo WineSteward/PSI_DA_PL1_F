@@ -14,5 +14,7 @@ namespace PSI_DA_PL1_F.Models
     
         public DateTime DataHora { get; set; }
 
+        public MenuRefeicao MenuRefeicao { get; set; }
+
     }
 }

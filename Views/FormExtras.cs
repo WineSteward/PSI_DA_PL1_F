@@ -28,7 +28,7 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnAdicionarExtra_Click(object sender, EventArgs e)
         {
-            controladorExtras.AddExtra(textBoxDescricao.Text, numericUpDownPreco.Value, checkBoxAtivarEdit.Checked);
+            controladorExtras.AddExtra(textBoxDescricao.Text, numericUpDownPreco.Value, checkBoxAtivar.Checked);
 
             textBoxDescricao.Clear();
 

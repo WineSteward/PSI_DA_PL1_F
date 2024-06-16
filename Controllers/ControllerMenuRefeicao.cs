@@ -2,6 +2,7 @@
 using PSI_DA_PL1_F.Views;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,7 @@ namespace PSI_DA_PL1_F.Controllers
     internal class ControllerMenuRefeicao
     {
         CantinaContext db;
-        List<Extra> escolhaExtras;
-        List<Prato> escolhaPratos;
-        List<Extra> novaEscolhaExtras;
-        List<Prato> novaEscolhaPratos;
+       
         public ControllerMenuRefeicao(CantinaContext db)
         {
             this.db = db;
@@ -23,30 +21,34 @@ namespace PSI_DA_PL1_F.Controllers
 
         public List<Extra> UpdateListBoxExtras()
         {
-            List<Extra> listaExtras = db.Extras.ToList();
+            List<Extra> listaExtras = db.Extras.ToList<Extra>();
 
             return listaExtras;
         }
 
         public List<MenuRefeicao> UpdateListBoxMenus()
         {
-            List<MenuRefeicao> listaMenus = db.MenuRefeicoes.ToList();
+
+            List<MenuRefeicao> listaMenus = db.MenuRefeicoes
+                          .Include(m => m.Pratos) //include dos pratos
+                          .Include(m => m.Extras) //include dos extras
+                          .ToList<MenuRefeicao>();
 
             return listaMenus;
         }
 
         public List<Prato> UpdateListBoxPratos()
         {
-            List<Prato> listaPratos = db.Pratos.ToList();
+            List<Prato> listaPratos = db.Pratos.ToList<Prato>();
 
             return listaPratos;
         }
 
         public void AddMenu(DateTime diaHora, decimal quantidade, decimal precoEstudante, decimal precoProfessor, CheckedListBox pratos, CheckedListBox extras)
         {
-            escolhaExtras = Extra.GetCheckedItems(extras);
+            List<Extra> escolhaExtras = MenuRefeicao.GetCheckedItems<Extra>(extras);
 
-            escolhaPratos = Prato.GetCheckedItems(pratos);
+            List<Prato> escolhaPratos = MenuRefeicao.GetCheckedItems<Prato>(pratos);
 
             int quantidadeDisponivel = (int)quantidade;
 
@@ -59,9 +61,10 @@ namespace PSI_DA_PL1_F.Controllers
 
         public void UpdateMenu(DateTime diaHora, decimal quantidade, decimal precoEstudante, decimal precoProfessor, CheckedListBox pratos, CheckedListBox extras, MenuRefeicao menuAtual)
         {
-            novaEscolhaExtras = Extra.GetCheckedItems(extras);
 
-            novaEscolhaPratos = Prato.GetCheckedItems(pratos);
+            List<Extra> novaEscolhaExtras = MenuRefeicao.GetCheckedItems<Extra>(extras);
+
+            List<Prato> novaEscolhaPratos = MenuRefeicao.GetCheckedItems<Prato>(pratos);
 
             int quantidadeDisponivel = (int)quantidade;
 
@@ -78,6 +81,12 @@ namespace PSI_DA_PL1_F.Controllers
             menuAtual.Pratos = novaEscolhaPratos;
             menuAtual.Extras = novaEscolhaExtras;
 
+            db.SaveChanges();
+        }
+
+        public void RemoveMenu(MenuRefeicao menuAtual)
+        {
+            db.MenuRefeicoes.Remove(menuAtual);
             db.SaveChanges();
         }
     }

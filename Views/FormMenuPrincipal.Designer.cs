@@ -44,12 +44,13 @@ namespace PSI_DA_PL1_F.Views
             this.btnFormPratos = new System.Windows.Forms.Button();
             this.btnFormMulta = new System.Windows.Forms.Button();
             this.estudanteMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnFormCliente = new System.Windows.Forms.Button();
             this.clientesExpander = new System.Windows.Forms.Button();
+            this.btnFormCliente = new System.Windows.Forms.Button();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.btnVistaSemanal = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelShowForm = new System.Windows.Forms.Panel();
+            this.btnMenuRefeicao = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.menuOpcoes.SuspendLayout();
@@ -116,6 +117,7 @@ namespace PSI_DA_PL1_F.Views
             this.menuOpcoes.Controls.Add(this.btnFormExtras);
             this.menuOpcoes.Controls.Add(this.btnFormPratos);
             this.menuOpcoes.Controls.Add(this.btnFormMulta);
+            this.menuOpcoes.Controls.Add(this.btnMenuRefeicao);
             this.menuOpcoes.Location = new System.Drawing.Point(3, 94);
             this.menuOpcoes.Name = "menuOpcoes";
             this.menuOpcoes.Size = new System.Drawing.Size(233, 85);
@@ -199,23 +201,6 @@ namespace PSI_DA_PL1_F.Views
             this.estudanteMenu.Size = new System.Drawing.Size(233, 85);
             this.estudanteMenu.TabIndex = 9;
             // 
-            // btnFormCliente
-            // 
-            this.btnFormCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
-            this.btnFormCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFormCliente.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnFormCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnFormCliente.Image")));
-            this.btnFormCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormCliente.Location = new System.Drawing.Point(3, 88);
-            this.btnFormCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnFormCliente.Name = "btnFormCliente";
-            this.btnFormCliente.Size = new System.Drawing.Size(230, 76);
-            this.btnFormCliente.TabIndex = 6;
-            this.btnFormCliente.Text = "                  Opções Clientes";
-            this.btnFormCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormCliente.UseVisualStyleBackColor = false;
-            this.btnFormCliente.Click += new System.EventHandler(this.btnFormClientes);
-            // 
             // clientesExpander
             // 
             this.clientesExpander.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
@@ -232,6 +217,23 @@ namespace PSI_DA_PL1_F.Views
             this.clientesExpander.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clientesExpander.UseVisualStyleBackColor = false;
             this.clientesExpander.Click += new System.EventHandler(this.Cliente_Click);
+            // 
+            // btnFormCliente
+            // 
+            this.btnFormCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnFormCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFormCliente.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFormCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnFormCliente.Image")));
+            this.btnFormCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormCliente.Location = new System.Drawing.Point(3, 88);
+            this.btnFormCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFormCliente.Name = "btnFormCliente";
+            this.btnFormCliente.Size = new System.Drawing.Size(230, 76);
+            this.btnFormCliente.TabIndex = 6;
+            this.btnFormCliente.Text = "                  Opções Clientes";
+            this.btnFormCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormCliente.UseVisualStyleBackColor = false;
+            this.btnFormCliente.Click += new System.EventHandler(this.btnFormClientes);
             // 
             // sidebar
             // 
@@ -288,6 +290,23 @@ namespace PSI_DA_PL1_F.Views
             this.panelShowForm.Size = new System.Drawing.Size(963, 667);
             this.panelShowForm.TabIndex = 2;
             // 
+            // btnMenuRefeicao
+            // 
+            this.btnMenuRefeicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(72)))), ((int)(((byte)(98)))));
+            this.btnMenuRefeicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMenuRefeicao.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnMenuRefeicao.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuRefeicao.Image")));
+            this.btnMenuRefeicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuRefeicao.Location = new System.Drawing.Point(3, 340);
+            this.btnMenuRefeicao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMenuRefeicao.Name = "btnMenuRefeicao";
+            this.btnMenuRefeicao.Size = new System.Drawing.Size(230, 76);
+            this.btnMenuRefeicao.TabIndex = 10;
+            this.btnMenuRefeicao.Text = "                       Menu Refeições";
+            this.btnMenuRefeicao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuRefeicao.UseVisualStyleBackColor = false;
+            this.btnMenuRefeicao.Click += new System.EventHandler(this.btnMenuRefeicao_Click);
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -336,6 +355,7 @@ namespace PSI_DA_PL1_F.Views
         private System.Windows.Forms.Button btnFormExtras;
         private System.Windows.Forms.Button btnFormPratos;
         private System.Windows.Forms.Button btnFormMulta;
+        private System.Windows.Forms.Button btnMenuRefeicao;
     }
 }
 

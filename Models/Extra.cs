@@ -17,6 +17,8 @@ namespace PSI_DA_PL1_F.Models
 
         public bool Ativo { get; set; }
 
+        public List<MenuRefeicao> menuRefeicaos { get; set; }
+
         public static List<Extra> GetCheckedItems(CheckedListBox checkedListBox)
         {
             List<Extra> checkedItemsList = new List<Extra>();

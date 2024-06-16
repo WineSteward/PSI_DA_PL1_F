@@ -51,8 +51,6 @@ namespace PSI_DA_PL1_F.Controllers
 
             //procurar pelo menu com o dia mes ano e ignorar as horas
 
-
-
             MenuRefeicao menu = db.MenuRefeicoes
                           .Include(m => m.Pratos) //include dos pratos
                           .Include(m=> m.Extras) //include dos extras

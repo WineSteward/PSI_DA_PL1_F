@@ -31,6 +31,10 @@
             this.listBoxPratos = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBoxTipoPrato = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDownSaldoAdd = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDownSaldoAtual = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddSaldo = new System.Windows.Forms.Button();
             this.btnAdicionarReserva = new System.Windows.Forms.Button();
@@ -43,6 +47,8 @@
             this.btnConsumir = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.groupBoxTipoPrato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldoAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldoAtual)).BeginInit();
             this.groupBoxExtras.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +73,10 @@
             // 
             // groupBoxTipoPrato
             // 
+            this.groupBoxTipoPrato.Controls.Add(this.label4);
+            this.groupBoxTipoPrato.Controls.Add(this.numericUpDownSaldoAdd);
+            this.groupBoxTipoPrato.Controls.Add(this.label3);
+            this.groupBoxTipoPrato.Controls.Add(this.numericUpDownSaldoAtual);
             this.groupBoxTipoPrato.Controls.Add(this.label2);
             this.groupBoxTipoPrato.Controls.Add(this.btnAddSaldo);
             this.groupBoxTipoPrato.Controls.Add(this.btnAdicionarReserva);
@@ -83,6 +93,41 @@
             this.groupBoxTipoPrato.TabStop = false;
             this.groupBoxTipoPrato.Text = "Secção Reserva";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 416);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Saldo a Depositar:";
+            // 
+            // numericUpDownSaldoAdd
+            // 
+            this.numericUpDownSaldoAdd.DecimalPlaces = 2;
+            this.numericUpDownSaldoAdd.Location = new System.Drawing.Point(33, 432);
+            this.numericUpDownSaldoAdd.Name = "numericUpDownSaldoAdd";
+            this.numericUpDownSaldoAdd.Size = new System.Drawing.Size(61, 20);
+            this.numericUpDownSaldoAdd.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 365);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Saldo Atual:";
+            // 
+            // numericUpDownSaldoAtual
+            // 
+            this.numericUpDownSaldoAtual.DecimalPlaces = 2;
+            this.numericUpDownSaldoAtual.Enabled = false;
+            this.numericUpDownSaldoAtual.Location = new System.Drawing.Point(34, 381);
+            this.numericUpDownSaldoAtual.Name = "numericUpDownSaldoAtual";
+            this.numericUpDownSaldoAtual.Size = new System.Drawing.Size(61, 20);
+            this.numericUpDownSaldoAtual.TabIndex = 14;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -96,13 +141,14 @@
             // 
             // btnAddSaldo
             // 
-            this.btnAddSaldo.Location = new System.Drawing.Point(294, 468);
+            this.btnAddSaldo.Location = new System.Drawing.Point(19, 457);
             this.btnAddSaldo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddSaldo.Name = "btnAddSaldo";
             this.btnAddSaldo.Size = new System.Drawing.Size(101, 35);
             this.btnAddSaldo.TabIndex = 12;
             this.btnAddSaldo.Text = "Adicionar Saldo";
             this.btnAddSaldo.UseVisualStyleBackColor = true;
+            this.btnAddSaldo.Click += new System.EventHandler(this.btnAddSaldo_Click);
             // 
             // btnAdicionarReserva
             // 
@@ -122,7 +168,7 @@
             this.groupBoxExtras.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxExtras.Name = "groupBoxExtras";
             this.groupBoxExtras.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxExtras.Size = new System.Drawing.Size(196, 286);
+            this.groupBoxExtras.Size = new System.Drawing.Size(196, 164);
             this.groupBoxExtras.TabIndex = 8;
             this.groupBoxExtras.TabStop = false;
             this.groupBoxExtras.Text = "Extras: ";
@@ -133,7 +179,7 @@
             this.checkedListBoxExtras.Location = new System.Drawing.Point(20, 28);
             this.checkedListBoxExtras.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBoxExtras.Name = "checkedListBoxExtras";
-            this.checkedListBoxExtras.Size = new System.Drawing.Size(156, 229);
+            this.checkedListBoxExtras.Size = new System.Drawing.Size(156, 109);
             this.checkedListBoxExtras.TabIndex = 0;
             this.checkedListBoxExtras.Click += new System.EventHandler(this.checkedListBoxExtras_Click);
             // 
@@ -156,6 +202,7 @@
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(203, 303);
             this.listBoxClientes.TabIndex = 9;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // listBoxReservas
             // 
@@ -179,7 +226,7 @@
             // 
             // btnConsumir
             // 
-            this.btnConsumir.Location = new System.Drawing.Point(588, 441);
+            this.btnConsumir.Location = new System.Drawing.Point(579, 415);
             this.btnConsumir.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsumir.Name = "btnConsumir";
             this.btnConsumir.Size = new System.Drawing.Size(101, 30);
@@ -216,6 +263,8 @@
             this.Text = "FormReserva";
             this.groupBoxTipoPrato.ResumeLayout(false);
             this.groupBoxTipoPrato.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldoAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldoAtual)).EndInit();
             this.groupBoxExtras.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,5 +286,9 @@
         private System.Windows.Forms.Button btnAddSaldo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.NumericUpDown numericUpDownSaldoAtual;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDownSaldoAdd;
     }
 }

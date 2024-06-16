@@ -20,7 +20,7 @@ namespace PSI_DA_PL1_F.Controllers
         private FormMulta formMulta;
         private FormPratos formPratos;
         private FormVistaSemanal formReserva;
-
+        private FormMenuRefeicao formMenuRefeicao;
         public ControllerMenuPrincipal(FormMenuPrincipal formMenuPrincipal)
         {
             this.formMenuPrincipal = formMenuPrincipal;
@@ -110,5 +110,18 @@ namespace PSI_DA_PL1_F.Controllers
             formReserva.Show();
         }
 
+        internal void ShowVistaMenuRefeicao()
+        {
+            formMenuRefeicao = new FormMenuRefeicao(formMenuPrincipal);
+
+            formMenuRefeicao.TopLevel = false;
+            formMenuRefeicao.AutoScroll = true;
+
+            formMenuPrincipal.sidebar.Enabled = false;
+
+            formMenuPrincipal.panelShowForm.Controls.Add(formMenuRefeicao);
+
+            formMenuRefeicao.Show();
+        }
     }
 }

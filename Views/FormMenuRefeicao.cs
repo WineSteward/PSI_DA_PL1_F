@@ -65,6 +65,18 @@ namespace PSI_DA_PL1_F.Views
         {
             controladorMenuRefeicao.AddMenu(dateTimePicker.Value, numericUpDownQtddDisponivel.Value, numericUpDownPrecoEstudante.Value, numericUpDownPrecoProfessor.Value, checkedListBoxPratos, checkedListBoxExtras);
 
+            for (int i = 0; i < checkedListBoxPratos.Items.Count; i++)
+            {
+                // limpar os checks da checkbox
+                checkedListBoxPratos.SetItemChecked(i, false);
+            }
+
+            for (int i = 0; i < checkedListBoxExtras.Items.Count; i++)
+            {
+                // limpar os checks da checkbox
+                checkedListBoxExtras.SetItemChecked(i, false);
+            }
+
             listBoxMenuRefeicoes.DataSource = controladorMenuRefeicao.UpdateListBoxMenus();
         }
 
@@ -91,8 +103,6 @@ namespace PSI_DA_PL1_F.Views
                 checkedListBoxExtrasEdit.SetItemChecked(i, false);
             }
 
-
-
             dateTimePickerEdit.Value = menuAtual.DataHora;
 
             numericUpDownPrecoEstudanteEdit.Value = menuAtual.precoEstudante;
@@ -106,7 +116,7 @@ namespace PSI_DA_PL1_F.Views
                 Prato prato = (Prato)checkedListBoxPratosEdit.Items[i];
 
                 if (menuAtual.Pratos == null)
-                    return;
+                    break;
                 
                 // Verificar se o prato esta presente na lista de pratos do menuAtual
                 if (menuAtual.Pratos.Any(p => p.Id == prato.Id))
@@ -122,7 +132,7 @@ namespace PSI_DA_PL1_F.Views
                 Extra extra = (Extra)checkedListBoxExtrasEdit.Items[i];
                 
                 if (menuAtual.Extras == null)
-                    return;
+                    break;
                 
                 // Check if this Prato is in the menu.Pratos list
                 if (menuAtual.Extras.Any(p => p.Id == extra.Id))
@@ -136,6 +146,13 @@ namespace PSI_DA_PL1_F.Views
         private void btnAtualizarMenu_Click(object sender, EventArgs e)
         {
             controladorMenuRefeicao.UpdateMenu(dateTimePickerEdit.Value, numericUpDownQtddDisponivelEdit.Value, numericUpDownPrecoEstudanteEdit.Value, numericUpDownPrecoProfessorEdit.Value, checkedListBoxPratosEdit, checkedListBoxExtrasEdit, (MenuRefeicao)listBoxMenuRefeicoes.SelectedItem);
+            listBoxMenuRefeicoes.DataSource = controladorMenuRefeicao.UpdateListBoxMenus();
+        }
+
+        private void btnRemoverMenu_Click(object sender, EventArgs e)
+        {
+            controladorMenuRefeicao.RemoveMenu((MenuRefeicao)listBoxMenuRefeicoes.SelectedItem);
+
             listBoxMenuRefeicoes.DataSource = controladorMenuRefeicao.UpdateListBoxMenus();
         }
     }

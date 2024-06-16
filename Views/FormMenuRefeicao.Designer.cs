@@ -209,6 +209,7 @@
             this.btnRemoverMenu.TabIndex = 6;
             this.btnRemoverMenu.Text = "Remover Menu";
             this.btnRemoverMenu.UseVisualStyleBackColor = true;
+            this.btnRemoverMenu.Click += new System.EventHandler(this.btnRemoverMenu_Click);
             // 
             // groupBox1
             // 

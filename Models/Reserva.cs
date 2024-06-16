@@ -34,7 +34,22 @@ namespace PSI_DA_PL1_F.Models
             return checkedItemsList;
         }
 
+        public override string ToString()
+        {
+            return Prato.ToString() + " | " + Cliente.ToString();
+        }
+
         public Reserva() { }
+
+
+        public Reserva(Cliente cliente, MenuRefeicao menu, List<Extra> extras, Prato prato)
+        {
+            Cliente = cliente;
+            Menu = menu;
+            Extras = extras;
+            Prato = prato;
+            Ativo = true;
+        }
 
         public Reserva(Cliente cliente, Multa multa, MenuRefeicao menu, List<Extra> extras, Prato prato)
         {
