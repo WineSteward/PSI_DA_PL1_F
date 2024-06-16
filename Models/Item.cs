@@ -14,6 +14,10 @@ namespace PSI_DA_PL1_F.Models
 
         public string Descricao { get; set; }
 
-        public Fatura fatura { get; set; }
+        public Item(string descricao, decimal valor)
+        {
+            Descricao = descricao;
+            Preco = valor;
+        }
     }
 }

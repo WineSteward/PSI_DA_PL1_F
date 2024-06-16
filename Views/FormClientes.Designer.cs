@@ -58,13 +58,22 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdicionarCliente = new System.Windows.Forms.Button();
-            this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateListBoxClientes = new System.Windows.Forms.Button();
+            this.listBoxTipoClienteSearch = new System.Windows.Forms.ListBox();
+            this.btnSearchCliente = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxNomeSearch = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
+            this.btnCleanTipo = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldoEdit)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldo)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -200,16 +209,16 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnRemoverCliente);
-            this.groupBox2.Location = new System.Drawing.Point(621, 301);
+            this.groupBox2.Location = new System.Drawing.Point(621, 367);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 179);
+            this.groupBox2.Size = new System.Drawing.Size(166, 101);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Área de Tratamento do Cliente";
             // 
             // btnRemoverCliente
             // 
-            this.btnRemoverCliente.Location = new System.Drawing.Point(34, 34);
+            this.btnRemoverCliente.Location = new System.Drawing.Point(34, 28);
             this.btnRemoverCliente.Name = "btnRemoverCliente";
             this.btnRemoverCliente.Size = new System.Drawing.Size(98, 50);
             this.btnRemoverCliente.TabIndex = 6;
@@ -346,18 +355,9 @@
             this.btnAdicionarCliente.UseVisualStyleBackColor = true;
             this.btnAdicionarCliente.Click += new System.EventHandler(this.btnAdicionarCliente_Click);
             // 
-            // listBoxClientes
-            // 
-            this.listBoxClientes.FormattingEnabled = true;
-            this.listBoxClientes.Location = new System.Drawing.Point(621, 7);
-            this.listBoxClientes.Name = "listBoxClientes";
-            this.listBoxClientes.Size = new System.Drawing.Size(166, 290);
-            this.listBoxClientes.TabIndex = 10;
-            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
-            // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(655, 486);
+            this.btnReturn.Location = new System.Drawing.Point(655, 474);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(98, 50);
             this.btnReturn.TabIndex = 7;
@@ -365,16 +365,105 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnCleanTipo);
+            this.groupBox4.Controls.Add(this.btnUpdateListBoxClientes);
+            this.groupBox4.Controls.Add(this.listBoxTipoClienteSearch);
+            this.groupBox4.Controls.Add(this.btnSearchCliente);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.textBoxNomeSearch);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.listBoxClientes);
+            this.groupBox4.Location = new System.Drawing.Point(621, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(178, 349);
+            this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Área de Pesquisa";
+            // 
+            // btnUpdateListBoxClientes
+            // 
+            this.btnUpdateListBoxClientes.Location = new System.Drawing.Point(6, 314);
+            this.btnUpdateListBoxClientes.Name = "btnUpdateListBoxClientes";
+            this.btnUpdateListBoxClientes.Size = new System.Drawing.Size(160, 26);
+            this.btnUpdateListBoxClientes.TabIndex = 39;
+            this.btnUpdateListBoxClientes.Text = "Reset Lista de Clientes";
+            this.btnUpdateListBoxClientes.UseVisualStyleBackColor = true;
+            this.btnUpdateListBoxClientes.Click += new System.EventHandler(this.btnUpdateListBoxClientes_Click);
+            // 
+            // listBoxTipoClienteSearch
+            // 
+            this.listBoxTipoClienteSearch.FormattingEnabled = true;
+            this.listBoxTipoClienteSearch.Location = new System.Drawing.Point(6, 85);
+            this.listBoxTipoClienteSearch.Name = "listBoxTipoClienteSearch";
+            this.listBoxTipoClienteSearch.Size = new System.Drawing.Size(99, 43);
+            this.listBoxTipoClienteSearch.TabIndex = 32;
+            // 
+            // btnSearchCliente
+            // 
+            this.btnSearchCliente.Location = new System.Drawing.Point(34, 254);
+            this.btnSearchCliente.Name = "btnSearchCliente";
+            this.btnSearchCliente.Size = new System.Drawing.Size(98, 40);
+            this.btnSearchCliente.TabIndex = 7;
+            this.btnSearchCliente.Text = "Pesquisar por Cliente";
+            this.btnSearchCliente.UseVisualStyleBackColor = true;
+            this.btnSearchCliente.Click += new System.EventHandler(this.btnSearchCliente_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(81, 13);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Tipo de Cliente:";
+            // 
+            // textBoxNomeSearch
+            // 
+            this.textBoxNomeSearch.Location = new System.Drawing.Point(6, 40);
+            this.textBoxNomeSearch.Name = "textBoxNomeSearch";
+            this.textBoxNomeSearch.Size = new System.Drawing.Size(167, 20);
+            this.textBoxNomeSearch.TabIndex = 38;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(88, 13);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "Nome do Cliente:";
+            // 
+            // listBoxClientes
+            // 
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.Location = new System.Drawing.Point(6, 140);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(166, 108);
+            this.listBoxClientes.TabIndex = 34;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
+            // 
+            // btnCleanTipo
+            // 
+            this.btnCleanTipo.Location = new System.Drawing.Point(111, 88);
+            this.btnCleanTipo.Name = "btnCleanTipo";
+            this.btnCleanTipo.Size = new System.Drawing.Size(45, 40);
+            this.btnCleanTipo.TabIndex = 40;
+            this.btnCleanTipo.Text = "Clean";
+            this.btnCleanTipo.UseVisualStyleBackColor = true;
+            this.btnCleanTipo.Click += new System.EventHandler(this.btnCleanTipo_Click);
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 536);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listBoxClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormClientes";
             this.Text = "FormClientes";
@@ -385,6 +474,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldo)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -397,7 +488,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdicionarCliente;
-        private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.NumericUpDown numericUpDownSaldo;
         private System.Windows.Forms.Label label4;
@@ -423,5 +513,14 @@
         private System.Windows.Forms.ListBox listBoxTipoClienteEdit;
         private System.Windows.Forms.ListBox listBoxTipoCliente;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxNomeSearch;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox listBoxClientes;
+        private System.Windows.Forms.ListBox listBoxTipoClienteSearch;
+        private System.Windows.Forms.Button btnUpdateListBoxClientes;
+        private System.Windows.Forms.Button btnSearchCliente;
+        private System.Windows.Forms.Button btnCleanTipo;
     }
 }

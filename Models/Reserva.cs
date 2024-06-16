@@ -11,6 +11,8 @@ namespace PSI_DA_PL1_F.Models
     {
         public int Id {  get; set; }
 
+        public decimal Total { get; set; }
+
         public Cliente Cliente { get; set; }
 
         public Multa Multa { get; set; }
@@ -36,28 +38,52 @@ namespace PSI_DA_PL1_F.Models
 
         public override string ToString()
         {
-            return Prato.ToString() + " | " + Cliente.ToString();
+            return Cliente.Nome + " | " + Menu.DataHora.ToString();
+        }
+
+        // Method to format the content of the reservation
+        public string ToStringExtended()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Nome do Cliente: {Cliente.Nome}");
+            sb.AppendLine($"Dia e Hora da Reserva: {Menu.DataHora.ToString()}");
+            sb.AppendLine($"Prato: {Prato.ToString()}");
+            sb.AppendLine("Extras:");
+
+            foreach (var extra in Extras)
+            {
+                sb.AppendLine($"- {extra}");
+            }
+            return sb.ToString();
+        }
+
+        // Method to get the formatted file name
+        public string GetFileName()
+        {
+            return $"{Cliente.Nome}_{Menu.DataHora:dd_MM_yyyy}.txt";
         }
 
         public Reserva() { }
 
 
-        public Reserva(Cliente cliente, MenuRefeicao menu, List<Extra> extras, Prato prato)
+        public Reserva(Cliente cliente, MenuRefeicao menu, List<Extra> extras, Prato prato, decimal total)
         {
             Cliente = cliente;
             Menu = menu;
             Extras = extras;
             Prato = prato;
+            Total = total;
             Ativo = true;
         }
 
-        public Reserva(Cliente cliente, Multa multa, MenuRefeicao menu, List<Extra> extras, Prato prato)
+        public Reserva(Cliente cliente, Multa multa, MenuRefeicao menu, List<Extra> extras, Prato prato, decimal total)
         {
             Cliente = cliente;
             Multa = multa;
             Menu = menu;
             Extras = extras;
             Prato = prato;
+            Total = total;
             Ativo = true;
         }
     }

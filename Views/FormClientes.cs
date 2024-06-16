@@ -28,6 +28,8 @@ namespace PSI_DA_PL1_F.Views
             listBoxTipoCliente.Items.Add("Professor");
             listBoxTipoClienteEdit.Items.Add("Estudante");
             listBoxTipoClienteEdit.Items.Add("Professor");
+            listBoxTipoClienteSearch.Items.Add("Estudante");
+            listBoxTipoClienteSearch.Items.Add("Professor");
 
             listBoxClientes.DataSource = controladorCliente.UpdateListBox();
 
@@ -101,6 +103,33 @@ namespace PSI_DA_PL1_F.Views
                 listBoxTipoClienteEdit.SetSelected(1, true);
                 textBoxEmailProfessorEdit.Text = professorAtual.EmailProfessor;
             }
+        }
+
+        private void btnSearchCliente_Click(object sender, EventArgs e)
+        {
+            
+            if (textBoxNomeSearch.Text == "")
+                listBoxClientes.DataSource = controladorCliente.FindCliente(listBoxTipoClienteSearch);
+
+            else if (listBoxTipoClienteSearch.SelectedItem == null && textBoxNomeSearch.Text != "")
+                listBoxClientes.DataSource = controladorCliente.FindCliente(textBoxNomeSearch.Text);
+
+            else
+                listBoxClientes.DataSource = controladorCliente.FindCliente(textBoxNomeSearch.Text, listBoxTipoClienteSearch);
+
+
+            textBoxNomeSearch.Text = "";
+            listBoxTipoClienteSearch.ClearSelected();
+        }
+
+        private void btnUpdateListBoxClientes_Click(object sender, EventArgs e)
+        {
+            listBoxClientes.DataSource = controladorCliente.UpdateListBox();
+        }
+
+        private void btnCleanTipo_Click(object sender, EventArgs e)
+        {
+            listBoxTipoClienteSearch.ClearSelected();
         }
     }
 }

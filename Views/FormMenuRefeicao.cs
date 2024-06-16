@@ -63,17 +63,26 @@ namespace PSI_DA_PL1_F.Views
 
         private void btnAdicionarMenu_Click(object sender, EventArgs e)
         {
+            //ir buscar os pratos selecionados para completar o menu
+            //verificar que pelo menos 1 prato foi selecionado
+            List<Prato> lista = MenuRefeicao.GetCheckedItems<Prato>(checkedListBoxPratos);
+            if (lista.Count == 0)
+            {
+                MessageBox.Show("Escolha pelo menos um Prato");
+                return;
+            }
+
+
             controladorMenuRefeicao.AddMenu(dateTimePicker.Value, numericUpDownQtddDisponivel.Value, numericUpDownPrecoEstudante.Value, numericUpDownPrecoProfessor.Value, checkedListBoxPratos, checkedListBoxExtras);
 
+            // limpar os checks da checkbox
             for (int i = 0; i < checkedListBoxPratos.Items.Count; i++)
-            {
-                // limpar os checks da checkbox
+            {   
                 checkedListBoxPratos.SetItemChecked(i, false);
             }
 
             for (int i = 0; i < checkedListBoxExtras.Items.Count; i++)
             {
-                // limpar os checks da checkbox
                 checkedListBoxExtras.SetItemChecked(i, false);
             }
 

@@ -1,11 +1,13 @@
 ﻿using PSI_DA_PL1_F.Models;
 using PSI_DA_PL1_F.Views;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PSI_DA_PL1_F.Controllers
 {
@@ -31,7 +33,7 @@ namespace PSI_DA_PL1_F.Controllers
 
         public List<Cliente> UpdateListBox()
         {
-            List <Cliente> listaClientes = new List<Cliente>();
+            List<Cliente> listaClientes;
 
             listaClientes = db.Estudantes.ToList<Cliente>();
 
@@ -58,6 +60,65 @@ namespace PSI_DA_PL1_F.Controllers
                 return db.Professores.Find(clienteAtual.Id);
 
         }
+
+        public List<Cliente> FindCliente(string nomeCliente)
+        {
+            return db.Clientes.Where(c => c.Nome == nomeCliente).ToList<Cliente>();
+
+        }
+
+        public List<Cliente> FindCliente(ListBox tipoCliente)
+        {
+            if (tipoCliente.Items.Count == 0)
+                return null;
+
+            List<Cliente> lista = null;
+
+            foreach (string cliente in tipoCliente.SelectedItems)
+            {
+                if (cliente == "Estudante")
+                {
+                    lista = db.Estudantes.ToList<Cliente>();
+                    return lista;
+                }
+                else if (cliente == "Professor")
+                {
+                    lista = db.Professores.ToList<Cliente>();
+                    return lista;
+                }
+            }
+
+            // If no specific type was found in the ListBox items, return an empty list
+            return lista ?? new List<Cliente>();
+        }
+
+
+        public List<Cliente> FindCliente(string nomeCliente, ListBox tipoCliente)
+        {
+            if (tipoCliente.Items.Count == 0)
+                return null;
+
+            List<Cliente> lista = null;
+
+            foreach (string cliente in tipoCliente.SelectedItems)
+            {
+                if (cliente == "Estudante")
+                {
+                    lista = db.Estudantes.Where(c => c.Nome == nomeCliente).ToList<Cliente>();
+                    return lista;
+                }
+                else if (cliente == "Professor")
+                {
+                    lista = db.Professores.Where(c => c.Nome == nomeCliente).ToList<Cliente>();
+                    return lista;
+                }
+            }
+
+            // If no specific type was found in the ListBox items, return an empty list
+            return lista ?? new List<Cliente>();
+        }
+
+
 
         public void UpdateEstudante(string nome, string nif, decimal saldo, string numeroEstudante, Cliente clienteAtual)
         {

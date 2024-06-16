@@ -11,6 +11,8 @@ namespace PSI_DA_PL1_F.Controllers
 {
     public class CantinaContext : DbContext
     {
+        public DbSet<Cliente> Clientes { get; set; }
+     
         public DbSet<Funcionario> Funcionarios { get; set; }
 
         public DbSet<Estudante> Estudantes { get; set; }

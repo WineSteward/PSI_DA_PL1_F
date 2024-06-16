@@ -48,11 +48,16 @@ namespace PSI_DA_PL1_F.Views
             int reservaEfetuada = controladorReserva.AddReserva((Cliente)listBoxClientes.SelectedItem, (Prato)listBoxPratos.SelectedItem, checkedListBoxExtras, listBoxReservas);
 
             if (reservaEfetuada == 1)
+            {
                 listBoxReservas.DataSource = controladorReserva.UpdateListBoxReservas(menuRefeicao);
+                MessageBox.Show("Reserva efetuada com sucesso!");
+            }
             else if (reservaEfetuada == 2)
                 MessageBox.Show("Cliente tem saldo insuficiente para aquisição de reserva");
             else if (reservaEfetuada == 3)
                 MessageBox.Show("Não é possivel efetuar reserva para depois da hora do menu");
+            else if (reservaEfetuada == 4)
+                MessageBox.Show("Limite de extras ultrapassado, escoha no máximo 3 extras");
             else if (reservaEfetuada == -1)
                 MessageBox.Show("Cliente já tem uma reserva para o dia/menu selecionado");
             else
@@ -80,6 +85,10 @@ namespace PSI_DA_PL1_F.Views
         private void btnConsumir_Click(object sender, EventArgs e)
         {
             controladorReserva.ConsumirReserva((Reserva)listBoxReservas.SelectedItem);
+
+            //apos consumir a reserva criar uma fatura com itens do menu (total, e gravar em pdf)
+
+
             listBoxReservas.DataSource = controladorReserva.UpdateListBoxReservas(menuRefeicao);
         }
 

@@ -2,12 +2,18 @@
 using PSI_DA_PL1_F.Views;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.IO;
+using System.Text;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using iTextSharp.text.pdf.draw;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace PSI_DA_PL1_F.Controllers
 {
@@ -19,12 +25,24 @@ namespace PSI_DA_PL1_F.Controllers
         List<Extra> listaExtras;
         List<Extra> escolhaExtras;
         Multa multa;
-
+        string fileName = "ObjectOProgramming";
 
         public ControllerReserva(CantinaContext db, MenuRefeicao Menu)
         {
             this.db = db;
             this.Menu = Menu;
+        }
+
+        //criar um talao (.txt) informacao do cliente e do menu dia/hora prato e extras
+        public void MakeTalao(Reserva reserva)
+        {
+            fileName = reserva.GetFileName();
+
+            // Get the content to save
+            string content = reserva.ToStringExtended();
+
+            // Write the content to a file
+            File.WriteAllText(fileName, content);
         }
 
         public int AddReserva(Cliente cliente, Prato prato, CheckedListBox extras, ListBox listboxReservas)
@@ -47,12 +65,16 @@ namespace PSI_DA_PL1_F.Controllers
                     }
                 }
                
-
+                //ir buscar os extras escolhidos pelo cliente
                 escolhaExtras = MenuRefeicao.GetCheckedItems<Extra>(extras);
+
+                //verificar que os extras nao excedem o limite de 3
+                if (escolhaExtras.Count > 3)
+                    return 4;
+
                 decimal sumPrecoExtra = 0;
 
                 //ir buscar todas as multas
-
                 List<Multa> listaMultas = db.Multas.ToList<Multa>();
 
 
@@ -91,9 +113,15 @@ namespace PSI_DA_PL1_F.Controllers
                     {
                         if (cliente.Saldo >= Menu.precoEstudante + sumPrecoExtra + multa.Valor)
                         {
-                            cliente.Saldo -= Menu.precoEstudante + sumPrecoExtra + multa.Valor;
+                            decimal total = Menu.precoEstudante + sumPrecoExtra + multa.Valor;
 
-                            db.Reservas.Add(new Reserva(cliente, multa, Menu, escolhaExtras, prato));
+                            cliente.Saldo -= total;
+
+                            Reserva novaReserva = new Reserva(cliente, multa, Menu, escolhaExtras, prato, total);
+
+                            db.Reservas.Add(novaReserva);
+
+                            this.MakeTalao(novaReserva);
 
                             Menu.Quantidade -= 1;
 
@@ -108,9 +136,15 @@ namespace PSI_DA_PL1_F.Controllers
                     {
                         if (cliente.Saldo >= Menu.precoEstudante + sumPrecoExtra)
                         {
-                            cliente.Saldo -= Menu.precoEstudante + sumPrecoExtra;
+                            decimal total = Menu.precoEstudante + sumPrecoExtra;
 
-                            db.Reservas.Add(new Reserva(cliente, Menu, escolhaExtras, prato));
+                            cliente.Saldo -= total;
+
+                            Reserva novaReserva = new Reserva(cliente, Menu, escolhaExtras, prato, total);
+
+                            db.Reservas.Add(novaReserva);
+
+                            this.MakeTalao(novaReserva);
 
                             Menu.Quantidade -= 1;
 
@@ -128,9 +162,14 @@ namespace PSI_DA_PL1_F.Controllers
                     {
                         if (cliente.Saldo >= Menu.precoProfessor + sumPrecoExtra + multa.Valor)
                         {
-                            cliente.Saldo -= Menu.precoProfessor + sumPrecoExtra + multa.Valor;
+                            decimal total = Menu.precoProfessor + sumPrecoExtra + multa.Valor;
+                            cliente.Saldo -= total;
 
-                            db.Reservas.Add(new Reserva(cliente, multa, Menu, escolhaExtras, prato));
+                            Reserva novaReserva = new Reserva(cliente, multa, Menu, escolhaExtras, prato, total);
+
+                            db.Reservas.Add(novaReserva);
+
+                            this.MakeTalao(novaReserva);
 
                             Menu.Quantidade -= 1;
 
@@ -145,9 +184,15 @@ namespace PSI_DA_PL1_F.Controllers
                     {
                         if (cliente.Saldo >= Menu.precoProfessor + sumPrecoExtra)
                         {
-                            cliente.Saldo -= Menu.precoProfessor + sumPrecoExtra;
+                            decimal total = Menu.precoProfessor + sumPrecoExtra;
 
-                            db.Reservas.Add(new Reserva(cliente, Menu, escolhaExtras, prato));
+                            cliente.Saldo -= total;
+
+                            Reserva novaReserva = new Reserva(cliente, Menu, escolhaExtras, prato, total);
+
+                           db.Reservas.Add(novaReserva);
+
+                            this.MakeTalao(novaReserva);
 
                             Menu.Quantidade -= 1;
 
@@ -173,8 +218,58 @@ namespace PSI_DA_PL1_F.Controllers
 
         public void ConsumirReserva(Reserva reservaEscolhida)
         {
-            db.Reservas.Remove(reservaEscolhida);
+            Fatura novaFatura;
+
+            reservaEscolhida.Ativo = false;
+
+            if(reservaEscolhida.Cliente is Estudante)
+                 novaFatura = new Fatura(reservaEscolhida.Menu.DataHora ,reservaEscolhida.Total, reservaEscolhida.Menu.precoEstudante, reservaEscolhida.Prato, reservaEscolhida.Extras);
+
+            else
+                novaFatura = new Fatura(reservaEscolhida.Menu.DataHora, reservaEscolhida.Total, reservaEscolhida.Menu.precoProfessor, reservaEscolhida.Prato, reservaEscolhida.Extras);
+            
+            GeneratePDF(novaFatura, fileName);
             db.SaveChanges();
+        }
+
+        public static void GeneratePDF(Fatura fatura, string fileName)
+        {
+
+            // Get the path to the user's Documents folder
+            string directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string filePath = Path.Combine(directoryPath, fileName);
+
+            Document document = new Document();
+            PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+            document.Open();
+
+            // Add title
+            Paragraph title = new Paragraph("Cantina");
+            title.Alignment = Element.ALIGN_CENTER;
+            document.Add(title);
+
+            // Add date
+            Paragraph date = new Paragraph($"Dia: {DateTime.Now:dd/MM/yyyy}");
+            date.Alignment = Element.ALIGN_LEFT;
+            document.Add(date);
+
+            // Add line separator
+            LineSeparator lineSeparator = new LineSeparator(1f, 100f, BaseColor.BLACK, Element.ALIGN_CENTER, -1);
+            document.Add(new Chunk(lineSeparator));
+
+            // Add items
+            foreach (var item in fatura.Items)
+            {
+                Paragraph itemParagraph = new Paragraph($"Descricao do Item: {item.Descricao.PadRight(50)} Preco Item: {item.Preco:C}".PadRight(100));
+                document.Add(itemParagraph);
+            }
+
+            // Add total
+            Paragraph total = new Paragraph($"Total: {fatura.Total:C}");
+            total.Alignment = Element.ALIGN_RIGHT;
+            document.Add(total);
+
+            document.Close();
         }
 
 
@@ -199,9 +294,9 @@ namespace PSI_DA_PL1_F.Controllers
 
         public List<Reserva> UpdateListBoxReservas(MenuRefeicao Menu)
         {
-            List<Reserva> listaReservas = db.Reservas
-                                     .Where(r => r.Menu.Id == Menu.Id && r.Ativo == true)
-                                     .ToList();
+            List<Reserva> listaReservas = db.Reservas.Include(r => r.Extras)
+                                                     .Where(r => r.Menu.Id == Menu.Id && r.Ativo == true)
+                                                     .ToList();
 
             return listaReservas;
         }
@@ -213,8 +308,6 @@ namespace PSI_DA_PL1_F.Controllers
 
             return listaPratos;
         }
-
-
     }
 }
 

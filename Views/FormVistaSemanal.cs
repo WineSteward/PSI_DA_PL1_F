@@ -26,6 +26,15 @@ namespace PSI_DA_PL1_F.Views
             controladorVistaSemanal = new ControllerVistaSemanal(menuPrincipal.db);
 
             //preencher a listbox dias por default para mostrara a semana atual, acho que abre logo no dia atual -> facil entao
+            List<DateTime> week = controladorVistaSemanal.GetSemana(dateTimePicker);
+            // limpar listbox
+            listBoxDias.Items.Clear();
+
+            // adicionar os dias a listbox
+            foreach (DateTime day in week)
+            {
+                listBoxDias.Items.Add(day);
+            }
         }
 
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
