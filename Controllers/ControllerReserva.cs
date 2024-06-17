@@ -14,6 +14,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using iTextSharp.text.pdf.draw;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using Microsoft.VisualBasic.ApplicationServices;
+using Org.BouncyCastle.Bcpg.Sig;
+using System.Diagnostics;
 
 namespace PSI_DA_PL1_F.Controllers
 {
@@ -25,7 +28,6 @@ namespace PSI_DA_PL1_F.Controllers
         List<Extra> listaExtras;
         List<Extra> escolhaExtras;
         Multa multa;
-        string fileName = "ObjectOProgramming";
 
         public ControllerReserva(CantinaContext db, MenuRefeicao Menu)
         {
@@ -36,7 +38,7 @@ namespace PSI_DA_PL1_F.Controllers
         //criar um talao (.txt) informacao do cliente e do menu dia/hora prato e extras
         public void MakeTalao(Reserva reserva)
         {
-            fileName = reserva.GetFileName();
+            string fileName = reserva.GetFileName();
 
             // Get the content to save
             string content = reserva.ToStringExtended();
@@ -56,7 +58,7 @@ namespace PSI_DA_PL1_F.Controllers
 
 
                 //verificar  se o cliente ja tem uma reserva feita do menu selecionado
-                if(listboxReservas.Items.Count > 0)
+                if (listboxReservas.Items.Count > 0)
                 {
                     foreach (Reserva reserva in listboxReservas.Items)
                     {
@@ -64,7 +66,7 @@ namespace PSI_DA_PL1_F.Controllers
                             return -1;
                     }
                 }
-               
+
                 //ir buscar os extras escolhidos pelo cliente
                 escolhaExtras = MenuRefeicao.GetCheckedItems<Extra>(extras);
 
@@ -190,7 +192,7 @@ namespace PSI_DA_PL1_F.Controllers
 
                             Reserva novaReserva = new Reserva(cliente, Menu, escolhaExtras, prato, total);
 
-                           db.Reservas.Add(novaReserva);
+                            db.Reservas.Add(novaReserva);
 
                             this.MakeTalao(novaReserva);
 
@@ -222,62 +224,91 @@ namespace PSI_DA_PL1_F.Controllers
 
             reservaEscolhida.Ativo = false;
 
-            if(reservaEscolhida.Cliente is Estudante)
-                 novaFatura = new Fatura(reservaEscolhida.Menu.DataHora ,reservaEscolhida.Total, reservaEscolhida.Menu.precoEstudante, reservaEscolhida.Prato, reservaEscolhida.Extras);
+            if (reservaEscolhida.Cliente is Estudante)
+                novaFatura = new Fatura(reservaEscolhida.Menu.DataHora, reservaEscolhida.Total, reservaEscolhida.Menu.precoEstudante, reservaEscolhida.Prato, reservaEscolhida.Extras);
 
             else
                 novaFatura = new Fatura(reservaEscolhida.Menu.DataHora, reservaEscolhida.Total, reservaEscolhida.Menu.precoProfessor, reservaEscolhida.Prato, reservaEscolhida.Extras);
-            
-            GeneratePDF(novaFatura, fileName);
+
+            GeneratePDF(novaFatura);
             db.SaveChanges();
         }
 
-        public static void GeneratePDF(Fatura fatura, string fileName)
+        public static void GeneratePDF(Fatura fatura)
         {
 
-            // Get the path to the user's Documents folder
-            string directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string filePath = Path.Combine(directoryPath, fileName);
-
-            Document document = new Document();
-            PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
-            document.Open();
-
-            // Add title
-            Paragraph title = new Paragraph("Cantina");
-            title.Alignment = Element.ALIGN_CENTER;
-            document.Add(title);
-
-            // Add date
-            Paragraph date = new Paragraph($"Dia: {DateTime.Now:dd/MM/yyyy}");
-            date.Alignment = Element.ALIGN_LEFT;
-            document.Add(date);
-
-            // Add line separator
-            LineSeparator lineSeparator = new LineSeparator(1f, 100f, BaseColor.BLACK, Element.ALIGN_CENTER, -1);
-            document.Add(new Chunk(lineSeparator));
-
-            // Add items
-            foreach (var item in fatura.Items)
+            try
             {
-                Paragraph itemParagraph = new Paragraph($"Descricao do Item: {item.Descricao.PadRight(50)} Preco Item: {item.Preco:C}".PadRight(100));
-                document.Add(itemParagraph);
+                // Ensure the directory exists
+                string directoryPath = @"C:\Users\MMC\Desktop\ObjectOProgramming\Projeto_Aplicacoes\PSI_DA_PL1_F\bin\Debug\Faturas";
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                // Combine directory path with a file name
+                string fileName = "Fatura_" + fatura.Id + ".pdf";
+                string filePath = Path.Combine(directoryPath, fileName);
+
+                using (FileStream fstream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    Document document = new Document();
+                    PdfWriter.GetInstance(document, fstream);
+                    document.Open();
+
+                    // Add title
+                    Paragraph title = new Paragraph("Cantina");
+                    title.Alignment = Element.ALIGN_CENTER;
+                    document.Add(title);
+
+                    // Add date
+                    Paragraph date = new Paragraph($"Dia: {DateTime.Now:dd/MM/yyyy}");
+                    date.Alignment = Element.ALIGN_LEFT;
+                    document.Add(date);
+
+                    // Add line separator
+                    LineSeparator lineSeparator = new LineSeparator(1f, 100f, BaseColor.BLACK, Element.ALIGN_CENTER, -1);
+                    document.Add(new Chunk(lineSeparator));
+
+
+                    //variavel para encontrar o preco do prato
+                    decimal precoPrato = fatura.Total;
+
+                    foreach (var item in fatura.Items)
+                    {
+                        precoPrato -= item.Preco;
+                        Paragraph itemParagraph = new Paragraph($"Descricao do Item: {item.Descricao.PadRight(50)} Preço Item: {item.Preco:C}".PadRight(100));
+                        document.Add(itemParagraph);
+                    }
+
+                    Paragraph prato = new Paragraph($"Descricao do Prato: {fatura.Prato.Descricao.PadRight(50)} Preço: {precoPrato:C}".PadRight(100));
+                    document.Add(prato);
+
+                    //adicionar nova linha separadora
+                    document.Add(new Chunk(lineSeparator));
+
+                    // Add total
+                    Paragraph total = new Paragraph($"Total: {fatura.Total:C}");
+                    total.Alignment = Element.ALIGN_RIGHT;
+                    document.Add(total);
+
+                    document.Close();
+                }
             }
-
-            // Add total
-            Paragraph total = new Paragraph($"Total: {fatura.Total:C}");
-            total.Alignment = Element.ALIGN_RIGHT;
-            document.Add(total);
-
-            document.Close();
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine("Error: Access to the path is denied. " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
         }
 
 
         public List<Cliente> UpdateListBoxClientes()
         {
-            List<Cliente> listaClientes = new List<Cliente>();
-
-            listaClientes = db.Estudantes.ToList<Cliente>();
+            List<Cliente> listaClientes = db.Estudantes.ToList<Cliente>();
 
             listaClientes.AddRange(db.Professores.ToList<Cliente>());
 

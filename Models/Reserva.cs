@@ -57,10 +57,10 @@ namespace PSI_DA_PL1_F.Models
             return sb.ToString();
         }
 
-        // Method to get the formatted file name
+
         public string GetFileName()
         {
-            return $"{Cliente.Nome}_{Menu.DataHora:dd_MM_yyyy}.txt";
+            return Cliente.Nome + "_" + $"{Menu.DataHora:dd_MM_yyyy}.txt";
         }
 
         public Reserva() { }
