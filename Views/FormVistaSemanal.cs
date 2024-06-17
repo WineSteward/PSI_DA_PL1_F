@@ -25,7 +25,7 @@ namespace PSI_DA_PL1_F.Views
 
             controladorVistaSemanal = new ControllerVistaSemanal(menuPrincipal.db);
 
-            //preencher a listbox dias por default para mostrara a semana atual, acho que abre logo no dia atual -> facil entao
+            //preencher a listbox dias por default para mostrara a semana atual
             List<DateTime> week = controladorVistaSemanal.GetSemana(dateTimePicker);
             // limpar listbox
             listBoxDias.Items.Clear();
@@ -37,6 +37,7 @@ namespace PSI_DA_PL1_F.Views
             }
         }
 
+        //Mudanda da data provoca um evento que atualiza a listbox dos dias da semana
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
            List<DateTime> week = controladorVistaSemanal.GetSemana(dateTimePicker);
@@ -51,6 +52,7 @@ namespace PSI_DA_PL1_F.Views
             }
         }
 
+        //Mudança do dia da semana atualiza a listbox do menu daquele dia
         private void listBoxDias_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBoxMenu.Items.Clear();
@@ -69,6 +71,7 @@ namespace PSI_DA_PL1_F.Views
             }
         }
        
+        //return para o main menu
         private void btnReturn_Click(object sender, EventArgs e)
         {
             menuPrincipal.panelShowForm.Controls.Clear();
@@ -76,8 +79,15 @@ namespace PSI_DA_PL1_F.Views
             menuPrincipal.sidebar.Enabled = true;
         }
 
+        //Redirect para o formReserva para conseguir reservar
         private void btnReservar_Click(object sender, EventArgs e)
         {
+            if (listBoxDias.SelectedItem == null)
+            {
+                MessageBox.Show("Selcione um dia antes de prosseguir");
+                return;
+            }
+
             MenuRefeicao menu = controladorVistaSemanal.FindMenu((DateTime)listBoxDias.SelectedItem);
 
             menuPrincipal.panelShowForm.Controls.Clear();
@@ -85,6 +95,8 @@ namespace PSI_DA_PL1_F.Views
             FormReserva formReserva = new FormReserva(menuPrincipal, menu);
         }
 
+
+        //redirect para o formMenuRefeicao para criar um menu para aquele dia
         private void btnCriarMenu_Click(object sender, EventArgs e)
         {
 

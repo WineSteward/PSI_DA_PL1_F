@@ -33,9 +33,7 @@ namespace PSI_DA_PL1_F.Controllers
 
         public List<Cliente> UpdateListBox()
         {
-            List<Cliente> listaClientes;
-
-            listaClientes = db.Estudantes.ToList<Cliente>();
+            List<Cliente> listaClientes = db.Estudantes.ToList<Cliente>();
 
             listaClientes.AddRange(db.Professores.ToList<Cliente>());
 
@@ -88,7 +86,7 @@ namespace PSI_DA_PL1_F.Controllers
                 }
             }
 
-            // If no specific type was found in the ListBox items, return an empty list
+            // Se nao encontrar nada devolve uma lista vazia
             return lista ?? new List<Cliente>();
         }
 
@@ -114,7 +112,7 @@ namespace PSI_DA_PL1_F.Controllers
                 }
             }
 
-            // If no specific type was found in the ListBox items, return an empty list
+            // Se nao encontrar nada devolve uma lista vazia
             return lista ?? new List<Cliente>();
         }
 

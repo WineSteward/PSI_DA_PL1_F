@@ -41,7 +41,7 @@ namespace PSI_DA_PL1_F.Models
             return Cliente.Nome + " | " + Menu.DataHora.ToString();
         }
 
-        // Method to format the content of the reservation
+
         public string ToStringExtended()
         {
             StringBuilder sb = new StringBuilder();

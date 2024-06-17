@@ -60,6 +60,7 @@
             this.btnAdicionarCliente = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnCleanTipo = new System.Windows.Forms.Button();
             this.btnUpdateListBoxClientes = new System.Windows.Forms.Button();
             this.listBoxTipoClienteSearch = new System.Windows.Forms.ListBox();
             this.btnSearchCliente = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.textBoxNomeSearch = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
-            this.btnCleanTipo = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSaldoEdit)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -106,6 +106,7 @@
             this.listBoxTipoClienteEdit.Name = "listBoxTipoClienteEdit";
             this.listBoxTipoClienteEdit.Size = new System.Drawing.Size(99, 56);
             this.listBoxTipoClienteEdit.TabIndex = 32;
+            this.listBoxTipoClienteEdit.SelectedIndexChanged += new System.EventHandler(this.listBoxTipoClienteEdit_SelectedIndexChanged);
             // 
             // textBoxEmailProfessorEdit
             // 
@@ -150,6 +151,7 @@
             // 
             // numericUpDownSaldoEdit
             // 
+            this.numericUpDownSaldoEdit.DecimalPlaces = 2;
             this.numericUpDownSaldoEdit.Location = new System.Drawing.Point(9, 157);
             this.numericUpDownSaldoEdit.Name = "numericUpDownSaldoEdit";
             this.numericUpDownSaldoEdit.Size = new System.Drawing.Size(120, 20);
@@ -255,6 +257,7 @@
             this.listBoxTipoCliente.Name = "listBoxTipoCliente";
             this.listBoxTipoCliente.Size = new System.Drawing.Size(99, 56);
             this.listBoxTipoCliente.TabIndex = 31;
+            this.listBoxTipoCliente.SelectedIndexChanged += new System.EventHandler(this.listBoxTipoCliente_SelectedIndexChanged);
             // 
             // textBoxEmailProfessor
             // 
@@ -299,6 +302,7 @@
             // 
             // numericUpDownSaldo
             // 
+            this.numericUpDownSaldo.DecimalPlaces = 2;
             this.numericUpDownSaldo.Location = new System.Drawing.Point(6, 170);
             this.numericUpDownSaldo.Name = "numericUpDownSaldo";
             this.numericUpDownSaldo.Size = new System.Drawing.Size(120, 20);
@@ -382,6 +386,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Área de Pesquisa";
             // 
+            // btnCleanTipo
+            // 
+            this.btnCleanTipo.Location = new System.Drawing.Point(111, 88);
+            this.btnCleanTipo.Name = "btnCleanTipo";
+            this.btnCleanTipo.Size = new System.Drawing.Size(45, 40);
+            this.btnCleanTipo.TabIndex = 40;
+            this.btnCleanTipo.Text = "Clean";
+            this.btnCleanTipo.UseVisualStyleBackColor = true;
+            this.btnCleanTipo.Click += new System.EventHandler(this.btnCleanTipo_Click);
+            // 
             // btnUpdateListBoxClientes
             // 
             this.btnUpdateListBoxClientes.Location = new System.Drawing.Point(6, 314);
@@ -443,16 +457,6 @@
             this.listBoxClientes.Size = new System.Drawing.Size(166, 108);
             this.listBoxClientes.TabIndex = 34;
             this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
-            // 
-            // btnCleanTipo
-            // 
-            this.btnCleanTipo.Location = new System.Drawing.Point(111, 88);
-            this.btnCleanTipo.Name = "btnCleanTipo";
-            this.btnCleanTipo.Size = new System.Drawing.Size(45, 40);
-            this.btnCleanTipo.TabIndex = 40;
-            this.btnCleanTipo.Text = "Clean";
-            this.btnCleanTipo.UseVisualStyleBackColor = true;
-            this.btnCleanTipo.Click += new System.EventHandler(this.btnCleanTipo_Click);
             // 
             // FormClientes
             // 

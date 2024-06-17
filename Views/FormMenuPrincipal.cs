@@ -76,6 +76,8 @@ namespace PSI_DA_PL1_F.Views
 
         //-----------------------------------------------Animation-----------------------------------------------------
 
+        bool sidebarExpand = true;
+
         private void menuTransition_Tick(object sender, EventArgs e)
         {
             if (menuExpand == false)
@@ -102,7 +104,6 @@ namespace PSI_DA_PL1_F.Views
         {
             clienteTransition.Start();
         }
-        bool sidebarExpand = true;
 
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {

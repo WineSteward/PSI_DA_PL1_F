@@ -35,7 +35,7 @@ namespace PSI_DA_PL1_F.Controllers
             this.Menu = Menu;
         }
 
-        //criar um talao (.txt) informacao do cliente e do menu dia/hora prato e extras
+        //Cria um talao (.txt) informacao do cliente e do menu dia/hora prato e extras
         public void MakeTalao(Reserva reserva)
         {
             string fileName = reserva.GetFileName();
@@ -224,6 +224,7 @@ namespace PSI_DA_PL1_F.Controllers
 
             reservaEscolhida.Ativo = false;
 
+            //Criar fatura apos consumo diferenciando que tipo de cliente é (precos diferentes)
             if (reservaEscolhida.Cliente is Estudante)
                 novaFatura = new Fatura(reservaEscolhida.Menu.DataHora, reservaEscolhida.Total, reservaEscolhida.Menu.precoEstudante, reservaEscolhida.Prato, reservaEscolhida.Extras);
 
@@ -239,8 +240,11 @@ namespace PSI_DA_PL1_F.Controllers
 
             try
             {
-                // Ensure the directory exists
+
+                //mudar este campo se mudar de maquina
                 string directoryPath = @"C:\Users\MMC\Desktop\ObjectOProgramming\Projeto_Aplicacoes\PSI_DA_PL1_F\bin\Debug\Faturas";
+
+                // Ensure the directory exists
                 if (!Directory.Exists(directoryPath))
                 {
                     Directory.CreateDirectory(directoryPath);
@@ -274,6 +278,8 @@ namespace PSI_DA_PL1_F.Controllers
                     //variavel para encontrar o preco do prato
                     decimal precoPrato = fatura.Total;
 
+
+                    //Add dos itens
                     foreach (var item in fatura.Items)
                     {
                         precoPrato -= item.Preco;
@@ -281,6 +287,7 @@ namespace PSI_DA_PL1_F.Controllers
                         document.Add(itemParagraph);
                     }
 
+                    //Add do prato
                     Paragraph prato = new Paragraph($"Descricao do Prato: {fatura.Prato.Descricao.PadRight(50)} Preço: {precoPrato:C}".PadRight(100));
                     document.Add(prato);
 
@@ -323,6 +330,7 @@ namespace PSI_DA_PL1_F.Controllers
             return listaExtras;
         }
 
+        //Atualizar a lista de reservas que sejam do menu correto e que ainda nao foram consumidas (ativas)
         public List<Reserva> UpdateListBoxReservas(MenuRefeicao Menu)
         {
             List<Reserva> listaReservas = db.Reservas.Include(r => r.Extras)

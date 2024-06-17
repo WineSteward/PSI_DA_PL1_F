@@ -25,7 +25,7 @@ namespace PSI_DA_PL1_F.Views
 
             controladorPratos = new ControllerPratos(menuPrincipal.db);
 
-
+            //Atualizar as listbox por default
             listBoxTipoPratoEdit.DataSource = controladorPratos.UpdateListBoxTipo();
 
             listBoxPratos.DataSource = controladorPratos.UpdateListBoxPratos();
@@ -33,6 +33,8 @@ namespace PSI_DA_PL1_F.Views
             listBoxTipoPrato.DataSource = controladorPratos.UpdateListBoxTipo();
         }
 
+
+        //Adicoinar prato a lista de pratos disponiveis
         private void btnAdicionarPrato_Click(object sender, EventArgs e)
         {
             controladorPratos.AddPrato(textBoxDescricao.Text, (TipoPrato)listBoxTipoPrato.SelectedItem, checkBoxAtivarPrato.Checked);
@@ -44,12 +46,14 @@ namespace PSI_DA_PL1_F.Views
             listBoxPratos.DataSource = controladorPratos.UpdateListBoxPratos();
         }
 
+        //atualizar os dados do prato selecionado na listbox
         private void btnUpdatePrato_Click(object sender, EventArgs e)
         {
             controladorPratos.UpdatePrato(textBoxDescricaoEdit.Text, checkBoxAtivarPratoEdit.Checked, (Prato)listBoxPratos.SelectedItem);
             listBoxPratos.DataSource = controladorPratos.UpdateListBoxPratos();
         }
 
+        //Preencher por default os dados dos prato selecionado na zona de edicao
         private void listBoxPratos_SelectedIndexChanged(object sender, EventArgs e)
         {
             Prato pratoAtual = controladorPratos.FindPrato((Prato)listBoxPratos.SelectedItem);
@@ -69,12 +73,14 @@ namespace PSI_DA_PL1_F.Views
             
         }
 
+        //remover o prato da base de dados
         private void btnRemoverPrato_Click(object sender, EventArgs e)
         {
             controladorPratos.RemovePrato(listBoxPratos.SelectedItem);
             listBoxPratos.DataSource = controladorPratos.UpdateListBoxPratos();
         }
 
+        //return ao menu principal
         private void btnReturn_Click(object sender, EventArgs e)
         {
             menuPrincipal.panelShowForm.Controls.Clear();

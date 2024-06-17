@@ -28,11 +28,9 @@ namespace PSI_DA_PL1_F.Views
 
             this.mainForm = mainForm;
             this.db = mainForm.db;
-            this.controladorFuncionario = new ControllerFuncionario();
+            controladorFuncionario = new ControllerFuncionario();
 
-            listFuncionario = this.controladorFuncionario.UpdateListBoxFuncionario(db);
-
-            listBoxFuncionarios.DataSource = listFuncionario;
+            listBoxFuncionarios.DataSource = controladorFuncionario.UpdateListBoxFuncionario(db);
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -42,13 +40,11 @@ namespace PSI_DA_PL1_F.Views
 
             funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
 
-            //uso o form que recebi e mudo o estado da sidebar e fecho este form
             mainForm.sidebar.Enabled = true;
             this.Close();
-            
-
         }
 
+        //Registar um utilizador
         private void btnDirecionarRegisto_Click(object sender, EventArgs e)
         {
             if (textBoxUsername.Text == "" || textBoxNome.Text == "" || textBoxNIF.Text == "")
@@ -57,22 +53,21 @@ namespace PSI_DA_PL1_F.Views
                 return;
             }
 
-            this.controladorFuncionario.RegistarFuncionario(textBoxUsername.Text, textBoxNome.Text, textBoxNIF.Text, db);
+            controladorFuncionario.RegistarFuncionario(textBoxUsername.Text, textBoxNome.Text, textBoxNIF.Text, db);
 
             textBoxUsername.Text = "";
             textBoxNome.Text = "";
             textBoxNIF.Text = "";
 
-            listBoxFuncionarios.DataSource = this.controladorFuncionario.UpdateListBoxFuncionario(db);
+            listBoxFuncionarios.DataSource = controladorFuncionario.UpdateListBoxFuncionario(db);
         }
 
+        //Remover funcionario da base de dados
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            funcionarioAtual = (Funcionario)listBoxFuncionarios.SelectedItem;
-
-            this.controladorFuncionario.RemoveFuncionario(db, funcionarioAtual);
+            controladorFuncionario.RemoveFuncionario(db, (Funcionario)listBoxFuncionarios.SelectedItem);
             
-            listBoxFuncionarios.DataSource = this.controladorFuncionario.UpdateListBoxFuncionario(db);
+            listBoxFuncionarios.DataSource = controladorFuncionario.UpdateListBoxFuncionario(db);
         }
     }
 }

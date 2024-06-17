@@ -181,7 +181,6 @@
             this.checkedListBoxExtras.Name = "checkedListBoxExtras";
             this.checkedListBoxExtras.Size = new System.Drawing.Size(156, 109);
             this.checkedListBoxExtras.TabIndex = 0;
-            this.checkedListBoxExtras.Click += new System.EventHandler(this.checkedListBoxExtras_Click);
             // 
             // labelClientes
             // 

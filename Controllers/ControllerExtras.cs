@@ -32,10 +32,10 @@ namespace PSI_DA_PL1_F.Controllers
                 return listaExtras;
             }
 
-            public void RemoveExtra(object extraAtual)
+            public void RemoveExtra(Extra extraAtual)
             {
-                if (extraAtual is Extra)
-                    db.Extras.Remove((Extra)extraAtual);
+
+                db.Extras.Remove((Extra)extraAtual);
 
                 db.SaveChanges();
             }

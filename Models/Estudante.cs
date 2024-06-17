@@ -24,7 +24,7 @@ namespace PSI_DA_PL1_F.Models
 
         public override string ToString()
         {
-            return Nome + "| Estudante";
+            return Nome + " | Estudante";
         }
 
     }

@@ -24,6 +24,8 @@ namespace PSI_DA_PL1_F.Views
 
             controladorCliente = new ControllerCliente(menuPrincipal.db);
 
+
+            //Preencher as listboxs por default
             listBoxTipoCliente.Items.Add("Estudante");
             listBoxTipoCliente.Items.Add("Professor");
             listBoxTipoClienteEdit.Items.Add("Estudante");
@@ -35,13 +37,21 @@ namespace PSI_DA_PL1_F.Views
 
         }
 
+        //Adicionar cliente a base de dados
         private void btnAdicionarCliente_Click(object sender, EventArgs e)
         {
-            if(listBoxTipoCliente.SelectedItem.ToString() == "Estudante")
+            //front end validations
+            if(listBoxTipoCliente.SelectedItem.ToString() == "Estudante" && textBoxNome.Text != "" && textBoxNIF.Text != "" && textBoxNumEstudante.Text != "")
                 controladorCliente.AddEstudante(textBoxNome.Text, textBoxNIF.Text, numericUpDownSaldo.Value, textBoxNumEstudante.Text);
             
-            else
+            else if (listBoxTipoCliente.SelectedItem.ToString() == "Professor" && textBoxNome.Text != "" && textBoxNIF.Text  != "" && textBoxEmailProfessor.Text != "")
                 controladorCliente.AddProfessor(textBoxNome.Text, textBoxNIF.Text, numericUpDownSaldo.Value, textBoxEmailProfessor.Text);
+            
+            else
+            {
+                MessageBox.Show("Preencha todos os parametros necessários");
+                return;
+            }
 
             listBoxClientes.DataSource = controladorCliente.UpdateListBox();
 
@@ -55,6 +65,7 @@ namespace PSI_DA_PL1_F.Views
 
         }
 
+        //return para o menu principal
         private void btnReturn_Click(object sender, EventArgs e)
         {
             menuPrincipal.panelShowForm.Controls.Clear();
@@ -62,23 +73,32 @@ namespace PSI_DA_PL1_F.Views
             menuPrincipal.sidebar.Enabled = true;
         }
 
+        //Remover cliente da base de dados
         private void btnRemoverCliente_Click(object sender, EventArgs e)
         {
             controladorCliente.RemoveCliente(listBoxClientes.SelectedItem);
             listBoxClientes.DataSource = controladorCliente.UpdateListBox();
         }
 
+        //Atualizar os dados do cliente na base de dados
         private void btnUpdateCliente_Click(object sender, EventArgs e)
         {
-            if (listBoxTipoClienteEdit.SelectedItem.ToString() == "Estudante")
+            if (listBoxTipoClienteEdit.SelectedItem.ToString() == "Estudante" && textBoxNomeEdit.Text != "" && textBoxNIFEdit.Text != "" && textBoxNumEstudanteEdit.Text != "")
                 controladorCliente.UpdateEstudante(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxNumEstudanteEdit.Text, (Cliente)listBoxClientes.SelectedItem);
 
+            else if (listBoxTipoClienteEdit.SelectedItem.ToString() == "Professor" && textBoxNomeEdit.Text != "" && textBoxNIFEdit.Text != "" && textBoxEmailProfessorEdit.Text != "")
+                controladorCliente.AddProfessor(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxEmailProfessorEdit.Text);
+
             else
-                controladorCliente.UpdateProfessor(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxEmailProfessorEdit.Text, (Cliente)listBoxClientes.SelectedItem);
+            {
+                MessageBox.Show("Preencha todos os parametros necessários");
+                return;
+            }
 
             listBoxClientes.DataSource = controladorCliente.UpdateListBox();
         }
 
+        //Preencher a zona de edicao do cliente com os dados do cliente selecionado
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxEmailProfessorEdit.Text = "";
@@ -105,31 +125,68 @@ namespace PSI_DA_PL1_F.Views
             }
         }
 
+        //Procurar pelo cliente pelo nome e/ou tipo
         private void btnSearchCliente_Click(object sender, EventArgs e)
         {
-            
+            //Front end validations
             if (textBoxNomeSearch.Text == "")
                 listBoxClientes.DataSource = controladorCliente.FindCliente(listBoxTipoClienteSearch);
 
             else if (listBoxTipoClienteSearch.SelectedItem == null && textBoxNomeSearch.Text != "")
                 listBoxClientes.DataSource = controladorCliente.FindCliente(textBoxNomeSearch.Text);
 
-            else
+            else if(listBoxTipoClienteSearch.SelectedItem != null && textBoxNomeSearch.Text != "")
                 listBoxClientes.DataSource = controladorCliente.FindCliente(textBoxNomeSearch.Text, listBoxTipoClienteSearch);
 
+            else
+            {
+                MessageBox.Show("Parametros inválidos");
+                return;
+            }
 
             textBoxNomeSearch.Text = "";
             listBoxTipoClienteSearch.ClearSelected();
         }
 
+        //Atualizar a listbox dos clientes on demand
         private void btnUpdateListBoxClientes_Click(object sender, EventArgs e)
         {
             listBoxClientes.DataSource = controladorCliente.UpdateListBox();
         }
 
+        //limpar a escolha no filtro do tipo do cliente
         private void btnCleanTipo_Click(object sender, EventArgs e)
         {
             listBoxTipoClienteSearch.ClearSelected();
+        }
+
+        //Mudar o tipo de cliente possibilita e elimina certos campos
+        private void listBoxTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxTipoCliente.SelectedItem.ToString() == "Estudante")
+            {
+                textBoxNumEstudante.Enabled = true;
+                textBoxEmailProfessor.Enabled = false;
+            }
+            else
+            {
+                textBoxNumEstudante.Enabled = false;
+                textBoxEmailProfessor.Enabled = true;
+            }
+        }
+
+        private void listBoxTipoClienteEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxTipoClienteEdit.SelectedItem.ToString() == "Estudante")
+            {
+                textBoxNumEstudanteEdit.Enabled = true;
+                textBoxEmailProfessorEdit.Enabled = false;
+            }
+            else
+            {
+                textBoxNumEstudanteEdit.Enabled = false;
+                textBoxEmailProfessorEdit.Enabled = true;
+            }
         }
     }
 }

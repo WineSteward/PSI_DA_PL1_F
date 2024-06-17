@@ -23,11 +23,20 @@ namespace PSI_DA_PL1_F.Views
             this.menuPrincipal = menuPrincipal;
             controladorExtras = new ControllerExtras(menuPrincipal.db);
 
+            //Atualizar por default a listabox
             listBoxExtras.DataSource = controladorExtras.UpdateListBox();
         }
 
+        //Adicionar extra a base de dados
         private void btnAdicionarExtra_Click(object sender, EventArgs e)
         {
+            //Front end validation
+            if(textBoxDescricao.Text == "" | numericUpDownPreco.Value == 0)
+            {
+                MessageBox.Show("Preencha todos os campos");
+                return;
+            }
+
             controladorExtras.AddExtra(textBoxDescricao.Text, numericUpDownPreco.Value, checkBoxAtivar.Checked);
 
             textBoxDescricao.Clear();
@@ -38,12 +47,15 @@ namespace PSI_DA_PL1_F.Views
 
             listBoxExtras.DataSource = controladorExtras.UpdateListBox();
         }
+
+        //Atualizar os dados do extra selecionado na base de dados
         private void btnUpdateExtra_Click(object sender, EventArgs e)
         {
             controladorExtras.UpdateExtra(textBoxDescricaoEdit.Text, numericUpDownPrecoEdit.Value, checkBoxAtivarEdit.Checked, (Extra)listBoxExtras.SelectedItem);
             listBoxExtras.DataSource = controladorExtras.UpdateListBox();
         }
 
+        //Return para o menu principal
         private void btnReturn_Click(object sender, EventArgs e)
         {
             menuPrincipal.panelShowForm.Controls.Clear();
@@ -52,12 +64,14 @@ namespace PSI_DA_PL1_F.Views
             
         }
 
+        //Remover o extra da base de dados
         private void btnRemoverExtra_Click(object sender, EventArgs e)
         {
-            controladorExtras.RemoveExtra(listBoxExtras.SelectedItem);
+            controladorExtras.RemoveExtra((Extra)listBoxExtras.SelectedItem);
             listBoxExtras.DataSource = controladorExtras.UpdateListBox();
         }
 
+        //Atualizar os campos da zona de edicao do extra com o extra selecionado
         private void listBoxExtras_SelectedIndexChanged(object sender, EventArgs e)
         {
             Extra extraAtual = controladorExtras.FindExtra((Extra)listBoxExtras.SelectedItem);

@@ -21,7 +21,8 @@ namespace PSI_DA_PL1_F.Controllers
 
         public List<Extra> UpdateListBoxExtras()
         {
-            List<Extra> listaExtras = db.Extras.ToList<Extra>();
+            List<Extra> listaExtras = db.Extras.Where(e => e.Ativo == true)
+                                                .ToList<Extra>();
 
             return listaExtras;
         }
@@ -39,7 +40,8 @@ namespace PSI_DA_PL1_F.Controllers
 
         public List<Prato> UpdateListBoxPratos()
         {
-            List<Prato> listaPratos = db.Pratos.ToList<Prato>();
+            List<Prato> listaPratos = db.Pratos.Where(p => p.Ativo == true)
+                                                .ToList<Prato>();
 
             return listaPratos;
         }
