@@ -23,6 +23,18 @@ namespace PSI_DA_PL1_F.Models
 
         public List<Prato> Pratos { get; set; }  //MENU NAO TEM MAXIMO DE PRATOS podemos bifana, bacalhau a bras, frango com massa..., tudo no mesmo dia mas na RESERVA SO PODEM ESCOLHER 1
 
+        public MenuRefeicao() { }
+
+        public MenuRefeicao(DateTime dataHora, int quantidade, decimal precoEstudante, decimal precoProfessor, List<Extra> extras, List<Prato> pratos)
+        {
+            DataHora = dataHora;
+            Quantidade = quantidade;
+            this.precoEstudante = precoEstudante;
+            this.precoProfessor = precoProfessor;
+            Extras = extras;
+            Pratos = pratos;
+        }
+
         public static List<T> GetCheckedItems<T>(CheckedListBox checkedListBox) where T : class
         {
             List<T> checkedItemsList = new List<T>();
@@ -40,18 +52,6 @@ namespace PSI_DA_PL1_F.Models
         public override string ToString()
         {
             return "Menu do Dia: " + DataHora.ToString();
-        }
-
-        public MenuRefeicao() { }
-
-        public MenuRefeicao(DateTime dataHora, int quantidade, decimal precoEstudante, decimal precoProfessor, List<Extra> extras, List<Prato> pratos)
-        {
-            DataHora = dataHora;
-            Quantidade = quantidade;
-            this.precoEstudante = precoEstudante;
-            this.precoProfessor = precoProfessor;
-            Extras = extras;
-            Pratos = pratos;
         }
     }
 }

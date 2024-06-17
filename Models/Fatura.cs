@@ -18,7 +18,6 @@ namespace PSI_DA_PL1_F.Models
 
         public List<Item> Items { get; set; }
 
-
         public Fatura() { }
 
         public Fatura(DateTime data, decimal total, decimal precoPrato, Prato prato, List<Extra> extras)

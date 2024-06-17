@@ -25,6 +25,32 @@ namespace PSI_DA_PL1_F.Models
 
         public bool Ativo { get; set; }
 
+
+        public Reserva() { }
+
+
+        public Reserva(Cliente cliente, MenuRefeicao menu, List<Extra> extras, Prato prato, decimal total)
+        {
+            Cliente = cliente;
+            Menu = menu;
+            Extras = extras;
+            Prato = prato;
+            Total = total;
+            Ativo = true;
+        }
+
+        public Reserva(Cliente cliente, Multa multa, MenuRefeicao menu, List<Extra> extras, Prato prato, decimal total)
+        {
+            Cliente = cliente;
+            Multa = multa;
+            Menu = menu;
+            Extras = extras;
+            Prato = prato;
+            Total = total;
+            Ativo = true;
+        }
+
+
         public static List<Extra> GetCheckedItems(CheckedListBox checkedListBox)
         {
             List<Extra> checkedItemsList = new List<Extra>();
@@ -61,30 +87,6 @@ namespace PSI_DA_PL1_F.Models
         public string GetFileName()
         {
             return Cliente.Nome + "_" + $"{Menu.DataHora:dd_MM_yyyy}.txt";
-        }
-
-        public Reserva() { }
-
-
-        public Reserva(Cliente cliente, MenuRefeicao menu, List<Extra> extras, Prato prato, decimal total)
-        {
-            Cliente = cliente;
-            Menu = menu;
-            Extras = extras;
-            Prato = prato;
-            Total = total;
-            Ativo = true;
-        }
-
-        public Reserva(Cliente cliente, Multa multa, MenuRefeicao menu, List<Extra> extras, Prato prato, decimal total)
-        {
-            Cliente = cliente;
-            Multa = multa;
-            Menu = menu;
-            Extras = extras;
-            Prato = prato;
-            Total = total;
-            Ativo = true;
         }
     }
 }

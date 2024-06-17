@@ -20,6 +20,15 @@ namespace PSI_DA_PL1_F.Models
 
         public TipoPrato Tipo { get; set; }
 
+        public Prato() { }
+
+        public Prato(string descricao, bool estado, TipoPrato tipo)
+        {
+            Descricao = descricao;
+            Ativo = estado;
+            Tipo = tipo;
+        }
+
         public static List<TipoPrato> GetAllTipos()
         {
             List<TipoPrato> lista = new List<TipoPrato>();
@@ -35,15 +44,6 @@ namespace PSI_DA_PL1_F.Models
         public override string ToString()
         {
             return Descricao + " | " + Tipo.ToString();
-        }
-
-        public Prato() { }
-
-        public Prato(string descricao, bool estado, TipoPrato tipo)
-        {
-            Descricao = descricao;
-            Ativo = estado;
-            Tipo = tipo;
         }
     }
 

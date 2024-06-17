@@ -19,6 +19,14 @@ namespace PSI_DA_PL1_F.Models
 
         public List<MenuRefeicao> menuRefeicaos { get; set; }
 
+        public Extra() { }
+        public Extra(string descricao, decimal valor, bool ativo)
+        {
+            this.Descricao = descricao;
+            this.Valor = valor;
+            this.Ativo = ativo;
+        }
+
         public static List<Extra> GetCheckedItems(CheckedListBox checkedListBox)
         {
             List<Extra> checkedItemsList = new List<Extra>();
@@ -28,14 +36,6 @@ namespace PSI_DA_PL1_F.Models
                 checkedItemsList.Add((Extra)item);
             }
             return checkedItemsList;
-        }
-
-        public Extra() { }
-        public Extra(string descricao, decimal valor, bool ativo)
-        {
-            this.Descricao = descricao;
-            this.Valor = valor;
-            this.Ativo = ativo;
         }
 
         public override string ToString()

@@ -11,7 +11,6 @@ namespace PSI_DA_PL1_F.Models
     public class Cliente : Utilizador
     {
         public decimal Saldo { get; set; }
-
     }
 
 }

@@ -10,7 +10,6 @@ namespace PSI_DA_PL1_F.Models
     {
         public string NumeroEstudante { get; set; }
 
-
         public Estudante() { }
 
         public Estudante(string nome, string nif, decimal saldo, string numeroEstudante)
@@ -20,7 +19,6 @@ namespace PSI_DA_PL1_F.Models
             this.Saldo = saldo;
             this.NumeroEstudante = numeroEstudante;
         }
-
 
         public override string ToString()
         {

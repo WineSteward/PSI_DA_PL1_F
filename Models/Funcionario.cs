@@ -14,6 +14,5 @@ namespace PSI_DA_PL1_F.Models
         {
             return Username + " | " + Nome;
         }
-
     }
 }
