@@ -231,8 +231,14 @@ namespace PSI_DA_PL1_F.Controllers
             else
                 novaFatura = new Fatura(reservaEscolhida.Menu.DataHora, reservaEscolhida.Total, reservaEscolhida.Menu.precoProfessor, reservaEscolhida.Prato, reservaEscolhida.Extras);
 
-            GeneratePDF(novaFatura);
-            db.SaveChanges();
+            
+            if(reservaEscolhida.Multa != null)
+                GeneratePDF(novaFatura, reservaEscolhida.Multa);
+           else
+                GeneratePDF(novaFatura);
+
+
+                db.SaveChanges();
         }
 
         public static void GeneratePDF(Fatura fatura)
@@ -311,6 +317,92 @@ namespace PSI_DA_PL1_F.Controllers
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
+
+
+        public static void GeneratePDF(Fatura fatura, Multa m)
+        {
+
+            try
+            {
+                //mudar este campo se mudar de maquina
+                string directoryPath = @"C:\Users\MMC\Desktop\ObjectOProgramming\Projeto_Aplicacoes\PSI_DA_PL1_F\bin\Debug\Faturas";
+
+                // Ensure the directory exists
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                // Combine directory path with a file name
+                string fileName = "Fatura_" + fatura.Id + ".pdf";
+                string filePath = Path.Combine(directoryPath, fileName);
+
+                using (FileStream fstream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    Multa multa = m;
+
+                    Document document = new Document();
+                    PdfWriter.GetInstance(document, fstream);
+                    document.Open();
+
+                    // Add title
+                    Paragraph title = new Paragraph("Cantina");
+                    title.Alignment = Element.ALIGN_CENTER;
+                    document.Add(title);
+
+                    // Add date
+                    Paragraph date = new Paragraph($"Dia: {DateTime.Now:dd/MM/yyyy}");
+                    date.Alignment = Element.ALIGN_LEFT;
+                    document.Add(date);
+
+                    // Add line separator
+                    LineSeparator lineSeparator = new LineSeparator(1f, 100f, BaseColor.BLACK, Element.ALIGN_CENTER, -1);
+                    document.Add(new Chunk(lineSeparator));
+
+
+                    //variavel para encontrar o preco do prato
+                    decimal precoPrato = fatura.Total - multa.Valor;
+
+
+                    //Add dos itens
+                    foreach (var item in fatura.Items)
+                    {
+                        precoPrato -= item.Preco;
+                        Paragraph itemParagraph = new Paragraph($"Descricao do Item: {item.Descricao.PadRight(50)} Preço Item: {item.Preco:C}".PadRight(100));
+                        document.Add(itemParagraph);
+                    }
+
+                    //Add do prato
+                    Paragraph prato = new Paragraph($"Descricao do Prato: {fatura.Prato.Descricao.PadRight(50)} Preço: {precoPrato:C}".PadRight(100));
+                    document.Add(prato);
+
+
+                    //Add do multa
+                    Paragraph multaEscrita = new Paragraph($"Descricao do Prato: {multa.NumeroHoras.ToString().PadRight(50)} Preço: {multa.Valor:C}".PadRight(100));
+                    document.Add(multaEscrita);
+
+
+                    //adicionar nova linha separadora
+                    document.Add(new Chunk(lineSeparator));
+
+                    // Add total
+                    Paragraph total = new Paragraph($"Total: {fatura.Total:C}");
+                    total.Alignment = Element.ALIGN_RIGHT;
+                    document.Add(total);
+
+                    document.Close();
+                }
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine("Error: Access to the path is denied. " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+        }
+
 
 
         public List<Cliente> UpdateListBoxClientes()

@@ -154,12 +154,6 @@ namespace PSI_DA_PL1_F.Views
             listBoxClientes.DataSource = controladorCliente.UpdateListBox();
         }
 
-        //limpar a escolha no filtro do tipo do cliente
-        private void btnCleanTipo_Click(object sender, EventArgs e)
-        {
-            listBoxTipoClienteSearch.ClearSelected();
-        }
-
         //Mudar o tipo de cliente possibilita e elimina certos campos
         private void listBoxTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -60,7 +60,6 @@
             this.btnAdicionarCliente = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnCleanTipo = new System.Windows.Forms.Button();
             this.btnUpdateListBoxClientes = new System.Windows.Forms.Button();
             this.listBoxTipoClienteSearch = new System.Windows.Forms.ListBox();
             this.btnSearchCliente = new System.Windows.Forms.Button();
@@ -371,7 +370,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.btnCleanTipo);
             this.groupBox4.Controls.Add(this.btnUpdateListBoxClientes);
             this.groupBox4.Controls.Add(this.listBoxTipoClienteSearch);
             this.groupBox4.Controls.Add(this.btnSearchCliente);
@@ -386,16 +384,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Área de Pesquisa";
             // 
-            // btnCleanTipo
-            // 
-            this.btnCleanTipo.Location = new System.Drawing.Point(111, 88);
-            this.btnCleanTipo.Name = "btnCleanTipo";
-            this.btnCleanTipo.Size = new System.Drawing.Size(45, 40);
-            this.btnCleanTipo.TabIndex = 40;
-            this.btnCleanTipo.Text = "Clean";
-            this.btnCleanTipo.UseVisualStyleBackColor = true;
-            this.btnCleanTipo.Click += new System.EventHandler(this.btnCleanTipo_Click);
-            // 
             // btnUpdateListBoxClientes
             // 
             this.btnUpdateListBoxClientes.Location = new System.Drawing.Point(6, 314);
@@ -409,7 +397,7 @@
             // listBoxTipoClienteSearch
             // 
             this.listBoxTipoClienteSearch.FormattingEnabled = true;
-            this.listBoxTipoClienteSearch.Location = new System.Drawing.Point(6, 85);
+            this.listBoxTipoClienteSearch.Location = new System.Drawing.Point(33, 85);
             this.listBoxTipoClienteSearch.Name = "listBoxTipoClienteSearch";
             this.listBoxTipoClienteSearch.Size = new System.Drawing.Size(99, 43);
             this.listBoxTipoClienteSearch.TabIndex = 32;
@@ -427,7 +415,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 69);
+            this.label14.Location = new System.Drawing.Point(41, 69);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(81, 13);
             this.label14.TabIndex = 35;
@@ -525,6 +513,5 @@
         private System.Windows.Forms.ListBox listBoxTipoClienteSearch;
         private System.Windows.Forms.Button btnUpdateListBoxClientes;
         private System.Windows.Forms.Button btnSearchCliente;
-        private System.Windows.Forms.Button btnCleanTipo;
     }
 }
