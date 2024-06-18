@@ -169,7 +169,7 @@
             this.groupBox1.Size = new System.Drawing.Size(164, 89);
             this.groupBox1.TabIndex = 70;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danger Zone";
+            this.groupBox1.Text = "Zona de Manuseamento";
             // 
             // listBoxFuncionarios
             // 

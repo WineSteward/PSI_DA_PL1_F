@@ -78,7 +78,13 @@ namespace PSI_DA_PL1_F.Views
                 return;
             }
 
-            controladorMenuRefeicao.AddMenu(dateTimePicker.Value, numericUpDownQtddDisponivel.Value, numericUpDownPrecoEstudante.Value, numericUpDownPrecoProfessor.Value, checkedListBoxPratos, checkedListBoxExtras);
+            bool menuJaExiste = controladorMenuRefeicao.AddMenu(dateTimePicker.Value, numericUpDownQtddDisponivel.Value, numericUpDownPrecoEstudante.Value, numericUpDownPrecoProfessor.Value, checkedListBoxPratos, checkedListBoxExtras);
+
+            if (menuJaExiste)
+            {
+                MessageBox.Show("Já existe um menu para o dia selecionado");
+                return;
+            }
 
             // limpar os checks da checkbox
             for (int i = 0; i < checkedListBoxPratos.Items.Count; i++)

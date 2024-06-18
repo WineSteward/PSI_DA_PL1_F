@@ -46,19 +46,32 @@ namespace PSI_DA_PL1_F.Controllers
             return listaPratos;
         }
 
-        public void AddMenu(DateTime diaHora, decimal quantidade, decimal precoEstudante, decimal precoProfessor, CheckedListBox pratos, CheckedListBox extras)
+        public bool AddMenu(DateTime diaHora, decimal quantidade, decimal precoEstudante, decimal precoProfessor, CheckedListBox pratos, CheckedListBox extras)
         {
+            // Obrigar que o menu tenha a hora do almoço e nao a atual
+            DateTime dia = new DateTime(diaHora.Year, diaHora.Month, diaHora.Day, 12, 00, 0);
+
+            //ir buscar os menus ja existentes
+            List<MenuRefeicao> listaAtual = UpdateListBoxMenus();
+
+            //verificar que ja nao existe um menu para o mesmo dia
+            foreach(MenuRefeicao menu in listaAtual)
+            {
+                if(menu.DataHora == dia)
+                    return true;
+            }
+
             List<Extra> escolhaExtras = MenuRefeicao.GetCheckedItems<Extra>(extras);
 
             List<Prato> escolhaPratos = MenuRefeicao.GetCheckedItems<Prato>(pratos);
 
             int quantidadeDisponivel = (int)quantidade;
 
-            // Obrigar que o menu tenha a hora do almoço e nao a atual
-            DateTime dia = new DateTime(diaHora.Year, diaHora.Month, diaHora.Day, 12, 00, 0);
+           
 
             db.MenuRefeicoes.Add(new MenuRefeicao(dia, quantidadeDisponivel, precoEstudante, precoProfessor, escolhaExtras, escolhaPratos));
             db.SaveChanges();
+            return false;
         }
 
         public void UpdateMenu(DateTime diaHora, decimal quantidade, decimal precoEstudante, decimal precoProfessor, CheckedListBox pratos, CheckedListBox extras, MenuRefeicao menuAtual)
