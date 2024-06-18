@@ -123,7 +123,11 @@ namespace PSI_DA_PL1_F.Controllers
 
                             db.Reservas.Add(novaReserva);
 
-                            this.MakeTalao(novaReserva);
+                            MakeTalao(novaReserva);
+
+                            Fatura novaFatura = new Fatura(novaReserva.Menu.DataHora, novaReserva.Total, novaReserva.Menu.precoEstudante, novaReserva.Prato, novaReserva.Extras);
+
+                            GeneratePDF(novaFatura, multa);
 
                             Menu.Quantidade -= 1;
 
@@ -146,7 +150,11 @@ namespace PSI_DA_PL1_F.Controllers
 
                             db.Reservas.Add(novaReserva);
 
-                            this.MakeTalao(novaReserva);
+                            MakeTalao(novaReserva);
+
+                            Fatura novaFatura = new Fatura(novaReserva.Menu.DataHora, novaReserva.Total, novaReserva.Menu.precoEstudante, novaReserva.Prato, novaReserva.Extras);
+
+                            GeneratePDF(novaFatura);
 
                             Menu.Quantidade -= 1;
 
@@ -171,7 +179,11 @@ namespace PSI_DA_PL1_F.Controllers
 
                             db.Reservas.Add(novaReserva);
 
-                            this.MakeTalao(novaReserva);
+                            MakeTalao(novaReserva);
+
+                            Fatura novaFatura = new Fatura(novaReserva.Menu.DataHora, novaReserva.Total, novaReserva.Menu.precoProfessor, novaReserva.Prato, novaReserva.Extras);
+
+                            GeneratePDF(novaFatura, multa);
 
                             Menu.Quantidade -= 1;
 
@@ -194,7 +206,11 @@ namespace PSI_DA_PL1_F.Controllers
 
                             db.Reservas.Add(novaReserva);
 
-                            this.MakeTalao(novaReserva);
+                            MakeTalao(novaReserva);
+
+                            Fatura novaFatura = new Fatura(novaReserva.Menu.DataHora, novaReserva.Total, novaReserva.Menu.precoProfessor, novaReserva.Prato, novaReserva.Extras);
+
+                            GeneratePDF(novaFatura);
 
                             Menu.Quantidade -= 1;
 
@@ -220,25 +236,9 @@ namespace PSI_DA_PL1_F.Controllers
 
         public void ConsumirReserva(Reserva reservaEscolhida)
         {
-            Fatura novaFatura;
-
             reservaEscolhida.Ativo = false;
 
-            //Criar fatura apos consumo diferenciando que tipo de cliente é (precos diferentes)
-            if (reservaEscolhida.Cliente is Estudante)
-                novaFatura = new Fatura(reservaEscolhida.Menu.DataHora, reservaEscolhida.Total, reservaEscolhida.Menu.precoEstudante, reservaEscolhida.Prato, reservaEscolhida.Extras);
-
-            else
-                novaFatura = new Fatura(reservaEscolhida.Menu.DataHora, reservaEscolhida.Total, reservaEscolhida.Menu.precoProfessor, reservaEscolhida.Prato, reservaEscolhida.Extras);
-
-            
-            if(reservaEscolhida.Multa != null)
-                GeneratePDF(novaFatura, reservaEscolhida.Multa);
-           else
-                GeneratePDF(novaFatura);
-
-
-                db.SaveChanges();
+            db.SaveChanges();
         }
 
         public static void GeneratePDF(Fatura fatura)
@@ -246,7 +246,6 @@ namespace PSI_DA_PL1_F.Controllers
 
             try
             {
-
                 //mudar este campo se mudar de maquina
                 string directoryPath = @"C:\Users\MMC\Desktop\ObjectOProgramming\Projeto_Aplicacoes\PSI_DA_PL1_F\bin\Debug\Faturas";
 
