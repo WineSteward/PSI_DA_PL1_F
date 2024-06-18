@@ -16,8 +16,9 @@ Este projeto é sobre um sistema de gestão de uma cantina que permita gerir os 
 <img src="img/diagrama.png" width=450px alt="Modelo de Dados">
 
 ## Exemplo do projeto
-<a href="https://youtu.be/HXN1qDDifJ4" target="_blank">
 
+<img  src="img/projetoExemplo.png" alt="Imagem do video do exemplo"><a href="https://youtu.be/HXN1qDDifJ4" target="_blank">
+  
 
 ## Como instalar o projeto na sua máquina
 
