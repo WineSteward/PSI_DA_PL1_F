@@ -17,8 +17,7 @@ Este projeto é sobre um sistema de gestão de uma cantina que permita gerir os 
 
 ## Exemplo do projeto
 
-<img  src="img/projetoExemplo.png" alt="Imagem do video do exemplo"><a href="https://youtu.be/HXN1qDDifJ4" target="_blank">
-  
+<a href="https://youtu.be/HXN1qDDifJ4" target="_blank"><img  src="img/projetoExemplo.png" alt="Imagem do video do exemplo"></a>
 
 ## Como instalar o projeto na sua máquina
 
@@ -36,6 +35,6 @@ Manuel Lopes        Nº 2231647
 Miguel Silva        Nº 2231683
 
 
-Projeto coordenado pelos docentes: <br/>
-**Diana Santos de Metodologias de Desenvolvimento de Software** <br/>
+Projeto coordenado pelos docentes: <br>
+**Diana Santos de Metodologias de Desenvolvimento de Software** <br>
 **Luis Barreiro de Desenvolvimento de Aplicações**
