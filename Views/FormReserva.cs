@@ -85,6 +85,9 @@ namespace PSI_DA_PL1_F.Views
         //Adicionar saldo ao cliente
         private void btnAddSaldo_Click(object sender, EventArgs e)
         {
+            if (listBoxClientes.SelectedItem == null)
+                return;
+
             controladorReserva.AddSaldo((Cliente)listBoxClientes.SelectedItem, numericUpDownSaldoAdd.Value);
 
             numericUpDownSaldoAdd.Value = 0;
@@ -95,6 +98,9 @@ namespace PSI_DA_PL1_F.Views
         //Consumir a reserva do cliente selecionado
         private void btnConsumir_Click(object sender, EventArgs e)
         {
+            if(listBoxReservas.SelectedItem == null)
+                return;
+
             controladorReserva.ConsumirReserva((Reserva)listBoxReservas.SelectedItem);
 
             listBoxReservas.DataSource = controladorReserva.UpdateListBoxReservas(menuRefeicao);
