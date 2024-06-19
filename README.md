@@ -30,9 +30,9 @@ A forma mais simples de correr a aplicação na sua máquina é:
 5. Iniciar a aplicação
 
 Projeto realizado por: <br>
-Miguel Carpinteiro  Nº 2231992
-Manuel Lopes        Nº 2231647
-Miguel Silva        Nº 2231683
+* Miguel Carpinteiro  Nº 2231992
+* Manuel Lopes        Nº 2231647
+* Miguel Silva        Nº 2231683
 
 
 Projeto coordenado pelos docentes: <br>
