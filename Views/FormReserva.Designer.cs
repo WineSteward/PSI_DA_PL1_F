@@ -206,10 +206,10 @@
             // listBoxReservas
             // 
             this.listBoxReservas.FormattingEnabled = true;
-            this.listBoxReservas.Location = new System.Drawing.Point(543, 134);
+            this.listBoxReservas.Location = new System.Drawing.Point(497, 108);
             this.listBoxReservas.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxReservas.Name = "listBoxReservas";
-            this.listBoxReservas.Size = new System.Drawing.Size(185, 277);
+            this.listBoxReservas.Size = new System.Drawing.Size(288, 277);
             this.listBoxReservas.TabIndex = 9;
             // 
             // label1
@@ -225,7 +225,7 @@
             // 
             // btnConsumir
             // 
-            this.btnConsumir.Location = new System.Drawing.Point(579, 415);
+            this.btnConsumir.Location = new System.Drawing.Point(579, 391);
             this.btnConsumir.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsumir.Name = "btnConsumir";
             this.btnConsumir.Size = new System.Drawing.Size(101, 30);

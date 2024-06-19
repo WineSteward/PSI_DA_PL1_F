@@ -41,12 +41,31 @@ namespace PSI_DA_PL1_F.Views
         private void btnAdicionarCliente_Click(object sender, EventArgs e)
         {
             //front end validations
-            if(listBoxTipoCliente.SelectedItem.ToString() == "Estudante" && textBoxNome.Text != "" && textBoxNIF.Text != "" && textBoxNumEstudante.Text != "")
-                controladorCliente.AddEstudante(textBoxNome.Text, textBoxNIF.Text, numericUpDownSaldo.Value, textBoxNumEstudante.Text);
-            
-            else if (listBoxTipoCliente.SelectedItem.ToString() == "Professor" && textBoxNome.Text != "" && textBoxNIF.Text  != "" && textBoxEmailProfessor.Text != "")
-                controladorCliente.AddProfessor(textBoxNome.Text, textBoxNIF.Text, numericUpDownSaldo.Value, textBoxEmailProfessor.Text);
-            
+            if (listBoxTipoCliente.SelectedItem.ToString() == "Estudante" && textBoxNome.Text != "" && textBoxNIF.Text != "" && textBoxNumEstudante.Text != "")
+                if (Utilizador.ValidarNif(textBoxNIF.Text))
+                {
+                    MessageBox.Show("Formato do NIF inválido");
+                    return;
+                }
+                else
+                    controladorCliente.AddEstudante(textBoxNome.Text, textBoxNIF.Text, numericUpDownSaldo.Value, textBoxNumEstudante.Text);
+
+            else if (listBoxTipoCliente.SelectedItem.ToString() == "Professor" && textBoxNome.Text != "" && textBoxNIF.Text != "" && textBoxEmailProfessor.Text != "")
+            {
+                if (Professor.IsValidEmail(textBoxEmailProfessor.Text))
+                    if (Utilizador.ValidarNif(textBoxNIF.Text))
+                        controladorCliente.AddProfessor(textBoxNome.Text, textBoxNIF.Text, numericUpDownSaldo.Value, textBoxEmailProfessor.Text);
+                    else
+                    {
+                        MessageBox.Show("NIF inválido");
+                        return;
+                    }
+                else
+                {
+                    MessageBox.Show("Email inválido");
+                    return;
+                }
+            }
             else
             {
                 MessageBox.Show("Preencha todos os parametros necessários");
@@ -84,10 +103,23 @@ namespace PSI_DA_PL1_F.Views
         private void btnUpdateCliente_Click(object sender, EventArgs e)
         {
             if (listBoxTipoClienteEdit.SelectedItem.ToString() == "Estudante" && textBoxNomeEdit.Text != "" && textBoxNIFEdit.Text != "" && textBoxNumEstudanteEdit.Text != "")
-                controladorCliente.UpdateEstudante(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxNumEstudanteEdit.Text, (Cliente)listBoxClientes.SelectedItem);
+                if (Utilizador.ValidarNif(textBoxNIFEdit.Text))
+                {
+                    MessageBox.Show("Formato do NIF inválido");
+                    return;
+                }
+                else
+                    controladorCliente.UpdateEstudante(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxNumEstudanteEdit.Text, (Cliente)listBoxClientes.SelectedItem);
 
             else if (listBoxTipoClienteEdit.SelectedItem.ToString() == "Professor" && textBoxNomeEdit.Text != "" && textBoxNIFEdit.Text != "" && textBoxEmailProfessorEdit.Text != "")
-                controladorCliente.AddProfessor(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxEmailProfessorEdit.Text);
+                if (Professor.IsValidEmail(textBoxEmailProfessorEdit.Text) && Utilizador.ValidarNif(textBoxNIFEdit.Text))
+                    controladorCliente.AddProfessor(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxEmailProfessorEdit.Text);
+
+                else
+                {
+                    MessageBox.Show("Endereço de email inválido");
+                    return;
+                }
 
             else
             {
@@ -106,9 +138,9 @@ namespace PSI_DA_PL1_F.Views
             textBoxNumEstudanteEdit.Text = "";
 
             Cliente clienteAtual = controladorCliente.FindCliente((Cliente)listBoxClientes.SelectedItem);
-               
+
             textBoxNomeEdit.Text = clienteAtual.Nome;
-            textBoxNIFEdit.Text =clienteAtual.NIF;
+            textBoxNIFEdit.Text = clienteAtual.NIF;
             numericUpDownSaldoEdit.Value = clienteAtual.Saldo;
 
             if (clienteAtual is Estudante)
@@ -135,7 +167,7 @@ namespace PSI_DA_PL1_F.Views
             else if (listBoxTipoClienteSearch.SelectedItem == null && textBoxNomeSearch.Text != "")
                 listBoxClientes.DataSource = controladorCliente.FindCliente(textBoxNomeSearch.Text);
 
-            else if(listBoxTipoClienteSearch.SelectedItem != null && textBoxNomeSearch.Text != "")
+            else if (listBoxTipoClienteSearch.SelectedItem != null && textBoxNomeSearch.Text != "")
                 listBoxClientes.DataSource = controladorCliente.FindCliente(textBoxNomeSearch.Text, listBoxTipoClienteSearch);
 
             else

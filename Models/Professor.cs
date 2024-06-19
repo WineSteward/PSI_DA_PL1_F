@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace PSI_DA_PL1_F.Models
@@ -18,6 +20,20 @@ namespace PSI_DA_PL1_F.Models
             this.NIF = nif;
             this.Saldo = saldo;
             this.EmailProfessor = emailProfessor;
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(email);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
 
         public override string ToString()

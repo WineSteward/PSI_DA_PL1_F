@@ -64,7 +64,7 @@ namespace PSI_DA_PL1_F.Models
 
         public override string ToString()
         {
-            return Cliente.Nome + " | " + Menu.DataHora.ToString();
+            return Cliente.Nome + " | " + Prato.Descricao + " | " + Menu.DataHora.ToString();
         }
 
 

@@ -15,23 +15,5 @@ namespace PSI_DA_PL1_F.Models
         {
             return Username + " | " + Nome;
         }
-
-        public static bool ValidarNif(string input)
-        {
-            // Check if the input contains only numbers using Regex
-            if (!Regex.IsMatch(input, @"^\d+$"))
-            {
-                return false;
-            }
-
-            // Check if the length of the input is within the specified range
-            if (input.Length == 9)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
     }
 }
