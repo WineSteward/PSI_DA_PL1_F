@@ -42,7 +42,7 @@ namespace PSI_DA_PL1_F.Views
         {
             //front end validations
             if (listBoxTipoCliente.SelectedItem.ToString() == "Estudante" && textBoxNome.Text != "" && textBoxNIF.Text != "" && textBoxNumEstudante.Text != "")
-                if (Utilizador.ValidarNif(textBoxNIF.Text))
+                if (!Utilizador.ValidarNif(textBoxNIF.Text))
                 {
                     MessageBox.Show("Formato do NIF inválido");
                     return;
@@ -103,7 +103,7 @@ namespace PSI_DA_PL1_F.Views
         private void btnUpdateCliente_Click(object sender, EventArgs e)
         {
             if (listBoxTipoClienteEdit.SelectedItem.ToString() == "Estudante" && textBoxNomeEdit.Text != "" && textBoxNIFEdit.Text != "" && textBoxNumEstudanteEdit.Text != "")
-                if (Utilizador.ValidarNif(textBoxNIFEdit.Text))
+                if (!Utilizador.ValidarNif(textBoxNIFEdit.Text))
                 {
                     MessageBox.Show("Formato do NIF inválido");
                     return;
@@ -112,15 +112,19 @@ namespace PSI_DA_PL1_F.Views
                     controladorCliente.UpdateEstudante(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxNumEstudanteEdit.Text, (Cliente)listBoxClientes.SelectedItem);
 
             else if (listBoxTipoClienteEdit.SelectedItem.ToString() == "Professor" && textBoxNomeEdit.Text != "" && textBoxNIFEdit.Text != "" && textBoxEmailProfessorEdit.Text != "")
-                if (Professor.IsValidEmail(textBoxEmailProfessorEdit.Text) && Utilizador.ValidarNif(textBoxNIFEdit.Text))
-                    controladorCliente.AddProfessor(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxEmailProfessorEdit.Text);
-
+                if (Professor.IsValidEmail(textBoxEmailProfessorEdit.Text))
+                    if(Utilizador.ValidarNif(textBoxNIFEdit.Text))
+                        controladorCliente.AddProfessor(textBoxNomeEdit.Text, textBoxNIFEdit.Text, numericUpDownSaldoEdit.Value, textBoxEmailProfessorEdit.Text);
+                    else
+                    {
+                        MessageBox.Show("NIF inválido");
+                        return;
+                    }
                 else
                 {
-                    MessageBox.Show("Endereço de email inválido");
+                    MessageBox.Show("Email inválido");
                     return;
                 }
-
             else
             {
                 MessageBox.Show("Preencha todos os parametros necessários");

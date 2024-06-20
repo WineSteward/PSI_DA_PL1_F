@@ -53,7 +53,7 @@ namespace PSI_DA_PL1_F.Views
                 return;
             }
 
-            if (Utilizador.ValidarNif(textBoxNIF.Text))
+            if (!Utilizador.ValidarNif(textBoxNIF.Text))
             {
                 MessageBox.Show("Formato do NIF inválido");
                 return;
